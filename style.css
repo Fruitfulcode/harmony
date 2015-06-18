@@ -1,0 +1,323 @@
+/**
+ * Theme Name: harvest
+ * Template: fruitful
+ */
+@import url('../fruitful/style.css');
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic);
+@import "font-awesome.less";
+@font-face{
+	font-family:Bebas;
+	src: url(../fonts/Bebas.ttf)
+}
+
+body {
+	font-family: 'Oswald', sans-serif !important;
+}
+.container {
+	position: relative;
+	width: 1152px;
+	margin: auto;
+	background-color: #fff;
+}
+.container .sixteen.columns {
+    margin: 30px 10px 10px 10px;
+    width: 1132px;
+}
+.logo-description {
+	color: #EE4400;
+	width: 100%;
+	display: block;
+}
+#masthead, #colophon, #content {
+ 	margin: 0 0 0 0 ;
+}
+#page-header .container header .header-hgroup.left-pos {
+	margin: 0 0px 0 0;
+	width: 50%;
+  	display: inline-block;
+  	margin-bottom: 8px;
+}
+#page-header .container header .menu-wrapper.right-pos {
+  	width: 100%;
+}
+.logo-description h1.site-title {
+    font-size: 48px !important;
+  	text-transform: uppercase;
+  	font-weight: bold;
+  	line-height: 20px;
+  	display: inline;
+  	margin: 0px 8px 0 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  	clear: none;
+}
+h1, h3, h5, h6 {
+  	font-family: 'Oswald', sans-serif !important;
+}
+h2 {
+	font-family: PT-Serif-Regular !important;
+	width: 100%;
+	line-height: 1.3;
+  	letter-spacing: 1px;
+}
+.entry-content h1,
+.comment-content h1{
+	width: 70%;
+    line-height: 60px;
+    font-size: 48px;
+    margin: 25px 0;
+}
+.entry-content h2,
+.comment-content h2{
+	line-height: 1.5;
+	margin-top: 37px;
+	width: 75%;
+}
+.entry-content h4 {
+	margin: 15px 0;
+}
+.list {
+	margin-top: 32px;
+}
+h4 {
+	font-family: PT-Serif-Regular;
+	font-weight: bold;
+}
+.list ul {
+  	font-family: PT-Serif-Regular;
+  	font-size: 18px;
+  	list-style-type: disc;
+  	margin-top: 12px;
+  	margin-left: 18px;
+    letter-spacing: 0.8px;
+ }
+.logo-description h2.site-description {
+  	font-family: 'PT-Serif', sans-serif ;
+	font-style: italic;
+  	color: #939393;
+  	font-size: 18px !important;
+	display: inline;
+  	vertical-align: bottom;
+}
+.title {
+	color: #C6C6C6;
+  	margin-left: 8px;
+}
+.login {
+	float: right;
+}
+.login-link {
+	float: left;
+  	font-size: 13px;
+  	margin-top: 12px;
+  	margin-right: 32px;
+}
+.login-link a{
+	text-decoration: none;
+	font-family: 'PT-Serif';
+	font-style: italic;
+}
+.login-link a:hover{
+	color: #000;
+}
+.fa {
+	color: #EE4400;
+	margin-right: 10px;
+}
+.search.bar.icon-search.fa {
+	color:#D4D4D4;
+}
+.button {
+	background: #EE4400;
+	float: right;
+  	padding: 13px 55px;
+  	font-size: 13px;
+  	cursor: pointer;
+}
+.button a {
+	text-decoration: none;
+	color: #fff !important;
+	font-family: 'PT-Serif';
+	font-style: italic;
+}
+.main-navigation {
+ 	background-color: #282828;
+  	height: 71px;
+  	float: none;
+  	margin: auto;
+  	width: 100%;
+}
+.main-navigation li {
+	margin:0px ;
+}
+.main-navigation ul li.current_page_item a{
+	padding: 22px 13px 22px 13px;
+}
+#main-menu-1 {
+	margin: auto;
+	max-width: 1132px;
+}
+.page-container .container {
+  	background-color: #f5f5f5 !important;
+}
+.page-container {
+	padding: 0;
+}
+#page {
+	background-color: #f5f5f5;
+}
+.main-navigation a {
+	font-family:'Oswald', sans-serif  !important;
+	color: #ffffff;
+    padding: 22px 13px;
+}
+.search.bar{
+	margin: 16px 0 0 0;
+	float: right;
+}
+input#s {
+  	border-radius: 0px 0px 0px 0px;
+	font-size: 13px;
+	text-transform: uppercase;
+	height: 31px;
+	line-height: 1.5em;
+	padding: 4px 32px 4px 5px;
+	width: 221px;
+	background-color: #fff;
+}
+input[type=text], input[type=email], input[type=url] {
+ 	border: none;
+	font-family: 'Oswald', sans-serif ;
+	height: 41px;
+	width: 217px;
+	padding-left: 8px;
+	border-radius: 0px;
+	font-size: 14px;
+	padding: 0px 0 0 8px ;
+}
+.main-navigation ul li:hover > a {
+    background:none repeat scroll 0 0 #F15A23;
+    color:#fff;
+    padding:22px 13px;
+    -webkit-transition: all 0.2s ease-in-out; 
+    -moz-transition: all 0.3s ease-in-out; 
+    -khtml-transition: all 0.3s ease-in-out; 
+    -o-transition: all 0.3s ease-in-out; 
+    -ms-transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out; 
+    font-size:14px;
+}
+.main-navigation ul li:hover > ul {
+    margin:0;
+    opacity:1;
+    visibility:visible;
+}
+	#page-header .container header .header-hgroup.center-pos a {
+  		text-align: center;
+}
+.select-menu {
+  	width: 98%;
+}
+
+
+/* FOOTER */
+
+#colophon ul {
+	list-style: none;
+}
+#colophon li {
+	display: inline-block;
+	width: 15%;
+	padding: 0 10px 0 0;
+}
+#colophon a {
+	font-family: 'Oswald', sans-serif ;
+	text-decoration: none;
+}
+/* #colophon ul li img {
+	width: 50px;
+	height: 50px;
+	border:1px solid #ccc;
+	background:#fff;
+	padding:2px;
+	float:left;
+	margin:0 10px 0 0px;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.2); Для Firefox
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.2); Для Safari и Chrome
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.1); Параметры тени
+	-moz-transition: border 0.3s 0.05s ease;
+	-o-transition: border 0.3s 0.05s ease;
+	-webkit-transition: border 0.3s 0.05s ease;
+} */
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1200px) {
+	.container{
+		width: auto;
+	}
+	.container .sixteen.columns {
+		margin: 30px 10px 10px 10px;
+		width: 98%;
+	}
+	#main-menu-1 {
+  		margin: auto;
+  		max-width: 98%;
+	}
+	.entry-content h2, .comment-content h2 {
+	  	width: 100%;
+	}
+}
+@media screen and (max-width: 787px) {
+	#page-header .container header .header-hgroup.center-pos a {
+  		text-align: left;
+	}
+}
+@media screen and (max-width: 767px) and (min-width: 480px) {
+	#page-header .container header .header-hgroup.center-pos a {
+  		text-align: left;
+	}
+	.container .sixteen.columns {
+  		margin: 30px 10px 10px 10px;
+  		max-width: 98%;
+	}
+	.entry-content h2, .comment-content h2 {
+	  	width: 100%;
+	}
+	.responsive .select-menu {
+  		margin: 16px 0 25px 10px !important;
+	}
+	.select-menu {
+  	width: 96%;
+	}	
+}
+@media screen and (max-width: 640px) {
+	.container{
+		width: auto;
+	}
+	.container .sixteen.columns {
+		margin: 30px 10px 10px 10px;
+		width: auto;
+	}
+	.entry-content h1, .comment-content h1 {
+		width: 100%;
+		font-size: 45px;
+		margin: 0px;
+	}
+	.entry-content h2, .comment-content h2 {
+	  	width: 100%;
+	}
+	.entry-content, .entry-summary {
+  		margin:0px;
+	}
+	.login {
+  		float: right;
+	}
+	.logo-description h2.site-description {
+  		font-size: 17px !important;
+	}
+}
+
+
