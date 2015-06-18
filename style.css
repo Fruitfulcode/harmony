@@ -235,7 +235,7 @@ input[type=text], input[type=email], input[type=url] {
 	font-family: 'Oswald', sans-serif ;
 	text-decoration: none;
 }
-/* #colophon ul li img {
+#colophon ul li img {
 	width: 50px;
 	height: 50px;
 	border:1px solid #ccc;
@@ -249,7 +249,7 @@ input[type=text], input[type=email], input[type=url] {
 	-moz-transition: border 0.3s 0.05s ease;
 	-o-transition: border 0.3s 0.05s ease;
 	-webkit-transition: border 0.3s 0.05s ease;
-} */
+}
 
 
 /* RESPONSIVE */
