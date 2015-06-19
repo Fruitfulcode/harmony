@@ -10,29 +10,18 @@
  */
 ?>
 				</div>
-					<div class="sixteen columns">
-						<div class="footer-sidebar">
-							<?php get_sidebar('footer'); ?>
-						</div>
-					</div>
+					
 			</div>
 		</div><!-- .page-container-->
 		
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="container">
-					<ul>
-						<?php
-						$pc = new WP_Query('orderby=comment_count&posts_per_page=5'); ?>
-						<?php while ($pc->have_posts()) : $pc->the_post(); ?>
-						<li>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(array()); ?></a>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-						</li>
-						<?php endwhile; ?>
-					</ul>
-			</div>
-			<div id="back-top">
-				<a rel="nofollow" href="#top" title="Back to top">&uarr;</a>
+			<div class="sixteen columns">
+						<div class="footer-sidebar">
+							<?php get_sidebar('footer'); ?>
+						</div>
+					</div>
+			<div id="back-to-top">
+				<a rel="nofollow" href="#top" title="Back to top"><i class="fa fa-chevron-up"></i>top</a>
 			</div>
 		</footer><!-- #colophon .site-footer -->
 	<!--WordPress Development by Fruitful Code-->
