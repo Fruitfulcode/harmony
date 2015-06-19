@@ -132,14 +132,14 @@ h4 {
 .search.bar.icon-search.fa {
 	color:#D4D4D4;
 }
-.button {
+button {
 	background: #EE4400;
 	float: right;
-  	padding: 13px 55px;
+  	padding: 15px 55px;
   	font-size: 13px;
   	cursor: pointer;
 }
-.button a {
+button a {
 	text-decoration: none;
 	color: #fff !important;
 	font-family: 'PT-Serif';

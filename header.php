@@ -60,7 +60,7 @@
 									<div class="login">
 										<div class="login-link"><a href="#"><i class="fa fa-key"></i></a>
 										<a href="#">LOGIN</a></div>
-										<div class="button"><a href="../contactform/index.html" target="_blank">CONTACT ME</a></div>
+										<button><a href="../contactform/index.html" target="_blank">CONTACT ME</a></button>
 									</div>
 										
 									<div data-originalstyle="<?php echo $menu_pos_class; ?>" class="menu-wrapper <?php echo $menu_pos_class; ?>">
