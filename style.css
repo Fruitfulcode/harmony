@@ -1,7 +1,15 @@
-/**
- * Theme Name: harvest
- * Template: fruitful
- */
+/*
+Theme Name: Harmony
+Theme URI: http://themes.fruitfulcode.com/harmony
+Author: fruitfulcode
+Author URI: http://fruitfulcode.com
+Description: Fruitful Child theme
+Template: fruitful
+Version: 0.1
+Text Domain: fruitful
+*/
+
+
 @import url('../fruitful/style.css');
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
 @import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic);
