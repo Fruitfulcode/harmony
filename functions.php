@@ -1,4 +1,3 @@
-
 <?php
 	if ( ! function_exists( 'fruitful_get_product_search_form' ) ) {
 		function fruitful_get_search_form(){

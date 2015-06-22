@@ -58,9 +58,11 @@
 									</div>	
 
 									<div class="login">
-										<div class="login-link"><a href="#"><i class="fa fa-key"></i></a>
-										<a href="#">LOGIN</a></div>
-										<button><a href="../contactform/index.html" target="_blank">CONTACT ME</a></button>
+										<div class="search_form">
+											<i class="fa fa-search"></i>
+											<span id="search">Search</span>
+										</div>
+										<button><a href="../contactform/index.html" target="_blank"><a href="#"><i class="fa fa-envelope-o"></i>CONTACT ME</a></button>
 									</div>
 										
 									<div data-originalstyle="<?php echo $menu_pos_class; ?>" class="menu-wrapper <?php echo $menu_pos_class; ?>">
@@ -73,9 +75,9 @@
 							<nav role="navigation" class="site-navigation main-navigation">
 								<div class="menu content">
 									<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-									<div class="search bar">
+									<!-- <div class="search bar">
 										<?php fruitful_get_search_form(); ?>
-									</div>
+									</div> -->
 								</div>
 							</nav><!-- .site-navigation .main-navigation -->
 					</div>
