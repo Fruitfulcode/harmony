@@ -21,6 +21,7 @@ Text Domain: fruitful
 
 body {
 	font-family: 'Oswald', sans-serif !important;
+	  background-color: #282828 !important;
 }
 .container {
 	position: relative;
@@ -74,10 +75,23 @@ h2 {
   	letter-spacing: 1px;
   	font-size: 24px !important;
 }
+h4 {
+	font-family: PT-Serif-Regular;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+li {
+  	font-family: PT-Serif-Regular;
+  	font-size: 18px;
+  	list-style-type: disc;
+  	letter-spacing: 0.8px;
+ }
 p {
 	font-size: 20px;
 	font-family: PT-Serif-Regular !important;
 	text-align: justify;
+	line-height: 35px;
+	margin-bottom: 50px;
 }
 .entry-content h1,
 .comment-content h1{
@@ -85,31 +99,24 @@ p {
     line-height: 60px;
     font-size: 48px;
     margin: 25px 0;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
 }
 .entry-content h2,
 .comment-content h2{
 	line-height: 1.5;
-	margin-top: 37px;
 	width: 100%;
+	margin-bottom: 50px;
 }
-.entry-content h4 {
-	margin: 15px 0;
+#page {
+	width: 1448px;
+	margin: auto;
 }
-.list {
-	margin-top: 32px;
+#page-header .head-container {
+  z-index: 9;
+  width: 1448px;
+   margin: auto;
 }
-h4 {
-	font-family: PT-Serif-Regular;
-	font-weight: bold;
-}
-.list ul {
-  	font-family: PT-Serif-Regular;
-  	font-size: 18px;
-  	list-style-type: disc;
-  	margin-top: 12px;
-  	margin-left: 18px;
-    letter-spacing: 0.8px;
- }
 .logo-description h2.site-description {
   	font-family: 'PT-Serif', sans-serif ;
 	font-style: italic;
@@ -147,7 +154,6 @@ h4 {
 	margin-top: 13px;
 }
 .fa {
-	color: #fff;
 	margin-right: 20px;
 	font-size: 16px;
 }
@@ -162,9 +168,6 @@ h4 {
 	text-transform: uppercase;
 	font-size: 13px;
 }
-/*.search.bar.icon-search.fa {
-	color:#D4D4D4;
-}*/
 button {
 	background: #EE4400;
 	float: right;
@@ -181,6 +184,7 @@ button a {
 .menu-main-menu-container{
 	display: inline-block;
 	width: 50%;
+
 }
 .main-navigation {
  	background-color: #282828;
@@ -190,7 +194,8 @@ button a {
   	width: 100%;
 }
 .main-navigation li {
-	margin:0px ;
+	margin:0px;
+	list-style-type: none;
 }
 .main-navigation ul li.current_page_item a{
 	padding: 22px 19px 22px 19px;
@@ -219,10 +224,6 @@ button a {
     padding: 22px 19px;
     font-size: 18px !important;
 }
-/*.search.bar{
-	margin: 16px 0 0 0;
-	float: right;
-}*/
 input#s {
   	border-radius: 0px 0px 0px 0px;
 	font-size: 13px;
@@ -290,15 +291,20 @@ input[type=text], input[type=email], input[type=url] {
 }
 .widget-title {
 	font-size: 14px;
-	color: #EB3C00;
 	text-transform: uppercase;
 }
 .widget img {
   	width: 170px;
   	height: 170px;
 }
-#colophon, #content {
+#colophon {
+	float: none;
   	background-color: #F5F5F5;
+  	width: 1448px;
+  	margin: auto;
+  	-webkit-box-shadow: 0px 10px 23px -1px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 10px 23px -1px rgba(0,0,0,0.3);
+	box-shadow: 0px 10px 23px -1px rgba(0,0,0,0.3);
 }
 #back-to-top a {
   	text-decoration: none;
@@ -312,7 +318,7 @@ input[type=text], input[type=email], input[type=url] {
   	width: 90%;
   	display: table;
   	margin-top: 30px;
-  	margin-bottom: 50px;
+  	margin-bottom: 30px;
 }
 .fa-chevron-up:before {
 	display: inline;
@@ -320,6 +326,86 @@ input[type=text], input[type=email], input[type=url] {
 	font-size: 12px;
 	vertical-align: bottom;
 }
+.footer-content {
+	display: table;
+	background-color: #282828;
+	margin: auto;
+	width: 100%;
+	color: #fff;
+}
+.widget.widget_aboutus_widget {
+	display: block;
+	width: 100%;
+	margin: auto;
+}
+.about_us, #nav_menu-4 {
+	float: left;
+	width: 20%;
+	margin: 4% 0 0 9%;
+  	padding: 0px 30px 0px 30px;
+}
+.widget-title {
+	font-size: 20px;
+	text-transform: uppercase;
+}
+.textwidget {
+	font-family: 'PT-Serif';
+	font-size: 18px;
+	color: #B0B1B4;
+	margin-top: 34px;
+}
+#nav_menu-4{
+	float: left;
+	width: 30%;
+}
+.footer-footer {
+	background-color: #202020;
+	display: table;
+  	margin: auto;
+  	width: 1132px;
+  	color: #B0B1B4;
+}
+.colortext {
+	color: #F64747;
+	font-size: 15px;
+	font-family: 'PT-Serif';
+}
+#page2 {
+	width: 1448px;
+	height: 50px;
+	margin: auto;
+	background-color: #202020;
+}
+#license {
+	width: 50%;
+	float: left;
+	margin: 10px 0 0 0;
+	font-size: 15px;
+}
+.social-icon {
+	margin: 0 5px 0 0 ;
+}
+#colophon .social-icon a {
+  	float: left;
+  	padding: 10px 10px 0 0;
+}
+#masthead .social-icon a:hover > i, 
+#colophon .social-icon a:hover > i{
+    color: #F64747;
+}
+.menu a{
+	color: #B0B1B4;
+	text-decoration: none;
+}
+.menu li {
+	list-style: none;
+}
+ul {
+	margin: 34px 0 60% 0 ;
+	font-size: 18px;
+	font-family: 'PT-Serif';
+}
+
 
 /* RESPONSIVE */
 

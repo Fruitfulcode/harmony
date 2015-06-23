@@ -16,12 +16,25 @@
 		
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="sixteen columns">
-						<div class="footer-sidebar">
-							<?php get_sidebar('footer'); ?>
-						</div>
-					</div>
+				<div class="footer-sidebar">
+					<?php get_sidebar('footer'); ?>
+				</div>
+			</div>
 			<div id="back-to-top">
 				<a rel="nofollow" href="#top" title="Back to top"><i class="fa fa-chevron-up"></i>top</a>
+			</div>
+			<div class="footer-content">
+				<?php dynamic_sidebar('sidebar-8'); ?>
+			</div>
+			<div id="page2">
+				<div class="footer-footer">
+					<div class="license">
+						<p id="license">© 2015 Harmony theme by  <span class="colortext">fruitfulcode</span> 
+						Powered by <span class="colortext">WordPress</span> </p>
+					</div>
+					<?php fruitful_get_socials_icon (); ?>
+
+				</div>
 			</div>
 		</footer><!-- #colophon .site-footer -->
 	<!--WordPress Development by Fruitful Code-->
