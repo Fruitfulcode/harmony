@@ -132,7 +132,7 @@ class aboutus_widget extends WP_Widget
 		if ( current_user_can('unfiltered_html') )
 			$instance['text'] =  $new_instance['text'];
 		else
-			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['text']) ) ); // wp_filter_post_kses() expects slashed
+			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['text']) ) ); 
 		$instance['filter'] = ! empty( $new_instance['filter'] );
 		return $instance;
 	}
@@ -142,4 +142,8 @@ function fruitful_about_widget() {
 	register_widget( 'aboutus_widget' );
 }
 add_action( 'widgets_init', 'fruitful_about_widget' );
+
+
+
+
 

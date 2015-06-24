@@ -25,6 +25,8 @@
 </head>
 <body <?php body_class();?>>
 	<div id="page-header" class="hfeed site">
+		
+		
 	<?php
 		$theme_options  = fruitful_ret_options("fruitful_theme_options");
 		$logo_pos = $menu_pos = '';
@@ -59,10 +61,49 @@
 
 									<div class="login">
 										<div class="search_form">
-											<i class="fa fa-search"></i>
-											<span id="search">Search</span>
+											<input type="checkbox" id="op"></input>
+											<div class="lower">
+												<label for="op" id="search"><i class="fa fa-search"></i>Search</label>
+											</div>
+											<div class="overlay overlay-hugeinc">
+												<label for="op"></label>
+											  	<nav>
+											  		<?php echo do_shortcode('[contact-form-7 id="64" title="Contact Us"]');  ?>
+											 	</nav>
+											</div>
 										</div>
-										<button><a href="../contactform/index.html" target="_blank"><a href="#"><i class="fa fa-envelope-o"></i>CONTACT ME</a></button>
+										<div class="contact">
+											<input type="checkbox" id="op"></input>
+											<div class="lower">
+												<label for="op" id="contact"><i class="fa fa-envelope-o"></i>Contact Me</label>
+											</div>
+											<div class="overlay overlay-hugeinc">
+													<label for="op" id="contact"></label>
+												  	<nav>
+												  		
+												  		<<!-- form action="wp-content/themes/harmony/support.php" method="post" id="contact-form" class="contact-form">
+					                                        <div class="search_form-title">Contact</div>
+					                                        <div class="field name">
+					                                        	<span class="title-search">Your name (required)</span>
+					                                            <input type="text" name="name" id="name" required/>
+					                                        </div>
+					                                        <div class="field emale">
+					                                        	<span class="title-search">Your Email (required)</span>
+					                                            <input type="email" name="email" id="email" required/>
+					                                        </div>
+					                                        <div class="field subject">
+					                                        	<span class="title-search">Subject</span>
+					                                            <input type="text" name="subject" id="subject"/>
+					                                        </div>
+					                                        <span class="title-search">Message</span>
+					                                        <textarea name="message" id="message" cols="25" rows="5"></textarea>
+					                                        <div class="submit">
+					                                            <button type="submit" class="message" name="send">Send</button>
+					                                        </div>
+					                                    </form> -->
+												 	</nav>
+											</div>
+										</div>
 									</div>
 										
 									<div data-originalstyle="<?php echo $menu_pos_class; ?>" class="menu-wrapper <?php echo $menu_pos_class; ?>">
@@ -75,11 +116,8 @@
 							<nav role="navigation" class="site-navigation main-navigation">
 								<div class="menu content">
 									<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-									<!-- <div class="search bar">
-										<?php fruitful_get_search_form(); ?>
-									</div> -->
 								</div>
-							</nav><!-- .site-navigation .main-navigation -->
+							</nav>
 					</div>
 					
 			<?php } else { ?>
@@ -125,6 +163,7 @@
 			<?php } ?>
 	</div><!-- .header-container -->
 	
+
 	<?php fruitful_get_slider(); ?>
 	
 	<div id="page" class="page-container">		

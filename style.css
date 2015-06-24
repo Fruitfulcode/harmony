@@ -18,10 +18,9 @@ Text Domain: fruitful
 	font-family:Bebas;
 	src: url(../fonts/Bebas.ttf)
 }
-
 body {
 	font-family: 'Oswald', sans-serif !important;
-	  background-color: #282828 !important;
+	background-color: #282828 !important;
 }
 .container {
 	position: relative;
@@ -93,6 +92,9 @@ p {
 	line-height: 35px;
 	margin-bottom: 50px;
 }
+a {
+	text-decoration: none;
+}
 .entry-content h1,
 .comment-content h1{
 	width: 100%;
@@ -131,7 +133,8 @@ p {
 }
 .login {
 	float: right;
-	display: inline-block;
+	margin-bottom: 32px;
+	width: 25%;
 }
 .login-link {
 	float: left;
@@ -151,26 +154,33 @@ p {
 	display: block;
 	float: left;
 	margin-right: 23px;
-	margin-top: 13px;
+	margin-top: 6px;
 }
 .fa {
+	display: initial !important;
 	margin-right: 20px;
 	font-size: 16px;
 }
 .fa.fa-search {
 	color: #B0B1B4;
 	margin-right: 7px;
+	margin-top: 3px;
 	vertical-align: text-bottom;
+	float: left;
+}
+.contact {
+	display: table;
 }
 #search {
+	display: table;
 	font-family: 'PT-Serif';
 	font-style: italic;
 	text-transform: uppercase;
 	font-size: 13px;
+	margin-top: 10px;
 }
 button {
 	background: #EE4400;
-	float: right;
   	padding: 15px 37px;
   	font-size: 13px;
   	cursor: pointer;
@@ -192,10 +202,12 @@ button a {
   	float: none;
   	margin: auto;
   	width: 100%;
+  	position: initial;
 }
 .main-navigation li {
 	margin:0px;
 	list-style-type: none;
+	position: initial;
 }
 .main-navigation ul li.current_page_item a{
 	padding: 22px 19px 22px 19px;
@@ -234,14 +246,9 @@ input#s {
 	background-color: #fff;
 }
 input[type=text], input[type=email], input[type=url] {
- 	border: none;
-	font-family: 'Oswald', sans-serif ;
-	height: 41px;
-	width: 217px;
-	padding-left: 8px;
 	border-radius: 0px;
-	font-size: 14px;
-	padding: 0px 0 0 8px ;
+	padding: 12px 0 12px 0;
+	width: 100%;
 }
 .main-navigation ul li:hover > a {
     background:none repeat scroll 0 0 #F15A23;
@@ -332,17 +339,20 @@ input[type=text], input[type=email], input[type=url] {
 	margin: auto;
 	width: 100%;
 	color: #fff;
+	background-image: url(images/map.png);
+	background-position: center;
+    background-repeat: no-repeat;
 }
 .widget.widget_aboutus_widget {
 	display: block;
 	width: 100%;
 	margin: auto;
 }
-.about_us, #nav_menu-4 {
-	float: left;
-	width: 20%;
-	margin: 4% 0 0 9%;
-  	padding: 0px 30px 0px 30px;
+.about_us, #nav_menu-4, #text-2 {
+  	float: left;
+  	width: 20%;
+  	margin: 5.5% 0 0 1%;
+  	padding: 0px 6% 0px 6%;
 }
 .widget-title {
 	font-size: 20px;
@@ -352,11 +362,7 @@ input[type=text], input[type=email], input[type=url] {
 	font-family: 'PT-Serif';
 	font-size: 18px;
 	color: #B0B1B4;
-	margin-top: 34px;
-}
-#nav_menu-4{
-	float: left;
-	width: 30%;
+	margin-top: 20px;
 }
 .footer-footer {
 	background-color: #202020;
@@ -405,6 +411,225 @@ ul {
 	font-size: 18px;
 	font-family: 'PT-Serif';
 }
+
+
+/*OVERLAY*/
+
+.lower{
+/*  margin:10% auto;*/
+ /* background:white;
+  float: left;*/
+}
+
+input[type="checkbox"]{
+  	display:none;
+}
+
+.lower label#contact{
+  	font-family: 'PT-Serif';
+  	text-transform:uppercase;
+	color: #fff;
+  	text-align:center;
+  	float: left;
+ 	background: #F64747;
+ 	padding: 15px 30px 15px 30px;
+  	font-size: 13px;
+  	cursor: pointer;
+  	font-style: italic;
+}
+
+.lower label:hover{
+  cursor:pointer;
+}
+
+.overlay{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.9);
+}
+
+.overlay label{
+	width: 58px;
+	height:58px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	background: url('http://tympanus.net/Development/FullscreenOverlayStyles/img/cross.png');
+	z-index: 100;
+  cursor:pointer;
+}
+
+.overlay nav {
+	text-align: center;
+	position: relative;
+	top: 35%;
+	height: 9%;
+	font-size: 54px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.overlay ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: inline-block;
+	height: 100%;
+	position: relative;
+}
+
+.overlay ul li {
+	display: block;
+	height: 20%;
+	height: calc(100% / 5);
+	min-height: 54px;
+}
+
+.overlay ul li a {
+	font-weight: 300;
+	display: block;
+	color: white;
+  text-decoration:none;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+  font-family: 'NotCourierSans';
+  text-transform:uppercase;
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+	color: #849368;
+}
+
+.lower~.overlay-hugeinc{
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+	transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+#op:checked~.overlay-hugeinc{
+	opacity: 0.9;
+	visibility: visible;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.overlay-hugeinc nav {
+	-moz-perspective: 300px;
+}
+
+.overlay-hugeinc nav ul {
+	opacity: 0.4;
+	-webkit-transform: translateY(-25%) rotateX(35deg);
+	transform: translateY(-25%) rotateX(35deg);
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+#op:checked~.overlay-hugeinc nav ul {
+	opacity: 1;
+	-webkit-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+#op:not(:checked)~.overlay-hugeinc nav ul {
+	-webkit-transform: translateY(25%) rotateX(-35deg);
+	transform: translateY(25%) rotateX(-35deg);
+}
+
+
+
+
+.title-search{
+	font-family: 'PT-Serif';
+	text-align: left;
+	font-size: 16px;
+	color: #6F6F6D;
+	float: left;
+	padding: 8px 0 8px 0;
+}
+.search_form-title {
+  	font-size: 20px;
+  	text-transform: uppercase;
+  	color: #fff;
+  	float: left;
+  	margin-bottom: 10px;
+}
+.contact-form {
+	width: 23.3%;
+  	display: inline-block;
+  	opacity: 1;
+  	padding-right: 71px;
+}
+#contact-form .field, #contact-form2 .field {
+	width: 98%;
+  	float: left;
+  	font-size: 13px;
+  	color: #fff;
+}
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form2 input[type="text"],
+#contact-form2 input[type="email"] {
+	font-family: 'PT-Serif';
+	display:inline-block;
+	width:100%;
+	color:#b7bcc2;
+}
+#contact-form textarea, #contact-form2 textarea {
+	width:98%;
+	font-size: 13px;
+	margin-bottom: 20px;
+}
+.message{
+	font-family: 'PT-Serif';
+	color:#fff;
+	font-style: italic;
+	font-size: 13px;
+}
+.submit {
+	background-color: #fff;
+}
+
+
+
+#wpcf7-f64-o1{
+	width: 23%;
+	margin: auto;
+}
+#contact7 {
+	color: #fff;
+	font-size: 13px;
+	line-height: 20px; 
+  	margin-bottom: 0px; 
+}
+.wpcf7-form-control wpcf7-text{
+	display: table;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* RESPONSIVE */
