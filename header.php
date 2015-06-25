@@ -68,39 +68,22 @@
 											<div class="overlay overlay-hugeinc">
 												<label for="op"></label>
 											  	<nav>
-											  		<?php echo do_shortcode('[contact-form-7 id="64" title="Contact Us"]');  ?>
+											  		<div id="searchforms">
+												  		<h3>Serach For</h3>
+												  		<?php fruitful_get_search_form() ?>
+											  		</div>
 											 	</nav>
 											</div>
 										</div>
-										<div class="contact">
-											<input type="checkbox" id="op"></input>
+										<div class="contact-form">
+											<input type="checkbox" id="op2"></input>
 											<div class="lower">
-												<label for="op" id="contact"><i class="fa fa-envelope-o"></i>Contact Me</label>
+												<label for="op2" id="contact"><i class="fa fa-envelope-o"></i>Contact Me</label>
 											</div>
 											<div class="overlay overlay-hugeinc">
-													<label for="op" id="contact"></label>
+													<label for="op2" id="contact"></label>
 												  	<nav>
-												  		
-												  		<<!-- form action="wp-content/themes/harmony/support.php" method="post" id="contact-form" class="contact-form">
-					                                        <div class="search_form-title">Contact</div>
-					                                        <div class="field name">
-					                                        	<span class="title-search">Your name (required)</span>
-					                                            <input type="text" name="name" id="name" required/>
-					                                        </div>
-					                                        <div class="field emale">
-					                                        	<span class="title-search">Your Email (required)</span>
-					                                            <input type="email" name="email" id="email" required/>
-					                                        </div>
-					                                        <div class="field subject">
-					                                        	<span class="title-search">Subject</span>
-					                                            <input type="text" name="subject" id="subject"/>
-					                                        </div>
-					                                        <span class="title-search">Message</span>
-					                                        <textarea name="message" id="message" cols="25" rows="5"></textarea>
-					                                        <div class="submit">
-					                                            <button type="submit" class="message" name="send">Send</button>
-					                                        </div>
-					                                    </form> -->
+												  		<?php echo do_shortcode('[contact-form-7 id="64" title="Contact Us"]');  ?>
 												 	</nav>
 											</div>
 										</div>
