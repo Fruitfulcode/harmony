@@ -362,6 +362,21 @@ input[type="checkbox"]{
 	left: 0;
 	background: rgba(0,0,0,0.9);
 }
+.overlay .overlay-close {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+	background: url(../img/cross.png) no-repeat center center;
+	text-indent: 200%;
+	color: transparent;
+	outline: none;
+	z-index: 100;
+}
+
 .overlay label{
 	width: 58px;
 	height:58px;
@@ -407,39 +422,32 @@ input[type="checkbox"]{
 }
 .overlay ul li a:hover,
 .overlay ul li a:focus {
-	color: #849368;
+	color: #f0f0f0;
 }
 .lower~.overlay-hugeinc{
-	opacity: 0;
 	visibility: hidden;
-	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
-	transition: opacity 0.5s, visibility 0s 0.5s;
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+	-webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
+	transition: transform 0.5s, visibility 0s 0.5s;
 }
 #op:checked~.overlay-hugeinc,
 #op2:checked~.overlay-hugeinc{
-	opacity: 0.98;
 	visibility: visible;
-	-webkit-transition: opacity 0.5s;
-	transition: opacity 0.5s;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
 }
-.overlay-hugeinc nav ul {
-	opacity: 0.4;
-	-webkit-transform: translateY(-25%) rotateX(35deg);
-	transform: translateY(-25%) rotateX(35deg);
-	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-	transition: transform 0.5s, opacity 0.5s;
+/*#page-header.head-container {
+	background: #fff;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
 }
-#op:checked~.overlay-hugeinc nav ul,
-#op2:checked~.overlay-hugeinc nav ul {
-	opacity: 1;
-	-webkit-transform: rotateX(0deg);
-	transform: rotateX(0deg);
-}
-#op:not(:checked)~.overlay-hugeinc nav ul,
-#op2:not(:checked)~.overlay-hugeinc nav ul {
-	-webkit-transform: translateY(25%) rotateX(-35deg);
-	transform: translateY(25%) rotateX(-35deg);
-}
+#page-header.head-container.op2:checked {
+	-webkit-transform: scale(0.8);
+	transform: scale(0.8);
+}*/
 #wpcf7-f64-o1{
 	width: 25%;
 	margin: auto;
