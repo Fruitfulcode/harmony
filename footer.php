@@ -23,9 +23,11 @@
 			<div id="back-to-top">
 				<a rel="nofollow" href="#top" title="Back to top"><i class="fa fa-chevron-up"></i>top</a>
 			</div>
-			<div class="footer-content">
-				<?php dynamic_sidebar('sidebar-8'); ?>
-			</div>
+				<div id="page3">
+					<div class="footer-content">
+						<?php dynamic_sidebar('sidebar-8'); ?>
+					</div>
+				</div>
 			<div id="page2">
 				<div class="footer-footer">
 					<div class="license">

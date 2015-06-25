@@ -108,6 +108,7 @@
 					<div class="head-container resp_full_width_menu">
 						<div class="container ">
 							<div class="sixteen columns">
+								<?php fruitful_get_slider(); ?>
 								<header id="masthead" class="site-header" role="banner">
 									<?php 	
 										if (fruitful_is_social_header()) { 

@@ -20,13 +20,11 @@ Text Domain: fruitful
 }
 body {
 	font-family: 'Oswald', sans-serif !important;
-	background-color: #282828 !important;
+	background-color: #F5F5F5 !important;
 }
 .container {
-	position: relative;
 	width: 1132px;
 	margin: auto;
-	background-color: #fff;
 }
 .container .sixteen.columns {
     margin: 30px 10px 10px 0px;
@@ -35,34 +33,6 @@ body {
 .sixteen.columns {
   	margin: auto;
   	width: 1132px;
-}
-.logo-description {
-	color: #f64747;
-	width: 100%;
-	display: block;
-}
-#masthead, #colophon, #content {
- 	margin: 0 0 0 0 ;
-}
-#page-header .container header .header-hgroup.left-pos {
-	margin: 0 0px 0 0;
-	width: 50%;
-  	display: inline-block;
-  	margin-bottom: 8px;
-}
-#page-header .container header .menu-wrapper.right-pos {
-  	width: 100%;
-}
-.logo-description h1.site-title {
-    font-size: 48px !important;
-  	text-transform: uppercase;
-  	font-weight: bold;
-  	line-height: 20px;
-  	display: inline;
-  	margin: 0px 8px 0 0;
-}
-h1, h2, h3, h4, h5, h6 {
-  	clear: none;
 }
 h1, h3, h5, h6 {
   	font-family: 'Oswald', sans-serif !important;
@@ -75,7 +45,7 @@ h2 {
   	font-size: 24px !important;
 }
 h4 {
-	font-family: PT-Serif-Regular;
+	font-family: PT-Serif-Regular !important;
 	font-weight: bold;
 	margin-bottom: 8px;
 }
@@ -95,12 +65,22 @@ p {
 a {
 	text-decoration: none;
 }
+#page2 {
+	height: 50px;
+	margin: auto;
+	background-color: #202020;
+}
+#page3 {
+	width: 100%;
+	background-color: #282828;
+	margin: auto;
+}
+.entry-content, .entry-summary {
+   	margin: 0; 
+}
 .entry-content h1,
 .comment-content h1{
-	width: 100%;
-    line-height: 60px;
     font-size: 48px;
-    margin: 25px 0;
     margin-bottom: 50px;
     letter-spacing: 1px;
 }
@@ -110,14 +90,18 @@ a {
 	width: 100%;
 	margin-bottom: 50px;
 }
-#page {
-	width: 1448px;
-	margin: auto;
+.page-container .container {
+  	background-color: #f5f5f5 !important;
 }
-#page-header .head-container {
-  z-index: 9;
-  width: 1448px;
-   margin: auto;
+.logo-description {
+	color: #f64747;
+	margin: 10px 0 0 0 ;
+}
+.logo-description h1.site-title {
+    font-size: 48px !important;
+  	text-transform: uppercase;
+  	display: inline;
+  	margin: 0px 8px 0 0;
 }
 .logo-description h2.site-description {
   	font-family: 'PT-Serif', sans-serif ;
@@ -125,38 +109,12 @@ a {
   	color: #939393;
   	font-size: 18px !important;
 	display: inline;
-  	vertical-align: bottom;
-}
-.title {
-	color: #C6C6C6;
-  	margin-left: 8px;
 }
 .login {
 	float: right;
-	margin-bottom: 32px;
-	width: 25%;
-}
-.login-link {
-	float: left;
-  	font-size: 13px;
-  	margin-top: 12px;
-  	margin-right: 32px;
-}
-.login h3 {
-	color: #fff;
-	float: left;
-	text-transform: uppercase;
-}
-.login-link a{
-	text-decoration: none;
-	font-family: 'PT-Serif';
-	font-style: italic;
-}
-.login-link a:hover{
-	color: #000;
+	width: 24%;
 }
 .search_form{
-	display: block;
 	float: left;
 	margin-right: 23px;
 	margin-top: 6px;
@@ -173,33 +131,12 @@ a {
 	vertical-align: text-bottom;
 	float: left;
 }
-.contact {
-	display: table;
-}
 #search {
 	display: table;
 	font-family: 'PT-Serif';
 	font-style: italic;
 	text-transform: uppercase;
-	font-size: 13px;
 	margin-top: 10px;
-}
-button {
-	background: #EE4400;
-  	padding: 15px 37px;
-  	font-size: 13px;
-  	cursor: pointer;
-}
-button a {
-	text-decoration: none;
-	color: #fff !important;
-	font-family: 'PT-Serif';
-	font-style: italic;
-}
-.menu-main-menu-container{
-/*	display: inline-block;*/
-	width: 50%;
-
 }
 .main-navigation {
  	background-color: #282828;
@@ -221,47 +158,14 @@ button a {
   	padding: 22px 19px 22px 19px;
 }
 #main-menu-1 {
-	margin-left: 20px;
 	margin: auto;
 	max-width: 1132px;
-}
-.page-container .container {
-  	background-color: #f5f5f5 !important;
-}
-.page-container {
-	padding: 0;
-	margin-bottom: 0px;
-}
-#page {
-	background-color: #f5f5f5;
 }
 .main-navigation a {
 	font-family:'Oswald', sans-serif  !important;
 	color: #ffffff;
     padding: 22px 19px;
     font-size: 18px !important;
-}
-input#s {
-  	border-radius: 0px 0px 0px 0px;
-	font-size: 13px;
-	height: 31px;
-	line-height: 1.5em;
-	padding: 4px 32px 4px 5px;
-	width: 221px;
-	background-color: #fff;
-}
-#searchform input#s{
-	width: 100%;
-}
-input[type=text], input[type=email], input[type=url] {
-	border-radius: 0px;
-	padding: 10px 7px 10px 7px;
-  	width: 96%;
-}
-input[type="submit"], input[type="reset"] {
-  	background-color: #f64747 !important;
-    padding: 16px 50px;
-  	float: right;
 }
 .main-navigation ul li:hover > a {
     background:none repeat scroll 0 0 #F15A23;
@@ -275,18 +179,43 @@ input[type="submit"], input[type="reset"] {
     transition: all 0.3s ease-in-out; 
     font-size:14px;
 }
-.main-navigation ul li:hover > ul {
-    margin:0;
-    opacity:1;
-    visibility:visible;
+input#s {
+	height: 31px;
+	line-height: 1.5em;
+	padding: 4px 32px 4px 5px;
+	background-color: #fff;
 }
-#page-header .container header .header-hgroup.center-pos a {
-  	text-align: center;
+textarea {
+   	width: 99%;
+   	margin-bottom: 20px;
 }
-.select-menu {
+.login h3 {
+	color: #fff;
+	float: left;
+	text-transform: uppercase;
+}
+#searchform input#s{
+	width: 100%;
+}
+input[type=text], input[type=email], input[type=url] {
+	border-radius: 0px;
+	padding: 10px 7px 10px 7px;
   	width: 98%;
 }
+input[type="submit"], input[type="reset"] {
+  	background-color: #f64747 !important;
+    padding: 16px 50px;
+  	float: right;
+}
 
+/*SLIDER*/
+
+.flex-direction-nav {
+	background-color: #F5F5F5;
+}
+.main-slider-container {
+	margin: 0;
+}
 
 /* FOOTER */
 
@@ -298,7 +227,6 @@ input[type="submit"], input[type="reset"] {
  }
 .footer li a {
  	font-family: 'Oswald', sans-serif !important;
- 	text-decoration: none;
  	font-size: 15px;
  	float: left;
  	width: 170px;
@@ -309,27 +237,15 @@ input[type="submit"], input[type="reset"] {
 	display: block;
 	width: 108%;
 }
-.widget-title {
+.footer h3 {
 	font-size: 14px;
-	text-transform: uppercase;
+	color:#F64747;
 }
 .widget img {
   	width: 170px;
   	height: 170px;
 }
-#colophon {
-	float: none;
-  	background-color: #F5F5F5;
-  	width: 1448px;
-  	margin: auto;
-  	-webkit-box-shadow: 0px 10px 23px -1px rgba(0,0,0,0.3);
-	-moz-box-shadow: 0px 10px 23px -1px rgba(0,0,0,0.3);
-	box-shadow: 0px 10px 23px -1px rgba(0,0,0,0.3);
-}
 #back-to-top a {
-  	text-decoration: none;
-  	font-size: 14px;
-  	color: #282828;
   	font-weight: 300;
   	float: right;
 }
@@ -340,32 +256,26 @@ input[type="submit"], input[type="reset"] {
   	margin-top: 30px;
   	margin-bottom: 30px;
 }
-.fa-chevron-up:before {
-	display: inline;
-	color: #282828;
-	font-size: 12px;
-	vertical-align: bottom;
-}
 .footer-content {
 	display: table;
-	background-color: #282828;
 	margin: auto;
-	width: 100%;
+	width: 1448px;
 	color: #fff;
 	background-image: url(images/map.png);
 	background-position: center;
     background-repeat: no-repeat;
 }
-.widget.widget_aboutus_widget {
-	display: block;
-	width: 100%;
-	margin: auto;
-}
 .about_us, #nav_menu-4, #text-2 {
   	float: left;
-  	width: 20%;
-  	margin: 5.5% 0 0 1%;
-  	padding: 0px 6% 0px 6%;
+  	width: 22%;
+  	margin: 5.5% 0 0 0;
+  	padding: 00 0 0;
+}
+.about_us {
+  	padding: 0px 8% 0px 10%;
+}
+#nav_menu-4 {
+  	padding: 0 0 0 10%;
 }
 .widget-title {
 	font-size: 20px;
@@ -388,12 +298,6 @@ input[type="submit"], input[type="reset"] {
 	color: #F64747;
 	font-size: 15px;
 	font-family: 'PT-Serif';
-}
-#page2 {
-	width: 1448px;
-	height: 50px;
-	margin: auto;
-	background-color: #202020;
 }
 #license {
 	width: 50%;
@@ -420,20 +324,16 @@ input[type="submit"], input[type="reset"] {
 	list-style: none;
 }
 ul {
-	margin: 34px 0 60% 0 ;
+	margin: 20px 0 50% 0 ;
 	font-size: 18px;
 	font-family: 'PT-Serif';
 }
 #searchforms {
-	width: 25%;
+	width: 23%;
 	margin:auto;
 }
 
-
 /*OVERLAY*/
-
-.lower{
-}
 
 input[type="checkbox"]{
   	display:none;
@@ -470,7 +370,7 @@ input[type="checkbox"]{
 	top: 20px;
 	background: url('http://tympanus.net/Development/FullscreenOverlayStyles/img/cross.png');
 	z-index: 100;
-  cursor:pointer;
+  	cursor:pointer;
 }
 .overlay nav {
 	text-align: center;
@@ -540,9 +440,6 @@ input[type="checkbox"]{
 	-webkit-transform: translateY(25%) rotateX(-35deg);
 	transform: translateY(25%) rotateX(-35deg);
 }
-.submit {
-	background-color: #fff;
-}
 #wpcf7-f64-o1{
 	width: 25%;
 	margin: auto;
@@ -550,18 +447,11 @@ input[type="checkbox"]{
 .login p {
 	color: #727171;
 	font-size: 17px;
-	line-height: 20px; 
-  	margin-bottom: 0px; 
-  	padding: 0 0 ;
+  	margin: 5px 0 5px 0 ; 
 }
 .wpcf7-form-control wpcf7-text{
 	display: table;
 }
-span.wpcf7-form-control-wrap {
-  position: relative;
-}
-
-
 
 /* RESPONSIVE */
 
