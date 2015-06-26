@@ -19,18 +19,13 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<script src="wp-content/themes/harmony/js/classie.js"></script>
-<script src="wp-content/themes/harmony/js/demo7.js"></script>
-<script src="wp-content/themes/harmony/js/modernizr.custom.js"></script>
 <?php fruitful_get_favicon(); ?>
 <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script><![endif]-->
 <?php wp_head(); ?> 
 </head>
 <body <?php body_class();?>>
-	<div class="cont">
+	<div class="mainclass" id="classmain">
 		<div id="page-header" class="hfeed site">
-			
-			
 		<?php
 			$theme_options  = fruitful_ret_options("fruitful_theme_options");
 			$logo_pos = $menu_pos = '';
@@ -61,38 +56,15 @@
 										?>
 										<div data-originalstyle="<?php echo $logo_pos_class; ?>" class="header-hgroup <?php echo $logo_pos_class; ?>">  
 											<?php echo fruitful_get_logo(); ?>
-										</div>	
-
+										</div>
 										<div class="login">
 											<div class="search_form">
-												<input type="checkbox" id="op"></input>
-												<div class="lower">
-													<label for="op" id="search"><i class="fa fa-search"></i>Search</label>
-												</div>
-												<div class="overlay overlay-hugeinc">
-													<label for="op"></label>
-												  	<nav>
-												  		<div id="searchforms">
-													  		<h3>Serach For</h3>
-													  		<?php fruitful_get_search_form() ?>
-												  		</div>
-												 	</nav>
-												</div>
+												<button id="trigger-overlay" type="button"><i class="fa fa-search"></i>Search</button>
 											</div>
 											<div class="contact-form">
-												<input type="checkbox" id="op2"></input>
-												<div class="lower">
-													<label for="op2" type="button" id="contact"><i class="fa fa-envelope-o"></i>Contact Me</label>
-												</div>
-												<div class="overlay overlay-hugeinc">
-														<label class="overlay-close" type="button" for="op2" id="contact"></label>
-													  	<nav>
-													  		<?php echo do_shortcode('[contact-form-7 id="64" title="Contact Us"]');  ?>
-													 	</nav>
-												</div>
+												<button id="trigger-overlay2" type="button"><i class="fa fa-envelope-o"></i>Contact Me</button>
 											</div>
 										</div>
-											
 										<div data-originalstyle="<?php echo $menu_pos_class; ?>" class="menu-wrapper <?php echo $menu_pos_class; ?>">
 											<?php fruitful_get_languages_list(); ?>
 											<?php fruitful_get_cart_button_html(); ?>
@@ -151,7 +123,6 @@
 						
 				<?php } ?>
 		</div><!-- .header-container -->
-		
 
 		<?php fruitful_get_slider(); ?>
 		

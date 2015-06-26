@@ -10,7 +10,6 @@
  */
 	?>
 					</div>
-						
 				</div>
 			</div><!-- .page-container-->
 			
@@ -40,7 +39,29 @@
 				</div>
 			</footer><!-- #colophon .site-footer -->
 		<!--WordPress Development by Fruitful Code-->
-	<?php wp_footer(); ?>
-</div>
+		<?php wp_footer(); ?>
+	</div>
+	<div class="overlay overlay-contentscale">
+		<button type="button" class="overlay-close"></button>
+		<div class="search_form2">
+			<nav>
+				<div id="searchforms">
+					<h3>Search For</h3>
+					<?php fruitful_get_search_form() ?>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="overlay overlay-contentscale">
+		<button type="button" class="overlay-close2"></button>
+		<div class="contact-form">
+			<nav>
+				<?php echo do_shortcode('[contact-form-7 id="64" title="Contact Us"]');?>
+			</nav>
+		</div>
+	</div>
+	<script src="wp-content/themes/harmony/js/search_overlay.js"></script>
+	<script src="wp-content/themes/harmony/js/contact_overlay.js"></script>
+	<script src="wp-content/themes/harmony/js/classie.js"></script>
 </body>
 </html>
