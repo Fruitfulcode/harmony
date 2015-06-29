@@ -52,9 +52,9 @@
 			</nav>
 		</div>
 	</div>
-	<div class="overlay overlay-contentscale">
+	<div class="overlay2 overlay-contentscale">
 		<button type="button" class="overlay-close2"></button>
-		<div class="contact-form">
+		<div class="contact-form2">
 			<nav>
 				<?php echo do_shortcode('[contact-form-7 id="64" title="Contact Us"]');?>
 			</nav>

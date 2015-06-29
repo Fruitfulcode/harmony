@@ -1,8 +1,8 @@
 (function() {
 	var container = document.querySelector( 'div.mainclass' ),
 		triggerBttn = document.getElementById( 'trigger-overlay2' ),
-		overlay = document.querySelector( 'div.overlay ' ),
-		closeBttn = overlay.querySelector( 'button.overlay-close' );
+		overlay = document.querySelector( 'div.overlay2 ' ),
+		closeBttn = overlay.querySelector( 'button.overlay-close2' );
 	function toggleOverlay() {
 		if( classie.has( overlay, 'open' ) ) {
 			classie.remove( overlay, 'open' );

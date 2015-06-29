@@ -65,10 +65,10 @@ p {
 a {
 	text-decoration: none;
 }
-.mainclass{
+/*.mainclass{
 	display: table;
 	width: 100%;
-}
+}*/
 #page2 {
 	height: 50px;
 	margin: auto;
@@ -146,7 +146,7 @@ a {
 	text-transform: uppercase;
 	background-color: #fff !important;
 	color: #282828;
-	margin-top: 8px;
+	margin-top: 6px;
 	font-size: 13px;
 	outline: none;
 }
@@ -208,6 +208,8 @@ input#s {
 textarea {
    	width: 99%;
    	margin-bottom: 20px;
+   	margin-top: 10px;
+   	height: 170px;
 }
 .search_form2 h3 {
 	color: #fff;
@@ -226,17 +228,24 @@ input[type=text], input[type=email], input[type=url] {
 	border-radius: 0px;
 	padding: 10px 7px 10px 7px;
   	width: 98%;
+  	margin-top: 10px;
 }
 input[type="submit"], input[type="reset"] {
   	background-color: #f64747 !important;
     padding: 16px 50px;
   	float: right;
+  	font-style: italic;
 }
 
 /*SLIDER*/
 
 .flex-direction-nav {
 	background-color: #F5F5F5;
+}
+.flexslider .slides img {
+  	width: 100%;
+  	display: block;
+  	height: 100%;
 }
 .main-slider-container {
 	margin: 0;
@@ -286,15 +295,18 @@ input[type="submit"], input[type="reset"] {
 	margin: auto;
 	width: 1448px;
 	color: #fff;
-	background-image: url(images/map.png);
-	background-position: center;
-    background-repeat: no-repeat;
 }
 .about_us, #nav_menu-4, #text-2 {
   	float: left;
   	width: 22%;
   	margin: 5.5% 0 0 0;
-  	padding: 00 0 0;
+  	padding: 0 0 0 0;
+}
+#text-2 {
+	background-image: url(images/map.png);
+	background-position: left;
+    background-repeat: no-repeat;
+    background-size: 90%;
 }
 .about_us {
   	padding: 0px 8% 0px 10%;
@@ -361,7 +373,8 @@ ul {
 
 /*OVERLAY*/
 
-.overlay{
+.overlay,
+.overlay2{
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -370,7 +383,8 @@ ul {
 	background: rgba(0,0,0,0.9);
 }
 /* Overlay closing cross */
-.overlay .overlay-close {
+.overlay .overlay-close,
+.overlay2 .overlay-close2 {
 	width: 58px;
 	height:58px;
 	background-color: #171717 !important;
@@ -378,7 +392,7 @@ ul {
 	right: 20px;
 	top: 20px;
 	background: url('http://tympanus.net/Development/FullscreenOverlayStyles/img/cross.png');
-	z-index: 100;
+	outline: none;
   	cursor:pointer;
 }
 
@@ -391,8 +405,16 @@ ul {
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-
-.overlay ul {
+.overlay2 nav {
+	top: 50%;
+	height: 60%;
+	text-align: center;
+	position: relative;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.overlay ul,
+.overlay2 ul {
 	list-style: none;
 	padding: 0;
 	margin: 0 auto;
@@ -401,14 +423,16 @@ ul {
 	position: relative;
 }
 
-.overlay ul li {
+.overlay ul li,
+.overlay2 ul li {
 	display: block;
 	height: 20%;
 	height: calc(100% / 5);
 	min-height: 54px;
 }
 
-.overlay ul li a {
+.overlay ul li a,
+.overlay2 ul li a {
 	font-size: 54px;
 	font-weight: 300;
 	display: block;
@@ -418,7 +442,9 @@ ul {
 }
 
 .overlay ul li a:hover,
-.overlay ul li a:focus {
+.overlay ul li a:focus,
+.overlay2 ul li a:hover,
+.overlay2 ul li a:focus {
 	color: #f0f0f0;
 }
 
@@ -441,7 +467,7 @@ ul {
 	transition: transform 0.5s;
 }
 
-/*@media screen and (max-height: 30.5em) {
+@media screen and (max-height: 30.5em) {
 	.overlay nav {
 		height: 70%;
 		font-size: 34px;
@@ -449,7 +475,7 @@ ul {
 	.overlay ul li {
 		min-height: 34px;
 	}
-}*/
+}
 
 
 .mainclass {
@@ -469,90 +495,316 @@ ul {
 	font-size: 17px;
   	margin: 5px 0 5px 0 ; 
 }
+.contact-form2{
+	margin-top: 20%;
+}
+.contact-form2 h3 {
+	color: #fff;
+	text-transform: uppercase;
+	float: left;
+	font-size: 18px;
+}
+.contact-form2 p {
+	line-height: 25px;
+  	margin: 10px 0 0 0;
+  	color: #6F6F6D;
+}
 .wpcf7-form-control wpcf7-text{
 	display: table;
 }
 
 /* RESPONSIVE */
 
+
 @media screen and (max-width: 1200px) {
-	.container{
-		width: auto;
-	}
-	.container .sixteen.columns {
-		margin: 30px 10px 10px 10px;
-		width: 98%;
-	}
-	#main-menu-1 {
-  		margin: auto;
-  		max-width: 98%;
-	}
-	.entry-content h2, .comment-content h2 {
-	  	width: 100%;
-	}
 	.footer li {
-		width: 25%;
+		width: 15%;
 	}
-	.widget {
-		width: 98%;
-}
+	.about_us {
+  		padding: 0px 8% 0px 3%;
+	}
 }
 @media screen and (max-width: 1024px) {
-	#page-header .container header .header-hgroup.center-pos a {
-  		text-align: left;
+	.container {
+		width: 960px;
+	}
+	.login {
+    	width: 29%;
 	}
 	.footer li {
-		width: 32%;
+	  	width: 40%;
+	}
+	.footer-sidebar {
+	  	margin-left: 10%;
+	}
+	.widget {
+  		width: 90%;
+	}	
+	.footer-footer {
+   		width: 960px;
+	}
+	#main-menu-1 {
+  		margin-left: 2%;
 	}
 }
-@media screen and (max-width: 768px) and (min-width: 480px) {
-	#page-header .container header .header-hgroup.center-pos a {
-  		text-align: left;
+@media screen and (max-width: 960px){
+	.container {
+		width: 910px;
+	}
+	.login {
+    	width: 31%;
+	}
+	.footer li {
+	  	width: 40%;
+	}
+	.footer-sidebar {
+	  	margin-left: 9%;
+	}
+	.widget {
+  		width: 90%;
+	}
+	.about_us {
+		padding: 0px 6% 0px 3%;
+	}	
+	#nav_menu-4 {
+	  	padding: 0 0 0 6%;
+	}
+	.footer-footer {
+   		width: 910px;
+	}
+	#main-menu-1 {
+  		margin-left: 1%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.container {
+		width: 750px;
 	}
 	.container .sixteen.columns {
-  		margin: 30px 10px 10px 10px;
-  		max-width: 98%;
+		max-width: 750px;
 	}
-	.entry-content h2, .comment-content h2 {
-	  	width: 100%;
+	.login {
+    	width: 31%;
 	}
-	.responsive .select-menu {
-  		margin: 16px 0 25px 10px !important;
-	}
-	.select-menu {
-  	width: 96%;
-	}	
 	.footer li {
-		width: 35%;
+	  	width: 37%;
 	}
+	.footer-sidebar {
+	  	margin-left: 1%;
+	}
+	.widget {
+  		width: 90%;
+	}
+	.about_us {
+		padding: 0px 3% 0px 1%;
+	}	
+	#nav_menu-4 {
+	  	padding: 0 0 0 3%;
+	}
+	.footer-footer {
+   		width: 750px;
+	}
+	/*#main-menu-1 {
+  		margin-left: 1%;
+	}
+	#trigger-overlay2 {
+  		padding: 15px 17px 15px 17px;
+  		font-size: 10px;
+	}
+	.entry-content h1 { 
+  		line-height: 60px;
+	}
+	#aboutus_widget-6{
+		width: 85%;
+	}*/
+}
+@media screen and (max-width: 736px) {
+	.container {
+		width: 720px;
+	}
+	.container .sixteen.columns {
+		max-width: 720px;
+	}
+	.login {
+    	width: 100%;
+	}
+	.contact-form{
+		float: right;
+		margin-right: 15px;
+	}
+/*	.footer li {
+	  	width: 37%;
+	}
+	.footer-sidebar {
+	  	margin-left: 1%;
+	}*/
+	.widget {
+  		width: 100%;
+	}
+	.about_us, #nav_menu-4, #text-2 {
+  		width: 32%;
+	}
+	.about_us {
+		padding: 0px 1% 0px 1%;
+	}	
+	#nav_menu-4 {
+	  	padding: 0 0 0 1%;
+	}
+	.footer-footer {
+   		width: 100%;
+	}
+	#license {
+  		width: 60%;
+	}
+	/*#main-menu-1 {
+  		margin-left: 1%;
+	}
+	#trigger-overlay2 {
+  		padding: 15px 17px 15px 17px;
+  		font-size: 10px;
+	}*/
+	.entry-content h1 { 
+  		line-height: 60px;
+	}
+	/*#aboutus_widget-6{
+		width: 85%;
+	}*/
+}
+@media screen and (max-width: 668px) {
+	.container{	width: 650px;
+	}
+	.container .sixteen.columns {
+		max-width: 650px;
+	}
+	.login {
+  		width: 100%;
+  		float: right;
+	}
+	.contact-form{
+		float: right;
+		margin-right: 15px;
+	}
+	.contact-form{
+		float: right;
+		margin-right: 15px;
+	}
+	.footer-footer,
+	.footer-content {
+   		width: auto;
+	}
+	.social-icon {
+  		margin: auto;
+	}
+	#colophon .social-icon {
+  		float: none;
+  		margin-left: 30%;
+	}
+	#license {
+  		width: 100%;
+   		margin: auto
+	}
+	#page2 {
+  		height: 100%;
+	}
+/*	.widget,.about_us, #nav_menu-4, #text-2{
+		float: none;
+	}
+	.about_us, #nav_menu-4, #text-2 {
+  		margin: auto;
+  		padding: 0 0 0 0;
+  		margin-bottom: 20px;
+	}
+	#aboutus_widget-6{
+		width: 100%;
+	}
+	.about_us, #nav_menu-4, #text-2 {
+  		width: 50%;
+	}
+	.footer li {
+  		width: 35%;
+	}*/
 }
 @media screen and (max-width: 640px) {
 	.container{
-		width: auto;
+		width: 630px;
 	}
 	.container .sixteen.columns {
 		margin: 30px 10px 10px 10px;
-		width: auto;
-	}
-	.entry-content h1, .comment-content h1 {
-		width: 100%;
-		font-size: 45px;
-		margin: 0px;
-	}
-	.entry-content h2, .comment-content h2 {
-	  	width: 100%;
-	}
-	.entry-content, .entry-summary {
-  		margin:0px;
+		max-width: 630px;
 	}
 	.login {
   		float: right;
+  		width: 100%;
+	}
+	#page-header .container header .header-hgroup.center-pos a {
+  		text-align: center;
+	}
+	#trigger-overlay	{
+		padding: 10px 18px 0 0 ;
+	}
+	.flexslider .slides img {
+  		width: 98%;
+	}
+	.contact-form{
+		float: right;
+		margin-right: 15px;
+	}
+	.footer-footer,
+	.footer-content {
+   		width: auto;
+	}
+	.social-icon {
+  		margin: auto;
+	}
+	#colophon .social-icon {
+  		float: none;
+  		margin-left: 30%;
+	}
+	#license {
+  		width: 100%;
+   		margin: auto
+	}
+	#page2 {
+  		height: 100%;
+	}
+	.widget,.about_us, #nav_menu-4, #text-2{
+		float: none;
+	}
+	.about_us, #nav_menu-4, #text-2 {
+  		margin: auto;
+  		padding: 0 0 0 0;
+  		margin-bottom: 20px;
+	}
+	#aboutus_widget-6{
+		width: 100%;
+	}
+	.about_us, #nav_menu-4, #text-2 {
+  		width: 50%;
+	}
+	.footer li {
+  		width: 35%;
+	}
+}
+@media screen and (max-width: 568px) {
+	.container{
+		width: 550px;
+	}
+	.container .sixteen.columns {
+		max-width: 550px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.footer li {
+  		width: 50%;
+	}
+	.container .sixteen.columns {
+  		max-width: 470px;
 	}
 	.logo-description h2.site-description {
   		font-size: 17px !important;
 	}
-	.footer li {
-		width: 60%;
+	#page-header .container header .header-hgroup.center-pos a {
+   		text-align: left; 
 	}
 }
 
