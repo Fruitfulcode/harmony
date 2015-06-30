@@ -8,6 +8,7 @@
 			classie.remove( overlay, 'open' );
 			classie.remove( container, 'overlay-open' );
 			classie.add( overlay, 'close' );
+			classie.remove( overlay, 'close' );
 		}
 		else if( !classie.has( overlay, 'close' ) ) {
 			classie.add( overlay, 'open' );

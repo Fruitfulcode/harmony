@@ -126,7 +126,10 @@
 
 		<?php fruitful_get_slider(); ?>
 		
-		<div id="page" class="page-container">		
+		<div id="page" class="page-container">
+
+		<!-- <div class="logofon"></div>	 -->
+
 			<div class="container">		
 				<?php do_action( 'before' ); ?>		
 					<div class="sixteen columns">
