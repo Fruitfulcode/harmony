@@ -306,7 +306,8 @@ input[type="submit"], input[type="reset"] {
     background-repeat: no-repeat;
     background-size: 90%;
 }
-.widget-title {
+.widget_text h3,
+.widget_nav_menu h3 {
 	font-size: 20px;
 	text-transform: uppercase;
 	color: #fff;
@@ -501,13 +502,29 @@ ul {
 
 /*SINGLE POST*/
 
-/*.logofon{
+.logofon{
 	display: table;
-	width: 1448;
-	background-color: #323232;
-	height: 500px;
-	background: url("images/blog_header.png")no-repeat;
-	background-position: top;
+	margin: auto;
+	position: relative;
+}
+
+.logofon:after {
+    content: ' ';
+	background-color: #000;
+	height: 100%;
+	left: 0;
+	opacity: 0.85;
+	position: absolute;
+	top: 0;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	-ms-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	width: 100%;
+}
+/*.logofon:hover:after {
+	opacity: 0.2;
 }*/
 
 

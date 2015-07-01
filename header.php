@@ -127,9 +127,13 @@
 		<?php fruitful_get_slider(); ?>
 		
 		<div id="page" class="page-container">
-
-		<!-- <div class="logofon"></div>	 -->
-
+		<div class="logofon">
+			<?php 
+			if ( has_post_thumbnail() && is_singular ()) 
+			{ 
+				echo get_the_post_thumbnail(null, array(1448, 500)); 
+			} ?>
+		</div>	
 			<div class="container">		
 				<?php do_action( 'before' ); ?>		
 					<div class="sixteen columns">

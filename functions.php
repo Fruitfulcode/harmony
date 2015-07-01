@@ -96,3 +96,7 @@ class fruitful_news_widget extends WP_Widget
 		register_widget( 'fruitful_news_widget' );
 	}
 	add_action( 'widgets_init', 'fruit_load_widget' );
+
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'blog_img', 1448, 500, true ); // new solution
+}
