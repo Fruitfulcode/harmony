@@ -23,7 +23,7 @@
 					<a rel="nofollow" href="#top" title="Back to top"><i class="fa fa-chevron-up"></i>top</a>
 				</div>
 					<div id="page3">
-						<div class="footer-content">
+						<div class="sixteen columns">
 							<?php dynamic_sidebar('sidebar-8'); ?>
 						</div>
 					</div>

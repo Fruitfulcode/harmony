@@ -23,7 +23,7 @@ function fruitful_widgets_init() {
 	register_widget( 'Fruitful_Widget_News_Archive' );
 
 	register_sidebar( array(
-		'name' => __( 'footer sidebar', 'fruitful' ),
+		'name' => __( 'Footer top sidebar', 'fruitful' ),
 		'id' => 'sidebar-7',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -31,7 +31,7 @@ function fruitful_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'footer sidebar 2', 'fruitful' ),
+		'name' => __( 'Footer bottom sidebar', 'fruitful' ),
 		'id' => 'sidebar-8',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -96,54 +96,3 @@ class fruitful_news_widget extends WP_Widget
 		register_widget( 'fruitful_news_widget' );
 	}
 	add_action( 'widgets_init', 'fruit_load_widget' );
-
-
-
-
-class aboutus_widget extends WP_Widget 
-{
-	function __construct() 
-	{
-		parent::__construct('aboutus_widget',__('About Us', 'fruiyful_about_us'), 
-		array('description' => __('About Us information', 'fruiyful_about_us'),));
-	}
-	public function widget($args, $instance) 
-	{
-		$text = apply_filters('widget_text', empty( $instance['text'])?'':$instance['text'], $instance);
-		echo $args['before_widget'];
-		?>
-			<div class="about_us">
-				<span class="widget-title">About Us</span>
-				<div class="textwidget"><?php echo !empty($instance['filter'])? wpautop($text):$text; ?></div>
-			</div>
-		<?php
-	}
-	public function form($instance) 
-	{
-		$instance = wp_parse_args( (array) $instance, array('text' => '' ));
-		$text = esc_textarea($instance['text']);
-?>
-		<p></p>
-		<textarea class="widefat" rows="6" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
-<?php
-	}
-	public function update($new_instance, $old_instance) {
-		$instance = $old_instance;
-		if ( current_user_can('unfiltered_html') )
-			$instance['text'] =  $new_instance['text'];
-		else
-			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['text']) ) ); 
-		$instance['filter'] = ! empty( $new_instance['filter'] );
-		return $instance;
-	}
-} 
-
-function fruitful_about_widget() {
-	register_widget( 'aboutus_widget' );
-}
-add_action( 'widgets_init', 'fruitful_about_widget' );
-
-
-
-
-
