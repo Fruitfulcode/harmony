@@ -506,11 +506,23 @@ ul {
 	display: table;
 	margin: auto;
 	position: relative;
+	background-size: 100% 100%;
+	height: 500px;
+	width: 1448px;
+}
+.entry-title2{
+	padding-right: 45%;
+  	margin: -200px 0 0 0;
+  	position: absolute;
+}
+.entry-title2 h1{
+	color: #fff;
+	font-size: 48px;
 }
 
 .logofon:after {
     content: ' ';
-	background-color: #000;
+	background-color: #1B1B1B;;
 	height: 100%;
 	left: 0;
 	opacity: 0.85;
@@ -526,6 +538,37 @@ ul {
 /*.logofon:hover:after {
 	opacity: 0.2;
 }*/
+.post_tree {
+	font-family: 'PT-Serif';
+	font-size: 18px;
+	color: #F5F5F5;
+	margin-bottom: 10px;
+}
+#colortext {
+	color: #F64747;
+}
+.eleven.columns .blog_post .post-content {
+  	width: 750px;
+}
+.blog_post .post-content .entry-content, .blog_post .post-content .entry-summary {
+/*  	padding-left: 0;*/
+  	padding-top: 0;
+  	margin-top: 0;
+}
+.blog_post .post-content {
+  	float: left;
+  	width: 884px;
+  	padding: 0 0 18px 0;
+  	border: 0;
+}
+.site-header img, .entry-content img, img[class*="align"], img[class*="wp-image-"] {
+  	height: auto;
+  	display: none;
+}
+.blog_post .post-content footer.entry-meta {
+  	margin: 0;
+  	padding: 0;
+}
 
 
 /* RESPONSIVE */

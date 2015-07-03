@@ -73,7 +73,7 @@
 								</div>
 							</div>
 								<nav role="navigation" class="site-navigation main-navigation">
-									<div class="menu content">
+									<div class="sixteen columns">
 										<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 									</div>
 								</nav>
@@ -127,13 +127,7 @@
 		<?php fruitful_get_slider(); ?>
 		
 		<div id="page" class="page-container">
-		<div class="logofon">
-			<?php 
-			if ( has_post_thumbnail() && is_singular ()) 
-			{ 
-				echo get_the_post_thumbnail(null, array(1448, 500)); 
-			} ?>
-		</div>	
+			<?php fruitful_get_blog_single(); ?>
 			<div class="container">		
 				<?php do_action( 'before' ); ?>		
 					<div class="sixteen columns">

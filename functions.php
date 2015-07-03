@@ -97,6 +97,45 @@ class fruitful_news_widget extends WP_Widget
 	}
 	add_action( 'widgets_init', 'fruit_load_widget' );
 
+
+
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'blog_img', 1448, 500, true ); // new solution
+	add_image_size( 'blog_img', 1448, 500, true ); // new solution for blog pictures
 }
+
+
+function trim_characters($count, $after = '...') //function for cutting post title by letters
+{
+  $excerpt = get_the_title();
+  $excerpt = strip_tags($excerpt);
+  $excerpt = mb_substr($excerpt, 0, $count);
+  $excerpt = $excerpt . $after;
+  return $excerpt;
+}
+
+
+if (!function_exists('fruitful_get_blog_single')) //single blog post header
+{
+	function fruitful_get_blog_single()
+	{
+		if ( has_post_thumbnail() && is_singular ()) 
+		{ 
+		?>
+		<div class="logofon"><?php
+			echo get_the_post_thumbnail(null, array(1448, 500)); 
+			?>
+		</div>
+		<div class="sixteen columns">
+			<div class="entry-title2"> 
+				<span class="post_tree">Home  /  Blog  / <span id="colortext"> <?php echo trim_characters(25, '...'); ?></span></span>
+				<h1><?php the_title(); ?> </h1>
+			</div>
+		</div>
+		<?php
+		} 
+	}
+}
+
+
+
+
