@@ -10,6 +10,7 @@
  */
 	?>
 					</div>
+					<?php harmony_entry_meta(); ?>
 				</div>
 			</div><!-- .page-container-->
 			
@@ -60,8 +61,9 @@
 			</nav>
 		</div>
 	</div>
-	<script src="wp-content/themes/harmony/js/search_overlay.js"></script>
-	<script src="wp-content/themes/harmony/js/contact_overlay.js"></script>
-	<script src="wp-content/themes/harmony/js/classie.js"></script>
+	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/search_overlay.js" type="text/javascript"></script>
+	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/contact_overlay.js" type="text/javascript"></script>
+	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/classie.js" type="text/javascript"></script>
+
 </body>
 </html>

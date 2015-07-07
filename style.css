@@ -551,7 +551,8 @@ ul {
   	width: 750px;
 }
 .blog_post .post-content .entry-content, .blog_post .post-content .entry-summary {
-/*  	padding-left: 0;*/
+  	padding-left: 0;
+  	padding-right: 0;
   	padding-top: 0;
   	margin-top: 0;
 }
@@ -568,7 +569,103 @@ ul {
 .blog_post .post-content footer.entry-meta {
   	margin: 0;
   	padding: 0;
+  	width: 50%;
+  	float: left;
 }
+.blog_post .post-content footer.entry-meta .tag-links {
+  	background: inherit;
+  	text-transform: uppercase;
+  	font-size: 14px;
+  	display: table;
+}
+.post_tree a {
+	color: #fff;
+	font-size: 20px;
+}
+.blog_post .post-content footer.entry-meta .author-link {
+  	background: inherit;
+}
+.tag-links h2 {
+	font-size: 14px !important;
+	font-family: 'Oswald', sans-serif !important;
+	margin-top: 40px;
+	margin-bottom: 25px;
+	color: #F64747;
+}
+.by{
+	font-family: 'PT-Serif';
+	font-size: 16px;
+}
+.date {
+	color: #F64747;
+}
+.author-link.author {
+  	font-family: 'PT-Serif';
+  	font-size: 16px;
+  	color: #F64747;
+}
+.tag-links{
+	text-transform: uppercase;
+	margin-bottom: 40px;
+}
+.bio{
+	display:inline-block;
+	width: 60%;
+	float: left;
+	margin-bottom: 50px;
+}
+.entry-meta {
+  	width: 40%;
+  	float: left;
+}
+.bio h2{
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 16px !important;
+	font-family: 'Oswald', sans-serif !important;
+}
+.biography_image {
+  	width: 20%;
+  	float: left;
+}
+.biography_block {
+  	float: left;
+  	width: 80%;
+}
+.biography_text{
+	font-family: 'PT-Serif';
+	text-align: justify;
+}
+.nav-next{
+	float: left;
+}
+.nav-previous{
+	float: right;
+}
+#comments {
+  margin-top: 40px;
+}
+.comments-link{
+	margin-left: 15px;
+	color: #F64747;
+}
+.fa.fa-comment-o{
+	margin-right: 5px;
+}
+.tags{
+	font-weight: bold;
+}
+.comment-respond {
+  	width: 98%;
+}
+.meta-conteiner {
+	background-color: #fff;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+
 
 
 /* RESPONSIVE */
