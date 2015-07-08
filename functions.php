@@ -57,11 +57,21 @@ class fruitful_news_widget extends WP_Widget
 		if (!empty($title)){
 			echo $args['before_title'].$title.$args['after_title'];
 			}
-				$pc = new WP_Query('orderby=comment_count&posts_per_page=6'); ?>
+				$pc = new WP_Query('posts_per_page=6'); ?>
 				<?php while ($pc->have_posts()) : $pc->the_post(); ?>
 					<li>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(array()); ?></a>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+						<?php 
+						if(has_post_thumbnail()) 
+						{
+							?>
+			               	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array()); ?></a>
+			               	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		                <?php 
+		            	} 
+		            	else 
+		            	{
+		            		/*<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/no-image.png"></a>*/
+						} ?>
 					</li>
 				<?php endwhile; 
 				echo $args['after_widget'];
@@ -100,7 +110,7 @@ class fruitful_news_widget extends WP_Widget
 
 
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'blog_img', 1448, 500, true ); // new solution for blog pictures
+	add_image_size( 'blog_img', 1920, 500, true ); // new solution for blog pictures
 }
 
 
@@ -120,11 +130,17 @@ if (!function_exists('fruitful_get_blog_single')) //single blog post header
 	{
 		if ( has_post_thumbnail() && is_singular()) 
 		{ 
-		?>
-		<div class="logofon"><?php
-			echo get_the_post_thumbnail(null, array(1448, 500)); 
 			?>
-		</div>
+			<div class="logofon">
+				<?php echo get_the_post_thumbnail(null, array(1920, 500)); ?>
+			</div>
+			<?php
+		} 
+		if (! has_post_thumbnail() && is_single()) 
+		{ 
+			?><div class="logofon2"></div><?php
+		} 
+		?>
 		<div class="sixteen columns">
 			<div class="entry-title2"> 
 				<span class="post_tree"><?php  the_breadcrumb();?><span id="colortext"> <?php echo trim_characters(25, '...'); ?></span></span>
@@ -132,7 +148,6 @@ if (!function_exists('fruitful_get_blog_single')) //single blog post header
 			</div>
 		</div>
 		<?php
-		} 
 	}
 }
 
@@ -168,7 +183,7 @@ if (!function_exists('harmony_entry_meta'))
 {
 	function harmony_entry_meta()
 	{
-		if (is_singular() || !is_front_page()) 
+		if (is_single()) 
 		{ 
 		?>
 			<div class="page-container">

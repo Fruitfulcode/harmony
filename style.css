@@ -60,7 +60,7 @@ p {
 	font-family: PT-Serif-Regular !important;
 	text-align: justify;
 	line-height: 35px;
-	margin-bottom: 50px;
+/*	margin-bottom: 50px;*/
 }
 a {
 	text-decoration: none;
@@ -81,14 +81,16 @@ a {
 .entry-content h1,
 .comment-content h1{
     font-size: 48px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     letter-spacing: 1px;
+    line-height: 50px;
 }
 .entry-content h2,
 .comment-content h2{
 	line-height: 1.5;
 	width: 100%;
 	margin-bottom: 50px;
+	text-align: justify;
 }
 .page-container {
    	padding-top: 0px; 
@@ -508,11 +510,19 @@ ul {
 	position: relative;
 	background-size: 100% 100%;
 	height: 500px;
-	width: 1448px;
+	width: 1920px;
+}
+.logofon2{
+	display: table;
+	margin: auto;
+	position: relative;
+	background-size: 100% 100%;
+	height: 300px;
+	width: 1920px;
 }
 .entry-title2{
 	padding-right: 45%;
-  	margin: -200px 0 0 0;
+  	margin: -230px 0 0 0;
   	position: absolute;
 }
 .entry-title2 h1{
@@ -520,10 +530,11 @@ ul {
 	font-size: 48px;
 }
 
-.logofon:after {
+.logofon:after,
+.logofon2:after {
     content: ' ';
 	background-color: #1B1B1B;;
-	height: 100%;
+	height: 99%;
 	left: 0;
 	opacity: 0.85;
 	position: absolute;
@@ -534,6 +545,9 @@ ul {
 	-ms-transition: opacity 0.3s;
 	transition: opacity 0.3s;
 	width: 100%;
+}
+.logofon2:after {
+	opacity: 0.95;
 }
 /*.logofon:hover:after {
 	opacity: 0.2;
@@ -663,10 +677,29 @@ ul {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+#comments.comments-area ol.commentlist li {
+	  list-style-type: none;
+}
+.entry-thumbnail .wp-post-image {
+  	margin-bottom: 25px;
+}
 
 
+/*BLOG*/
 
-
+header.post-header .post-title {
+	font-family: 'Oswald', sans-serif !important;
+  	font-size: 48px !important;
+  	line-height: 50px;
+  	border: none;
+  	padding: 0;
+}
+.blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post {
+  	margin: 0;
+}
+.entry-thumbnail {
+	padding: 0;
+}
 
 /* RESPONSIVE */
 
@@ -688,6 +721,10 @@ ul {
 	#wpcf7-f64-o1,#searchforms {width: 50%;}
 	.widget_text		{margin: 5.5% 0 0px 0; width:31%;  padding: 0px 8% 0px 1%;}
 	.widget_nav_menu	{padding: 0 0 0 4%;}
+	.biography_block 	{width: 75%;}
+	.biography_image 	{width: 25%;}
+	.eleven.columns .blog_post .post-content {width: 650px;}
+	.entry-title2 		{padding-right: 25%;}
 }
 @media screen and (max-width: 960px){
 	.container 			{width: 910px;}
@@ -707,18 +744,25 @@ ul {
 	.footer li 			{width: 37%;}
 	.footer-sidebar 	{margin-left: 1%;}
 	.footer-footer 		{width: 750px;}
+	.bio 				{width: 100%;margin-bottom: 20px;}
+	.column.omega,.columns.omega {float: none;}
+	#page .container #secondary {width: 90%;}
 }
 @media screen and (max-width: 736px) {
-	.container 			{width: 720px;}
+	.container 			{width: 710px;}
 	.container .sixteen.columns {max-width: 720px;}
 	.login 				{width: 100%;}
 	.contact-form		{float: right;	margin-right: 15px;}
-/*	.widget 			{width: 100%;}*/
 	.widget_text		{margin: 5.5% 0 0px 0;width: 19%; padding: 0px 5% 0px 1%;}
 	.widget_nav_menu 	{width: 16%;}
 	.footer-footer 		{width: 100%;}
+	.footer li 			{width: 35%;}
 	#license 			{width: 60%;}
 	.entry-content h1 	{line-height: 60px;}
+	.biography_image 	{width: 20%;}
+	.select-menu 		{width: 74%;}
+	.entry-title2 		{margin: -270px 0px 0px 10px;}
+	.entry-meta 		{width: 100%;margin-bottom: 15px;}
 }
 @media screen and (max-width: 667px) {
 	.container .sixteen.columns,
@@ -737,6 +781,7 @@ ul {
 	.container			{width: 630px;}
 	.sixteen.columns 	{margin: 0;max-width: 630px;}
 	.login 				{float: right;width: 100%;}
+	.eleven.columns .blog_post .post-content {width: 590px;}
 	#page-header .container header 
 	.header-hgroup.center-pos a {text-align: center;}
 	#trigger-overlay	{padding: 10px 18px 0 0 ;}
@@ -748,28 +793,54 @@ ul {
 	#colophon .social-icon {float: none;margin-left: 30%;}
 	#license 			{width: 100%;margin: auto}
 	#page2 				{height: 100%;}
-	.footer li 			{width: 48%;}
+	.footer li 			{width: 47%;}
+	.select-menu 		{width: 98%;}
+	.responsive .select-menu {margin: 16px 0 25px 10px !important;}
+	.biography_image 	{width: 25%;}
+	.comment-respond 	{width: 100%;}
+
 }
 @media screen and (max-width: 568px) {
-	.container			{width: 550px;}
+	.container			{width: 540px;}
 	.container .sixteen.columns {max-width: 550px;}
 	.contact-form2 p 	{line-height: 13px;}
   	.overlay nav,
   	.overlay2 nav 		{-webkit-transform: translateY(-1%);}
   	.widget_text		{margin: 5.5% 0 0px 0;width: 67%;padding: 0px 5% 0px 5%;}
 	.widget_nav_menu 	{width: 20%; float: left;}
+	.select-menu 		{width: 87%;}
+	.responsive .select-menu { margin: 16px 0 25px 10px !important;}
+	.entry-title2 h1 	{font-size: 38px;}
+	.eleven.columns .blog_post .post-content {width: 520px;}
+	.biography_image 	{width: 25%;}
+	#searchform input#s {width: 92%;}
+	.entry-title2 		{margin: -230px 0px 0px 10px;}
+	.footer li 			{width: 45%;}
+	.entry-meta 		{width: 100%;margin-bottom: 15px;}
 }
 @media screen and (max-width: 480px) {
 	.footer li 			{width: 37%;}
 	.container .sixteen.columns {max-width: 460px;margin: 30px 0px 10px 5px;}
+	.container 			{width: 460px;}
 	.logo-description h2.site-description {	font-size: 17px !important;}
 	#page-header .container header 
 	.header-hgroup.center-pos a {text-align: center;}
+	.entry-title2 h1 	{font-size: 38px;}
+	.eleven.columns .blog_post .post-content {width: 420px;}
+	.biography_block 	{width: 70%;}
+	#comments 			{width: 95%;}
+	.entry-title2 		{margin: -270px 0px 0px 10px;}
+	.biography_image 	{width: 30%;}
+	.entry-meta 		{width: 100%;margin-bottom: 15px;}
+	.select-menu 		{width: 72%;}
 }
 @media screen and (max-width: 400px) and (min-width: 320px){
 	.container .sixteen.columns,
 	.container			{max-width: 320px;}
 	.logo-description h2.site-description {	display: inherit;}
 	.wpcf7 p 			{font-size: 11px;}
+	
+	
+
 }
 
