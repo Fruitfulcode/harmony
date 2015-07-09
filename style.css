@@ -14,12 +14,12 @@ Text Domain: fruitful
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
 @import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic);
 @import "font-awesome.less";
-@font-face{
+/*@font-face{
 	font-family:Bebas;
 	src: url(../fonts/Bebas.ttf)
-}
+}*/
 body {
-	font-family: 'Oswald', sans-serif !important;
+/*	font-family: 'Oswald', sans-serif !importan*/t;
 	background-color: #F5F5F5 !important;
 }
 .container {
@@ -30,34 +30,49 @@ body {
     margin: 30px 10px 10px 0px;
     width: 100%;
 }
+.container .eleven.columns {
+  	display: table;
+	padding-left: 20px;
+}
+.container .five.columns {
+  	width: 260px;
+}
 .sixteen.columns {
   	width: 1132px;
   	display: table;
 }
-h1, h3, h5, h6 {
+/*h1, h3, h5, h6 {
   	font-family: 'Oswald', sans-serif !important;
-}
+}*/
+h1 {font-size: 48px;}
+h2 {font-size: 34px;}
+h3 {font-size: 18px;}
+h4 {font-size: 17px;}
+h5 {font-size: 14px;}
+h6 {font-size: 12px;}
+li {font-size: 18px;}
+
 h2 {
-	font-family: PT-Serif-Regular !important;
+	/*font-family: PT-Serif-Regular !important;*/
 	width: 100%;
 	line-height: 1.3;
   	letter-spacing: 1px;
-  	font-size: 24px !important;
+  	/*font-size: 24px !important;*/
 }
 h4 {
-	font-family: PT-Serif-Regular !important;
+	/*font-family: PT-Serif-Regular !important;*/
 	font-weight: bold;
 	margin-bottom: 8px;
 }
 li {
-  	font-family: PT-Serif-Regular;
-  	font-size: 18px;
+  	/*font-family: PT-Serif-Regular;*/
+  	/*font-size: 18px;*/
   	list-style-type: disc;
   	letter-spacing: 0.8px;
 }
 p {
 	font-size: 20px;
-	font-family: PT-Serif-Regular !important;
+/*	font-family: PT-Serif-Regular !important;*/
 	text-align: justify;
 	line-height: 35px;
 /*	margin-bottom: 50px;*/
@@ -77,10 +92,11 @@ a {
 }
 .entry-content, .entry-summary {
    	margin: 0; 
+   	padding: 0 20px 0 20px;
 }
 .entry-content h1,
 .comment-content h1{
-    font-size: 48px;
+    /*font-size: 48px;*/
     margin-bottom: 20px;
     letter-spacing: 1px;
     line-height: 50px;
@@ -97,9 +113,10 @@ a {
 }
 .page-container .container {
   	background-color: #f5f5f5 !important;
+  	/*padding: 0 20px 0 20px;*/
 }
 .logo-description {
-	color: #f64747;
+/*	color: #f64747;*/
 	margin: 10px 0 0 0 ;
 }
 .logo-description h1.site-title {
@@ -109,10 +126,10 @@ a {
   	margin: 0px 8px 0 0;
 }
 .logo-description h2.site-description {
-  	font-family: 'PT-Serif', sans-serif ;
+  	/*font-family: 'PT-Serif', sans-serif ;*/
 	font-style: italic;
   	color: #939393;
-  	font-size: 18px !important;
+/*  	font-size: 18px !important;*/
 	display: inline;
 }
 .login {
@@ -137,7 +154,7 @@ a {
 	float: left;
 }
 #trigger-overlay {
-	font-family: 'PT-Serif';
+	/*font-family: 'PT-Serif';*/
 	font-style: italic;
 	text-transform: uppercase;
 	background-color: #fff !important;
@@ -147,16 +164,16 @@ a {
 	outline: none;
 }
 #trigger-overlay2{
-	font-family: 'PT-Serif';
+	/*font-family: 'PT-Serif';*/
 	font-style: italic;
 	text-transform: uppercase;
 	padding: 15px 30px 15px 30px;
-	font-size: 13px;
+	font-size: 12px;
 	outline: none;
 }
 .main-navigation {
  	background-color: #282828;
-  	height: 71px;
+/*  	height: 71px;*/
   	float: none;
   	margin: auto;
   	width: 100%;
@@ -166,6 +183,10 @@ a {
 	margin:0px;
 	list-style-type: none;
 	position: initial;
+}
+.main-navigation ul ul {
+  	left: inherit;
+ 	top:inherit;
 }
 .main-navigation ul li.current_page_item a{
 	padding: 22px 19px 22px 19px;
@@ -178,11 +199,14 @@ a {
 	max-width: 1132px;
 }
 .main-navigation a {
-	font-family:'Oswald', sans-serif  !important;
+	/*font-family:'Oswald', sans-serif  !important;*/
 	color: #ffffff;
     padding: 22px 19px;
-    font-size: 18px !important;
+    /*font-size: 18px !important;*/
 }
+/*.main-navigation ul:not(.sub-menu) > li > a, .main-navigation ul:not(.sub-menu) > li:hover > a {
+   	font-size: inherit; 
+}*/
 .main-navigation ul li:hover > a {
     background:none repeat scroll 0 0 #F15A23;
     color:#fff;
@@ -193,7 +217,7 @@ a {
     -o-transition: all 0.3s ease-in-out; 
     -ms-transition: all 0.3s ease-in-out; 
     transition: all 0.3s ease-in-out; 
-    font-size:14px;
+    /*font-size:14px;*/
 }
 input#s {
 	height: 31px;
@@ -256,7 +280,7 @@ input[type="submit"], input[type="reset"] {
  	padding: 25px 18px 0px 0px;
  }
 .footer li a {
- 	font-family: 'Oswald', sans-serif !important;
+ 	/*font-family: 'Oswald', sans-serif !important;*/
  	font-size: 15px;
  	float: left;
  	width: 170px;
@@ -267,7 +291,7 @@ input[type="submit"], input[type="reset"] {
 	width: 100%;
 }
 .footer h3 {
-	font-size: 14px;
+/*	font-size: 14px;*/
 	color:#F64747;
 }
 .widget img {
@@ -310,12 +334,12 @@ input[type="submit"], input[type="reset"] {
 }
 .widget_text h3,
 .widget_nav_menu h3 {
-	font-size: 20px;
+/*	font-size: 20px;*/
 	text-transform: uppercase;
 	color: #fff;
 }
 .textwidget {
-	font-family: 'PT-Serif';
+	/*font-family: 'PT-Serif';*/
 	font-size: 18px;
 	color: #B0B1B4;
 	margin-top: 20px;
@@ -327,10 +351,15 @@ input[type="submit"], input[type="reset"] {
   	width: 1132px;
   	color: #B0B1B4;
 }
+.footer-sidebar {
+    background-color: #F5F5F5;
+  	padding: 0px 10px 0px 10px;
+  	width: 98%;
+}
 .colortext {
 	color: #F64747;
 	font-size: 15px;
-	font-family: 'PT-Serif';
+	/*font-family: 'PT-Serif';*/
 }
 #license {
 	width: 50%;
@@ -358,8 +387,8 @@ input[type="submit"], input[type="reset"] {
 }
 ul {
 	margin: 20px 0 50px 0 ;
-	font-size: 18px;
-	font-family: 'PT-Serif';
+	/*font-size: 18px;*/
+	/*font-family: 'PT-Serif';*/
 }
 #searchforms {
 	width: 23%;
@@ -490,7 +519,7 @@ ul {
 	color: #fff;
 	text-transform: uppercase;
 	float: left;
-	font-size: 18px;
+	/*font-size: 18px;*/
 }
 .contact-form2 p {
 	line-height: 25px;
@@ -510,7 +539,7 @@ ul {
 	position: relative;
 	background-size: 100% 100%;
 	height: 500px;
-	width: 1920px;
+	width: 100%;
 }
 .logofon2{
 	display: table;
@@ -527,7 +556,7 @@ ul {
 }
 .entry-title2 h1{
 	color: #fff;
-	font-size: 48px;
+	/*font-size: 48px;*/
 }
 
 .logofon:after,
@@ -553,7 +582,7 @@ ul {
 	opacity: 0.2;
 }*/
 .post_tree {
-	font-family: 'PT-Serif';
+	/*font-family: 'PT-Serif';*/
 	font-size: 18px;
 	color: #F5F5F5;
 	margin-bottom: 10px;
@@ -571,7 +600,8 @@ ul {
   	margin-top: 0;
 }
 .blog_post .post-content {
-  	float: left;
+  	float: none;
+  	margin: auto;
   	width: 884px;
   	padding: 0 0 18px 0;
   	border: 0;
@@ -600,21 +630,21 @@ ul {
   	background: inherit;
 }
 .tag-links h2 {
-	font-size: 14px !important;
-	font-family: 'Oswald', sans-serif !important;
+	/*font-size: 14px !important;*/
+	/*font-family: 'Oswald', sans-serif !important;*/
 	margin-top: 40px;
 	margin-bottom: 25px;
 	color: #F64747;
 }
 .by{
-	font-family: 'PT-Serif';
+	/*font-family: 'PT-Serif';*/
 	font-size: 16px;
 }
 .date {
 	color: #F64747;
 }
 .author-link.author {
-  	font-family: 'PT-Serif';
+  	/*font-family: 'PT-Serif';*/
   	font-size: 16px;
   	color: #F64747;
 }
@@ -635,8 +665,8 @@ ul {
 .bio h2{
 	text-transform: uppercase;
 	font-weight: 500;
-	font-size: 16px !important;
-	font-family: 'Oswald', sans-serif !important;
+	/*font-size: 16px !important;*/
+	/*font-family: 'Oswald', sans-serif !important;*/
 }
 .biography_image {
   	width: 20%;
@@ -647,7 +677,7 @@ ul {
   	width: 80%;
 }
 .biography_text{
-	font-family: 'PT-Serif';
+	/*font-family: 'PT-Serif';*/
 	text-align: justify;
 }
 .nav-next{
@@ -688,8 +718,8 @@ ul {
 /*BLOG*/
 
 header.post-header .post-title {
-	font-family: 'Oswald', sans-serif !important;
-  	font-size: 48px !important;
+	/*font-family: 'Oswald', sans-serif !important;*/
+/*  	font-size: 48px !important;*/
   	line-height: 50px;
   	border: none;
   	padding: 0;
@@ -699,6 +729,7 @@ header.post-header .post-title {
 }
 .entry-thumbnail {
 	padding: 0;
+	width: 100%;
 }
 
 /* RESPONSIVE */

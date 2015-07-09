@@ -61,18 +61,13 @@ class fruitful_news_widget extends WP_Widget
 				<?php while ($pc->have_posts()) : $pc->the_post(); ?>
 					<li>
 						<?php 
-						if(has_post_thumbnail()) 
-						{
-							?>
-			               	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array()); ?></a>
-			               	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		                <?php 
-		            	} 
-		            	else 
-		            	{
-		            		/*<a href="<?php the_permalink(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/no-image.png"></a>*/
-						} ?>
-					</li>
+						if(has_post_thumbnail()){
+							?><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array());?></a><?php
+						} else {
+							echo '<img src="'.get_bloginfo('stylesheet_directory').'/images/no-image.png"/>';
+						}?>
+						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+ 					</li>
 				<?php endwhile; 
 				echo $args['after_widget'];
 
