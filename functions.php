@@ -123,26 +123,31 @@ if (!function_exists('fruitful_get_blog_single')) //single blog post header
 {
 	function fruitful_get_blog_single()
 	{
-		if ( has_post_thumbnail() && is_singular()) 
-		{ 
+		if (is_single())
+		{
+			if ( has_post_thumbnail()) 
+			{ 
+				?>
+				<div class="logofon">
+					<?php echo get_the_post_thumbnail(null, array(1920, 500)); ?>
+				</div>
+				<?php
+			} 
+			if (! has_post_thumbnail()) 
+			{ 
+				?><div class="logofon2">
+
+				</div><?php
+			} 
 			?>
-			<div class="logofon">
-				<?php echo get_the_post_thumbnail(null, array(1920, 500)); ?>
+			<div class="sixteen columns">
+				<div class="entry-title2"> 
+					<span class="post_tree"><?php  the_breadcrumb();?><span id="colortext"> <?php echo trim_characters(25, '...'); ?></span></span>
+					<h1><?php the_title(); ?> </h1>
+				</div>
 			</div>
 			<?php
-		} 
-		if (! has_post_thumbnail() && is_single()) 
-		{ 
-			?><div class="logofon2"></div><?php
-		} 
-		?>
-		<div class="sixteen columns">
-			<div class="entry-title2"> 
-				<span class="post_tree"><?php  the_breadcrumb();?><span id="colortext"> <?php echo trim_characters(25, '...'); ?></span></span>
-				<h1><?php the_title(); ?> </h1>
-			</div>
-		</div>
-		<?php
+		}
 	}
 }
 

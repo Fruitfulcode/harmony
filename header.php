@@ -59,7 +59,7 @@
 										</div>
 										<div class="login">
 											<div class="search_form">
-												<button id="trigger-overlay" type="button"><i class="fa fa-search"></i>Search</button>
+												<span id="trigger-overlay" type="button"><i class="fa fa-search"></i>Search</span>
 											</div>
 											<div class="contact-form">
 												<button id="trigger-overlay2" type="button"><i class="fa fa-envelope-o"></i>Contact Me</button>

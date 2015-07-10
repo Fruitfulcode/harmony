@@ -44,6 +44,9 @@
 	</div>
 	<div class="overlay overlay-contentscale">
 		<button type="button" class="overlay-close"></button>
+		<!-- <button type="button" role="button" aria-label="Toggle Navigation" class="lines-button x close">
+          	<span class="lines"></span>
+        </button> -->
 		<div class="search_form2">
 			<nav>
 				<div id="searchforms">
@@ -64,6 +67,23 @@
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/search_overlay.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/contact_overlay.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/classie.js" type="text/javascript"></script>
-
+	<script>
+    var anchor = document.querySelectorAll('button');
+    
+    [].forEach.call(anchor, function(anchor){
+      var open = false;
+      anchor.onclick = function(event){
+        event.preventDefault();
+        if(!open){
+          this.classList.add('close');
+          open = true;
+        }
+        else{
+          this.classList.remove('close');
+          open = false;
+        }
+      }
+    }); 
+  </script>
 </body>
 </html>
