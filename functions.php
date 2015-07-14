@@ -38,6 +38,14 @@ function fruitful_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+	register_sidebar( array(
+		'name' => __( 'Single Post Sidebar', 'fruitful' ),
+		'id' => 'sidebar-3',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
 
 }
 
@@ -188,8 +196,6 @@ if (!function_exists('harmony_entry_meta'))
 		?>
 			<div class="page-container">
 				<footer class="entry-meta">
-					<span class="by">by </span>
-					<span class="author-link author"><?php print get_the_author(); ?></span>
 					<?php if ('post' == get_post_type()):?>
 					<?php
 						 $categories_list = get_the_category_list( __( ', ', 'fruitful'));
@@ -197,10 +203,9 @@ if (!function_exists('harmony_entry_meta'))
 					<?php endif;?>
 					
 					<?php endif;?>
-					<span class="by">date </span>
-					<span class="date"><?php the_date();?></span>
+					
 					<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) { ?>
-						<span class="comments-link"><i class="fa fa-comment-o"></i><?php comments_popup_link( __( 'Leave a comment', 'fruitful' ), __( '1', 'fruitful' ), __( '% Comments', 'fruitful' ) ); ?></span>
+						<!-- <span class="comments-link"><i class="fa fa-comment-o"></i><?php comments_popup_link( __( 'Leave a comment', 'fruitful' ), __( '1', 'fruitful' ), __( '% Comments', 'fruitful' ) ); ?></span> -->
 					<?php } ?>
 					<?php
 						$tags_list = get_the_tag_list( '', __( ', ', 'fruitful' ) );
@@ -210,6 +215,42 @@ if (!function_exists('harmony_entry_meta'))
 							<h2 >Tags</h2> 
 							<span class="tags"><?php echo $tags_list; ?></span> 
 						</div>
+						<span class="by">date </span>
+						<span class="date"><?php the_date();?></span>
+						<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) { ?>
+							<span class="comments-link"><i class="fa fa-comment-o"></i><?php comments_popup_link( __( 'Leave a comment', 'fruitful' ), __( '1', 'fruitful' ), __( '% Comments', 'fruitful' ) ); ?></span>
+						<?php } ?>
+						<?php endif;  ?>
+				</footer>
+			</div>	
+		<?php
+		} 
+	}
+}
+
+if (!function_exists('harmony_entry_meta2')) 
+{
+	function harmony_entry_meta2()
+	{
+		if (is_single()) 
+		{ 
+		?>
+			<div class="page-container">
+				<footer class="entry-meta">
+					<?php if ('post' == get_post_type()):?>
+					<?php
+						 $categories_list = get_the_category_list( __( ', ', 'fruitful'));
+					if ( $categories_list && fruitful_categorized_blog() ) : ?>
+					<?php endif;?>
+					
+					<?php endif;?>
+					<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) { ?>
+						<!-- <span class="comments-link"><i class="fa fa-comment-o"></i><?php comments_popup_link( __( 'Leave a comment', 'fruitful' ), __( '1', 'fruitful' ), __( '% Comments', 'fruitful' ) ); ?></span> -->
+					<?php } ?>
+					<?php
+						$tags_list = get_the_tag_list( '', __( ', ', 'fruitful' ) );
+						if ( $tags_list ) :
+					?>
 						<?php endif;  ?>
 				</footer>
 				<div class="bio">
@@ -222,12 +263,15 @@ if (!function_exists('harmony_entry_meta'))
 			</div>	
 		<?php fruitful_content_nav( 'nav-below' );  ?>
 		<?php comments_template(); ?>
+
+		<div class="sixteen columns">
+			<button id="trigger-overlay3" type="button">Leave Comment</button>
+		</div>
+
 		<?php
 		} 
 	}
 }
-
-
 
 if ( ! function_exists( 'fruitful_get_content_with_custom_sidebar' ) ) {
 	function fruitful_get_content_with_custom_sidebar($curr_sidebar = null) {

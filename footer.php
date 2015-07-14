@@ -10,7 +10,7 @@
  */
 	?>
 					</div>
-					<?php harmony_entry_meta(); ?>
+					<?php harmony_entry_meta2(); ?>
 				</div>
 			</div><!-- .page-container-->
 			
@@ -53,6 +53,7 @@
 			</nav>
 		</div>
 	</div>
+
 	<div class="overlay2 overlay-contentscale">
 		<button type="button" class="overlay-close2"></button>
 		<div class="contact-form2">
@@ -61,8 +62,18 @@
 			</nav>
 		</div>
 	</div>
+
+	<div class="overlay3 overlay-contentscale">
+		<button type="button" class="overlay-close3"></button>
+		<div class="addcomment">
+			<nav>
+				<?php comment_form(); ?>
+			</nav>
+		</div>
+	</div>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/search_overlay.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/contact_overlay.js" type="text/javascript"></script>
+	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/comment_overlay.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/classie.js" type="text/javascript"></script>
 </body>
 </html>

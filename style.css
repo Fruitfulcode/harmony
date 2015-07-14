@@ -136,6 +136,14 @@ a 	{text-decoration: none;}
 	font-size: 12px;
 	outline: none;
 }
+#trigger-overlay3{
+	font-style: italic;
+	text-transform: uppercase;
+	padding: 15px 30px 15px 30px;
+	font-size: 12px;
+	outline: none;
+	float: right;
+}
 .main-navigation {
  	background-color: #282828;
   	float: none;
@@ -196,7 +204,7 @@ textarea {
 	margin-bottom: 20px;
 }
 #searchform input#s{
-	width: 90%;
+	width: 100%;
 	border-radius: 0px;
 }
 .contact-form{
@@ -226,7 +234,7 @@ input[type="submit"], input[type="reset"] {
 .flexslider .slides img {
   	width: 100%;
   	display: block;
-  	height: 100% !important;
+  	height: 100% !im;
 }
 .main-slider-container {
 	margin: 0;
@@ -297,10 +305,15 @@ input[type="submit"], input[type="reset"] {
     background-repeat: no-repeat;
     background-size: 90%;
 }
-.widget_text h3,
-.widget_nav_menu h3 {
+.widget_text h3,.widget_nav_menu h3 {
 	text-transform: uppercase;
 	color: #fff;
+	font-weight: bold;
+}
+#page .container #secondary .widget h3.widget-title, #page .container #secondary .widget h1.widget-title {
+  	border-bottom: none;
+  	color: #000;
+	font-weight: bold;
 }
 .textwidget {
 	font-size: 18px;
@@ -357,8 +370,7 @@ input[type="submit"], input[type="reset"] {
 
 /*OVERLAY*/
 
-.overlay,
-.overlay2{
+.overlay,.overlay2,.overlay3{
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -367,8 +379,7 @@ input[type="submit"], input[type="reset"] {
 	background: rgba(0,0,0,0.9);
 }
 /* Overlay closing cross */
-.overlay .overlay-close,
-.overlay2 .overlay-close2 {
+.overlay .overlay-close,.overlay2 .overlay-close2,.overlay3 .overlay-close3 {
 	width: 58px;
 	height:58px;
 	background-color: #131215 !important;
@@ -388,7 +399,7 @@ input[type="submit"], input[type="reset"] {
 	-webkit-transform: translateY(-30%);
 	transform: translateY(-50%);
 }
-.overlay2 nav {
+.overlay2 nav, .overlay3 nav {
 	top: 50%;
 	height: 60%;
 	text-align: center;
@@ -396,8 +407,7 @@ input[type="submit"], input[type="reset"] {
 	-webkit-transform: translateY(-30%);
 	transform: translateY(-50%);
 }
-.overlay ul,
-.overlay2 ul {
+.overlay ul,.overlay2 ul,.overlay3 ul  {
 	list-style: none;
 	padding: 0;
 	margin: 0 auto;
@@ -405,15 +415,13 @@ input[type="submit"], input[type="reset"] {
 	height: 100%;
 	position: relative;
 }
-.overlay ul li,
-.overlay2 ul li {
+.overlay ul li,.overlay2 ul li,.overlay3 ul li {
 	display: block;
 	height: 20%;
 	height: calc(100% / 5);
 	min-height: 54px;
 }
-.overlay ul li a,
-.overlay2 ul li a {
+.overlay ul li a,.overlay2 ul li a,.overlay3 ul li a {
 	font-size: 54px;
 	font-weight: 300;
 	display: block;
@@ -424,20 +432,20 @@ input[type="submit"], input[type="reset"] {
 .overlay ul li a:hover,
 .overlay ul li a:focus,
 .overlay2 ul li a:hover,
-.overlay2 ul li a:focus {
+.overlay2 ul li a:focus,
+.overlay3 ul li a:hover,
+.overlay3 ul li a:focus {
 	color: #f0f0f0;
 }
 /* Effects */
-.overlay-contentscale,
-.overlay-contentscale2 {
+.overlay-contentscale,.overlay-contentscale2,.overlay-contentscale3  {
 	visibility: hidden;
 	-webkit-transform: translateY(100%);
 	transform: translateY(100%);
 	-webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
 	transition: transform 0.5s, visibility 0s 0.5s;
 }
-.overlay-contentscale.open,
-.overlay-contentscale2.open {
+.overlay-contentscale.open,.overlay-contentscale2.open,.overlay-contentscale3.open {
 	visibility: visible;
 	-webkit-transform: translateY(0%);
 	transform: translateY(0%);
@@ -474,13 +482,14 @@ input[type="submit"], input[type="reset"] {
 .contact-form2{
 	margin-top: 25%;
 }
-.contact-form2 h3 {
+.contact-form2 h3, .addcomment h3 {
 	color: #fff;
 	text-transform: uppercase;
+	margin-bottom: 20px;
 	float: left;
 	/*font-size: 18px;*/
 }
-.contact-form2 p {
+.contact-form2 p, .addcomment p {
 	line-height: 25px;
   	margin: 10px 0 0 0;
   	color: #6F6F6D;
@@ -488,6 +497,18 @@ input[type="submit"], input[type="reset"] {
 .wpcf7-form-control wpcf7-text{
 	display: table;
 }
+.addcomment {
+	width: 30%;
+	margin:auto;
+	margin-top: 25%;
+}
+.addcomment a {
+	color: #fff;
+}
+#commentform label{
+	display: none;
+}
+
 
 
 /*SINGLE POST*/
@@ -588,7 +609,6 @@ input[type="submit"], input[type="reset"] {
 }
 .tag-links h2 {
 	font-family: 'Oswald', sans-serif !important;
-	margin-top: 40px;
 	margin-bottom: 25px;
 	color: #F64747;
 }
@@ -605,16 +625,18 @@ input[type="submit"], input[type="reset"] {
 .tag-links{
 	text-transform: uppercase;
 	margin-bottom: 40px;
+	float: left;
+	width: 48%;
 }
 .bio{
 	display:inline-block;
-	width: 58%;
+	width: 100%;
 	float: left;
 	margin-bottom: 50px;
 	padding-right: 2%;
 }
 .entry-meta {
-  	width: 38%;
+  	width: 100%;
   	float: left;
   	padding-left: 2%;
 }
@@ -625,12 +647,12 @@ input[type="submit"], input[type="reset"] {
 	font-family: 'Oswald', sans-serif !important;
 }
 .biography_image {
-  	width: 20%;
+  	width: 12%;
   	float: left;
 }
 .biography_block {
   	float: left;
-  	width: 80%;
+  	width: 88%;
 }
 .biography_text{
 	/*font-family: 'PT-Serif';*/
@@ -647,24 +669,28 @@ input[type="submit"], input[type="reset"] {
 #comments {
   	margin-top: 40px;
     padding: 0 20px 10px 20px;
-    width: 97%;
+    width: 98%;
 }
 #comments.comments-area ol.commentlist {
-  	margin: 0 20px 20px 0;
+  	margin: 0 0px 0px 0;
 }
 .comments-link{
 /*	margin-left: 15px;*/
 	color: #F64747;
+}
+.logged-in-as{
+	float: right;
 }
 .fa.fa-comment-o{
 	margin-right: 5px;
 }
 .tags{
 	font-weight: bold;
+	font-family: 'Oswald';
 }
-.comment-respond {
+/*.comment-respond {
   	width: 98%;
-}
+}*/
 .meta-conteiner {
 	background-color: #fff;
 	padding-top: 20px;
@@ -710,8 +736,8 @@ header.post-header .post-title {
 	.footer li 			{width: 29%;}
 	.footer-footer 		{width: 960px;}
 /*	#main-menu-1 		{margin-left: 2%;}*/
-	.overlay1 nav,.overlay2 nav {-webkit-transform: translateY(-24%);}
-	#wpcf7-f64-o1,#searchforms {width: 50%;}
+	.overlay1 nav,.overlay2 nav,.overlay3 nav {-webkit-transform: translateY(-24%);}
+	#wpcf7-f64-o1,#searchforms, .addcomment  {width: 50%;}
 	.widget_text		{margin: 5.5% 0 0px 0; width:31%;  padding: 0px 8% 0px 1%;}
 	.widget_nav_menu	{padding: 0 0 0 4%;}
 	.biography_block 	{width: 75%;}
@@ -733,7 +759,7 @@ header.post-header .post-title {
 	.container 			{max-width: 710px;}
 	.login 				{width: 35%;}
 	#license 			{width: 100%;}
-	#trigger-overlay2 	{padding: 15px 20px 15px 20px;}
+	#trigger-overlay2, #trigger-overlay3 	{padding: 15px 20px 15px 20px;}
 	.footer li 			{width: 24%;}
 	.footer-sidebar 	{margin-left: 1%;}
 	.footer-footer 		{width: 750px;}
@@ -769,6 +795,7 @@ header.post-header .post-title {
 	.contact-form		{float: right;	margin-right: 15px;}
 	.footer-footer,
 	.social-icon 		{margin: auto;}
+	#trigger-overlay3 	{margin-right: 15px;}
 	.widget_text		{padding: 0px 3% 0px 1%;width: 32%;}
 	#colophon .social-icon {float: none;/*margin-left: 30%;*/}
 	#license 			{width: 100%;margin: auto}
@@ -789,7 +816,7 @@ header.post-header .post-title {
 	.flexslider .slides img {width: 98%;}
 	.contact-form		{float: right; margin-right: 15px;}
 	.footer-footer		{width: auto;}
-	.contact-form2,.search_form2{margin-top: 40%;}
+	.contact-form2,.search_form2, .addcomment{margin-top: 40%;}
 	.social-icon 		{margin: auto;}
 	#colophon .social-icon {float: none;/*margin-left: 30%;*/}
 	#license 			{width: 100%;margin: auto}
@@ -804,9 +831,8 @@ header.post-header .post-title {
 @media screen and (max-width: 600px) {
 	.container			{width: 540px;}
 	.container .sixteen.columns {max-width: 550px;}
-	.contact-form2 p 	{line-height: 13px;}
-  	.overlay nav,
-  	.overlay2 nav 		{-webkit-transform: translateY(-1%);}
+	.contact-form2 p,.addcomment p 	{line-height: 13px;}
+  	.overlay nav,.overlay2 nav,.overlay3 nav {-webkit-transform: translateY(-1%);}
   	.widget_text		{margin: 5.5% 0 0px 0;width: 70% !important;padding: 0px 5% 0px 5%;}
 	.widget_nav_menu 	{width: 20%; float: left;  padding: 0 0 0 4%;}
 	.select-menu 		{width: 87%;}
@@ -839,12 +865,13 @@ header.post-header .post-title {
 	.logo-description h2.site-description {display: inherit;}
 	.widget_nav_menu 	{padding: 0 0 0 4%;}
 	.blog_post .post-content, .eleven.columns .blog_post .post-content, .search .blog_post .post-content {width: 420px;}
+	.contact-form2, .addcomment	{margin-top: 10%;}
+	.contact-form2 p, .addcomment p	{font-size: 12px;}
 }
 @media screen and (max-width: 400px) and (min-width: 320px){
 	.container .sixteen.columns,
 	.container			{max-width: 320px;}
 	.logo-description h2.site-description {	display: inherit;}
 	.wpcf7 p 			{font-size: 11px;}
-
 }
 
