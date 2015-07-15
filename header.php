@@ -132,3 +132,4 @@
 				<?php do_action( 'before' ); ?>		
 					<div class="sixteen columns">
 						<?php harmony_entry_meta(); ?>
+

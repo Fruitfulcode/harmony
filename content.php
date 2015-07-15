@@ -7,7 +7,7 @@
 ?>
 <?php $options = fruitful_get_theme_options(); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('blog_post'); ?>>
+<article   id="post-<?php the_ID(); ?>" <?php post_class('blog_post'); ?>style="background-image: url(<?php	if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog_img2');echo ''.$full_image_url[0] . '';} ?>)">
 	<?php $day 		 = get_the_date('d'); 
 		  $month_abr = get_the_date('M');
 	?>
@@ -25,20 +25,22 @@
 	
 	<div class="post-content">	
 		<header class="post-header">
+
 			<?php if ( is_single() ) : ?>
 			<?php else : ?>
 				<?php if (get_the_title() != '') : ?>
-				<h2 class="post-title entry-title">
-					<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fruitful' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
-				</h2>
+				
 				<?php endif; ?>
 			<?php endif;  ?>		
 			
 			<?php if ( !is_single() ) : ?>
 				<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
-					<div class="entry-thumbnail">
-						<?php the_post_thumbnail(); ?>
-					</div>
+				<!-- 	<div class="entry-thumbnail">
+
+					</div> -->
+					<h2 class="post-title entry-title">
+					<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fruitful' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+				</h2>
 				<?php endif; ?>
 			<?php endif; ?>
 			<?php if ( is_single() ) : 

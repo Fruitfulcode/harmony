@@ -75,5 +75,51 @@
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/contact_overlay.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/comment_overlay.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/classie.js" type="text/javascript"></script>
+
+<!-- <section id="properties" class="properties">
+	<div class="grid">
+		<div class="row">
+			<div class="col-md-3 col-sm-6">
+				<div id="property-1898" class="property">
+					<figure class="tag status">Sale</figure>
+					<figure class="type" title="Apartment">
+						<img width="26px" height="26px" src="http://themes.fruitfulcode.com/zoner/wp-content/uploads/2014/07/apartment.png" alt="">
+					</figure><a href="http://themes.fruitfulcode.com/zoner/property/osiedle-domk%c3%b3w-szeregowych-w-rudzie-%c5%9bl%c4%85skiej/">
+					<div class="property-image">
+						<img class="img-responsive" src="http://themes.fruitfulcode.com/zoner/wp-content/uploads/2014/11/DSCN0648-440x330.jpg" alt="">
+					</div>
+					<div class="overlay">
+						<div class="info">
+							<span class="tag price">zł120,000</span>
+							<h3>Osiedle domków szeregowych w Rudzie Śląskiej</h3>
+							<figure>Ruda Śląska, Katowicka 18, 41-706</figure>
+						</div>
+						<ul class="additional-info">
+							<li>
+								<header>Area:</header>
+								<figure>33 m<sup>2</sup></figure>
+							</li>
+							<li>
+								<header>Beds:</header>
+								<figure>3</figure>
+							</li>
+							<li>
+								<header>Baths:</header>
+								<figure>3</figure>
+							</li>
+							<li>
+								<header>Garages:</header>
+								<figure>3</figure>
+							</li>
+						</ul>
+					</div></a>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+
+
+
 </body>
 </html>

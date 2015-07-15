@@ -24,7 +24,7 @@ Text Domain: fruitful
 }
 .container .eleven.columns {
   	display: table;
-	padding-left: 20px;
+	/*padding-left: 20px;*/
 }
 .container .five.columns {
   	width: 280px;
@@ -48,7 +48,7 @@ h2 	{width: 100%;line-height: 1.3;letter-spacing: 1px;}
 h4 	{font-weight: bold;margin-bottom: 8px;}
 ul 	{margin: 20px 0 50px 0 ;}
 li 	{list-style-type: disc;}
-p 	{font-size: 20px;text-align: justify;line-height: 35px;}
+p 	{text-align: justify;line-height: 35px;}
 a 	{text-decoration: none;}
 
 #page2 {
@@ -142,7 +142,7 @@ a 	{text-decoration: none;}
 	padding: 15px 30px 15px 30px;
 	font-size: 12px;
 	outline: none;
-	float: right;
+	float: left;
 }
 .main-navigation {
  	background-color: #282828;
@@ -490,7 +490,7 @@ input[type="submit"], input[type="reset"] {
 	/*font-size: 18px;*/
 }
 .contact-form2 p, .addcomment p {
-	line-height: 25px;
+	line-height: 32px;
   	margin: 10px 0 0 0;
   	color: #6F6F6D;
 }
@@ -573,13 +573,13 @@ input[type="submit"], input[type="reset"] {
   	padding-right: 0;
   	padding-top: 0;
   	margin-top: 0;
+  	display: none;
 }
 .blog_post .post-content {
   	float: none;
-  	margin: auto;
-/*  	width: 884px;*/
   	padding: 0 0 18px 0;
   	border: 0;
+  	width: 100%;
 }
 .site-header img, .entry-content img, img[class*="align"], img[class*="wp-image-"] {
   	height: auto;
@@ -617,6 +617,23 @@ input[type="submit"], input[type="reset"] {
 }
 .date {
 	color: #F64747;
+	float: right;
+	margin-right: 8px;
+}
+.date2 {
+	float: left;
+	margin-right: 8px;
+	font-size: 12px;
+	margin-top: 7px;
+	color: #A3A2A2;
+}
+#comments.comments-area ol.commentlist li.comment .comment-meta a.comment-edit-link {
+  	font-size: initial;
+}
+.fa-long-arrow-right{
+	margin-right: 8px;
+	color: #f64747;
+	font-size: 13px !important;
 }
 .author-link.author {
   	font-size: 16px;
@@ -626,7 +643,7 @@ input[type="submit"], input[type="reset"] {
 	text-transform: uppercase;
 	margin-bottom: 40px;
 	float: left;
-	width: 48%;
+	width: 52%;
 }
 .bio{
 	display:inline-block;
@@ -636,9 +653,9 @@ input[type="submit"], input[type="reset"] {
 	padding-right: 2%;
 }
 .entry-meta {
-  	width: 100%;
+  	width: 720px;
   	float: left;
-  	padding-left: 2%;
+/*  	padding-left: 2%;*/
 }
 .bio h2{
 	text-transform: uppercase;
@@ -660,23 +677,26 @@ input[type="submit"], input[type="reset"] {
 }
 .nav-next{
 	float: left;
-	padding-left: 2%;
+/*	padding-left: 2%;*/
 }
 .nav-previous{
 	float: right;
-	padding-right: 2%;
+/*	padding-right: 2%;*/
 }
 #comments {
   	margin-top: 40px;
-    padding: 0 20px 10px 20px;
-    width: 98%;
+    padding: 0 0px 0px 0px;
+    width: 100%;
+    float: none;
 }
 #comments.comments-area ol.commentlist {
   	margin: 0 0px 0px 0;
 }
 .comments-link{
-/*	margin-left: 15px;*/
+	float: right;
 	color: #F64747;
+	margin-right: 8px;
+	/*margin-left: 40px;*/
 }
 .logged-in-as{
 	float: right;
@@ -702,23 +722,79 @@ input[type="submit"], input[type="reset"] {
 .entry-thumbnail .wp-post-image {
   	margin-bottom: 25px;
 }
+#page .container #secondary .widget a {
+	font-size: initial;
+}
+.comment-body {
+  	padding: 0px 0;
+  	position: relative;
+}
+.commentsErrorBox {
+  	color: #F64747;
+    border: 1px solid #F64747;
+    width: 93%;
+}
+header.post-header .post-title a {
+  	text-decoration: none;
+  	color: #fff;
+
+}
 
 
 /*BLOG*/
 
 header.post-header .post-title {
 	font-family: 'Oswald', sans-serif !important;
-  	line-height: 50px;
+  	line-height: 25px;
   	border: none;
-  	width: 100%;
+  	width: 85%;
   	padding: 0;
+  	font-size: 18px;
+  	margin: 50% 0px 0 25px;
 }
 .blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post {
   	margin: 0;
+  	height: 265px;
+  	width: 365px;
+  	margin: 0px 9px 12px 0;
 }
 .entry-thumbnail {
 	padding: 0;
 	width: 100%;
+}
+#comments.comments-area h2.comments-title, #comments.comments-area #respond.comment-respond h3.comment-reply-title {
+	text-transform: uppercase;
+	font-family: 'Oswald';
+	font-weight: bold;
+}
+#comments.comments-area ol.commentlist li.comment .reply a.comment-reply-link {
+  	font-family: 'Oswald';
+  	font-weight: bold;
+  	font-size: 12px;
+  	text-transform: uppercase;
+}
+#comments .comment-meta cite.fn, #comments .comment-meta cite.fn a {
+  	color: #F64747;
+  	font-style: normal;
+  	text-transform: uppercase;
+  	font-family: 'Oswald';
+  	margin-right: 8px;
+  	float: left;
+}
+.comment-content {
+	border: none;
+}
+.replybutton {
+	margin-bottom: 50px;
+	display: table;
+}
+body.blog article, body.archive article {
+width: 32.5%;
+display: inline-block;
+vertical-align: top;
+text-align: left;
+margin-bottom: 10px;
+position: relative;
 }
 
 /* RESPONSIVE */
