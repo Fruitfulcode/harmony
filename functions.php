@@ -65,7 +65,7 @@ class fruitful_news_widget extends WP_Widget
 		if (!empty($title)){
 			echo $args['before_title'].$title.$args['after_title'];
 			}
-				$pc = new WP_Query('posts_per_page=6'); ?>
+				$pc = new WP_Query('posts_per_page=5'); ?>
 				<?php while ($pc->have_posts()) : $pc->the_post(); ?>
 					<li>
 						<?php 
@@ -113,12 +113,16 @@ class fruitful_news_widget extends WP_Widget
 
 
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'blog_img', 1920, 500, true ); // new solution for blog pictures
+	add_image_size( 'blog_img', 1920, 500, true ); // new solution for single blog pictures
 }
 
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'blog_img2', 365, 265, true ); // new solution for blog pictures
 }
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'sticky_img', 767, 530, true ); // new solution for sticky post pictures
+}
+
 
 
 function trim_characters($count, $after = '...') //function for cutting post title by letters
@@ -251,9 +255,9 @@ if (!function_exists('harmony_entry_meta2'))
 				</div>
 			<?php fruitful_content_nav( 'nav-below' );  ?>
 			<?php comments_template(); ?>
-			<div class="replybutton">
+			<!-- <div class="replybutton">
 				<button id="trigger-overlay3" type="button">Leave Comments</button>
-			</div>
+			</div> -->
 		<?php
 		} 
 	}
