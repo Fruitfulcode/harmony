@@ -32,6 +32,7 @@ Text Domain: fruitful
 .sixteen.columns {
   	width: 1132px;
   	display: table;
+  	margin: auto;
 }
 h1, h3, h5, h6 {
   	font-family: 'Oswald', sans-serif !important;
@@ -47,15 +48,14 @@ li 	{font-size: 18px;}
 h2 	{line-height: 1.3;letter-spacing: 1px;}
 h4 	{font-weight: bold;margin-bottom: 8px;}
 ul 	{margin: 20px 0 50px 0 ;}
-li 	{list-style-type: disc;}
 p 	{text-align: justify;line-height: 35px;}
 a 	{text-decoration: none;}
 
-#page2 {
+#copyright {
 	margin: auto;
 	background-color: #202020;
 }
-#page3 {
+#footer {
 	width: 100%;
 	background-color: #282828;
 	margin: auto;
@@ -204,7 +204,7 @@ textarea {
 	margin-bottom: 20px;
 }
 #searchform input#s{
-	width: 100%;
+	width: calc(100% - 44px);
 	border-radius: 0px;
 }
 .contact-form{
@@ -299,12 +299,12 @@ input[type="submit"], input[type="reset"] {
   	margin: 5.5% 0 0 0;
   	padding: 0 0% 0 0%;
 }
-#text-2{
+/*#text-2{
 	background-image: url(images/map.png);
 	background-position: left;
     background-repeat: no-repeat;
     background-size: 90%;
-}
+}*/
 .widget_text h3,.widget_nav_menu h3 {
 	text-transform: uppercase;
 	color: #fff;
@@ -520,6 +520,9 @@ input[type="submit"], input[type="reset"] {
 	background-size: 100% 100%;
 	height: 500px;
 }
+.logofon img {
+	width: 100%;
+}
 .logofon2{
 	display: table;
 	margin: auto;
@@ -567,6 +570,9 @@ input[type="submit"], input[type="reset"] {
 .eleven.columns .blog_post .post-content {
   	width: 720px;
   	margin-right: 30px;
+}
+.container .eleven.columns {
+  width: 820px;
 }
 .blog_post .post-content .entry-content, .blog_post .post-content .entry-summary {
   	padding-left: 0;
@@ -653,7 +659,7 @@ input[type="submit"], input[type="reset"] {
 	padding-right: 2%;
 }
 .entry-meta {
-  	width: 626px;
+  	width: 810px;
   	float: left;
 /*  	padding-left: 2%;*/
 }
@@ -761,7 +767,7 @@ header.post-header .post-title2 a, .sticky-post h2 a {
 }
 .blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post {
   	margin: 0;
-  	height: 263px;
+/*  	height: 263px;*/
   	width: 363px;
   	margin: 0px 9px 12px 0;
 }
@@ -791,27 +797,32 @@ property .property-image {
   /*height: 160px;*/
 }
 .property .property-image {
-  /*height: 195px;*/
-  overflow: hidden;
-  width: 100%;
+  	/*height: 195px;*/
+  	overflow: hidden;
+  	width: 100%;
+	height: 265px;
+}
+.property-image2 {
+	overflow: hidden;
+  	width: 100%;
 }
 .property img {
-  -moz-transition: 0.4s;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  -moz-backface-visibility: hidden;
-  max-width: 100%;
-  position: relative;
-  top: 0;
+  	-moz-transition: 0.4s;
+  	-webkit-transition: 0.4s;
+  	transition: 0.4s;
+  	-moz-backface-visibility: hidden;
+  	max-width: 100%;
+  	position: relative;
+  	top: 0;
 }
 .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  	display: block;
+  	max-width: 100%;
+  	height: auto;
 }
 .property:hover img, .property:active img, .property:focus img {
-  -moz-backface-visibility: hidden;
-  top: -10px;
+  	-moz-backface-visibility: hidden;
+  	top: -10px;
 }
 /*@media (min-width: 992px)
 .col-md-3 {
@@ -862,7 +873,7 @@ property .property-image {
   	color: #fff;
 }
 .blog .blog_post:last-of-type, .category .blog_post:last-of-type, .tag .blog_post:last-of-type, .author .blog_post:last-of-type, .search .blog_post:last-of-type {
-  	margin: 0 0 3px;
+  	margin: 0;
 }
 .entry-thumbnail {
   	margin: 0;
@@ -1012,7 +1023,7 @@ header.post-header, .blog_post {
 	.widget_text		{padding: 0px 3% 0px 1%;width: 32%;}
 	#colophon .social-icon {float: none;/*margin-left: 30%;*/}
 	#license 			{width: 100%;margin: auto}
-	#page2 				{height: 100%;}
+	#copyright 				{height: 100%;}
 	.footer li 			{width: 25%;}
 	.widget 			{width: 75%;}
 	.widget_text		{width: 50%;}
@@ -1033,7 +1044,7 @@ header.post-header, .blog_post {
 	.social-icon 		{margin: auto;}
 	#colophon .social-icon {float: none;/*margin-left: 30%;*/}
 	#license 			{width: 100%;margin: auto}
-	#page2 				{height: 100%;}
+	#copyright 				{height: 100%;}
 	.footer li 			{width: 40%;}
 	.select-menu 		{width: 98%;}
 	.responsive .select-menu {margin: 16px 0 25px 10px !important;}

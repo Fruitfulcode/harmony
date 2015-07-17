@@ -25,12 +25,12 @@
 				<div id="back-to-top">
 					<a rel="nofollow" href="#top" title="Back to top"><i class="fa fa-chevron-up"></i>top</a>
 				</div>
-					<div id="page3">
+					<div id="footer">
 						<div class="sixteen columns">
 							<?php dynamic_sidebar('sidebar-8'); ?>
 						</div>
 					</div>
-				<div id="page2">
+				<div id="copyright">
 					<div class="footer-footer">
 						<div class="license">
 							<p id="license">© 2015 Harmony theme by  <span class="colortext">fruitfulcode</span> 

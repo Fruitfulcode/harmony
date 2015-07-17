@@ -22,7 +22,7 @@
 								<article id="sticky-post" <?php post_class('blog_post'); ?>>
 									<div class="property">
 										<a href="<?php the_permalink(); ?>">
-											<div class="property-image">
+											<div class="property-image2">
 												<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sticky_img');echo ''.$full_image_url[0] . '';} ?>>
 											</div>
 											<div class="overlay-blog2">

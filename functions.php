@@ -61,12 +61,16 @@ class fruitful_news_widget extends WP_Widget
 	}
 	public function widget( $args, $instance ) {
 		$title = apply_filters('widget_title',$instance['title']);
+		$count = 0;
 		echo $args['before_widget'];
 		if (!empty($title)){
 			echo $args['before_title'].$title.$args['after_title'];
 			}
-				$pc = new WP_Query('posts_per_page=5'); ?>
+				$pc = new WP_Query('posts_per_page=6'); ?>
 				<?php while ($pc->have_posts()) : $pc->the_post(); ?>
+					<?php if (is_sticky() && $count==0) 
+						$pc = new WP_Query('posts_per_page=4'); $count++;?>
+
 					<li>
 						<?php 
 						if(has_post_thumbnail()){
@@ -109,6 +113,106 @@ class fruitful_news_widget extends WP_Widget
 		register_widget( 'fruitful_news_widget' );
 	}
 	add_action( 'widgets_init', 'fruit_load_widget' );
+
+
+
+
+
+
+add_action( 'widgets_init', 'my_widget' );
+
+
+function my_widget() {
+	register_widget( 'MY_Widget' );
+}
+
+class MY_Widget extends WP_Widget {
+
+	function MY_Widget() {
+		$widget_ops = array( 'classname' => 'example', 'description' => __('A widget that displays the authors name ', 'example') );
+		
+		$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'example-widget' );
+		
+		$this->WP_Widget( 'example-widget', __('Example Widget', 'example'), $widget_ops, $control_ops );
+	}
+	
+	function widget( $args, $instance ) {
+		extract( $args );
+
+		//Our variables from the widget settings.
+		$address = apply_filters('widget_title', $instance['address'] );
+		$email = $instance['email'];
+		$show_info = isset( $instance['show_info'] ) ? $instance['show_info'] : false;
+
+		echo $before_widget;
+
+		// Display the widget address 
+		if ( $address )
+			echo $before_title . $address . $after_title;
+
+		//Display the email 
+		if ( $email )
+			printf( '<p>' . __('<i class="fa fa-envelope"></i> %1$s', 'example') . '</p>', $email );
+
+		
+		if ( $show_info )
+			printf( $email );
+
+		
+		echo $after_widget;
+	}
+
+	//Update the widget 
+	 
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+
+		//Strip tags from title and name to remove HTML 
+		$instance['address'] = strip_tags( $new_instance['address'] );
+		$instance['email'] = strip_tags( $new_instance['email'] );
+		$instance['show_info'] = $new_instance['show_info'];
+
+		return $instance;
+	}
+
+	
+	function form( $instance ) {
+
+		//Set up some default widget settings.
+		$defaults = array( 'address' => __('Example', 'example'), 'email' => __('My e-mail@harmony.com', 'example'), 'show_info' => true );
+		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
+
+		//Widget Title: Text Input.
+		<p>
+			<label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e('Title:', 'example'); ?></label>
+			<input id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>" value="<?php echo $instance['address']; ?>" style="width:100%;" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e('Your email:', 'example'); ?></label>
+			<input id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" value="<?php echo $instance['email']; ?>" style="width:100%;" />
+		</p>
+
+		
+		//Checkbox.
+		<p>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['show_info'], true ); ?> id="<?php echo $this->get_field_id( 'show_info' ); ?>" name="<?php echo $this->get_field_name( 'show_info' ); ?>" /> 
+			<label for="<?php echo $this->get_field_id( 'show_info' ); ?>"><?php _e('Display info publicly?', 'example'); ?></label>
+		</p>
+
+	<?php
+	}
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -302,8 +406,17 @@ if ( ! function_exists( 'fruitful_get_content_with_custom_sidebar' ) ) {
 								while ( have_posts() ) : the_post();
 									if (is_page() && !is_front_page() && !is_home()) {
 										get_template_part( 'content', 'page' ); 
+
+										if (fruitful_state_page_comment()) { 
+											comments_template( '', true );  
+										}
 									} else if (is_single()) {
 										get_template_part( 'content', get_post_format() );	
+										fruitful_content_nav( 'nav-below' );
+									
+										if (fruitful_state_post_comment()) { 
+											if ( comments_open() || '0' != get_comments_number() ) comments_template();  
+										}
 									} else if (is_front_page())	{
 										get_template_part( 'content', 'page' );
 									}
