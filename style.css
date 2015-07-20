@@ -54,11 +54,14 @@ a 	{text-decoration: none;}
 #copyright {
 	margin: auto;
 	background-color: #202020;
+	display: table;
+  	width: 100%;
 }
 #footer {
 	width: 100%;
 	background-color: #282828;
 	margin: auto;
+	display: table;
 }
 .entry-content, .entry-summary {
    	margin: 0; 
@@ -288,7 +291,7 @@ input[type="submit"], input[type="reset"] {
 	width: 1448px;
 	color: #fff;
 }
-.widget_text {
+.widget_text,.widget.contact_us {
   	float: left;
   	width: 27%;
   	margin: 5.5% 15% 10% 0;
@@ -299,13 +302,20 @@ input[type="submit"], input[type="reset"] {
   	margin: 5.5% 0 0 0;
   	padding: 0 0% 0 0%;
 }
-/*#text-2{
+.widget.contact_us{
 	background-image: url(images/map.png);
 	background-position: left;
     background-repeat: no-repeat;
     background-size: 90%;
-}*/
-.widget_text h3,.widget_nav_menu h3 {
+}
+.widget.contact_us a, .widget.contact_us p{
+	color: #B0B1B4;
+    font-size: 18px;
+    text-align: inherit;
+  	line-height: 25px; 
+}
+
+.widget_text h3,.widget_nav_menu h3, .contact_us h3 {
 	text-transform: uppercase;
 	color: #fff;
 	font-weight: bold;
@@ -1023,7 +1033,7 @@ header.post-header, .blog_post {
 	.widget_text		{padding: 0px 3% 0px 1%;width: 32%;}
 	#colophon .social-icon {float: none;/*margin-left: 30%;*/}
 	#license 			{width: 100%;margin: auto}
-	#copyright 				{height: 100%;}
+	#copyright 			{height: 100%;}
 	.footer li 			{width: 25%;}
 	.widget 			{width: 75%;}
 	.widget_text		{width: 50%;}

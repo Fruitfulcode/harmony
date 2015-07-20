@@ -61,17 +61,16 @@ class fruitful_news_widget extends WP_Widget
 	}
 	public function widget( $args, $instance ) {
 		$title = apply_filters('widget_title',$instance['title']);
-		$count = 0;
 		echo $args['before_widget'];
 		if (!empty($title)){
 			echo $args['before_title'].$title.$args['after_title'];
 			}
 				$pc = new WP_Query('posts_per_page=6'); ?>
 				<?php while ($pc->have_posts()) : $pc->the_post(); ?>
-					<?php if (is_sticky() && $count==0) 
-						$pc = new WP_Query('posts_per_page=4'); $count++;?>
-
 					<li>
+						<?php 
+						if (is_sticky() && $count==0) 
+						$pc = new WP_Query('ignore_sticky_posts=1&posts_per_page=5'); $count++;?>
 						<?php 
 						if(has_post_thumbnail()){
 							?><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array());?></a><?php
@@ -119,98 +118,79 @@ class fruitful_news_widget extends WP_Widget
 
 
 
-add_action( 'widgets_init', 'my_widget' );
+add_action( 'widgets_init', 'ContactUs_widget' );
 
-
-function my_widget() {
-	register_widget( 'MY_Widget' );
+function ContactUs_widget() 
+{
+	register_widget( 'ContactUs_Widget' );
 }
+class ContactUs_Widget extends WP_Widget 
+{
 
-class MY_Widget extends WP_Widget {
-
-	function MY_Widget() {
-		$widget_ops = array( 'classname' => 'example', 'description' => __('A widget that displays the authors name ', 'example') );
-		
-		$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'example-widget' );
-		
-		$this->WP_Widget( 'example-widget', __('Example Widget', 'example'), $widget_ops, $control_ops );
+	function ContactUs_Widget() 
+	{
+		$widget_ops = array( 'classname' => 'contact_us', 'description' => __('Simple contact information ', 'contact_us') );
+		$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'contact_us-widget' );
+		$this->WP_Widget( 'contact_us-widget', __('Harmony Contact Information', 'contact_us'), $widget_ops, $control_ops );
 	}
-	
-	function widget( $args, $instance ) {
+	function widget( $args, $instance )
+	{
 		extract( $args );
-
-		//Our variables from the widget settings.
-		$address = apply_filters('widget_title', $instance['address'] );
+		$address = $instance['address'];
 		$email = $instance['email'];
-		$show_info = isset( $instance['show_info'] ) ? $instance['show_info'] : false;
+		$phone = $instance['phone'];
 
 		echo $before_widget;
-
-		// Display the widget address 
-		if ( $address )
-			echo $before_title . $address . $after_title;
-
-		//Display the email 
-		if ( $email )
-			printf( '<p>' . __('<i class="fa fa-envelope"></i> %1$s', 'example') . '</p>', $email );
-
-		
-		if ( $show_info )
-			printf( $email );
-
-		
+		?>
+		<div class="contact_us">
+			<h3>Contact Information</h3>
+		<?php
+			if ( $address )
+				printf( '<p>' . __('<i class="fa fa-map-marker"></i> %1$s', 'contact_us') . '</p>', $address );
+			if ( $show_info )
+				printf( $email );
+			if ( $email )
+				printf( __('<a href="mailto:%1$s"><i class="fa fa-envelope"></i> %1$s</a>', 'contact_us') . '<br><br>', $email );
+			if ( $show_info )
+				printf( $email );
+			if ( $phone )
+				printf( __('<a href="tel:%1$s"><i class="fa fa-phone"></i> %1$s</a>', 'contact_us'), $phone );
+			if ( $show_info )
+				printf( $phone );
+		?>
+		</div>
+		<?php
 		echo $after_widget;
 	}
-
-	//Update the widget 
-	 
-	function update( $new_instance, $old_instance ) {
+	function update( $new_instance, $old_instance ) 
+	{
 		$instance = $old_instance;
-
-		//Strip tags from title and name to remove HTML 
 		$instance['address'] = strip_tags( $new_instance['address'] );
 		$instance['email'] = strip_tags( $new_instance['email'] );
-		$instance['show_info'] = $new_instance['show_info'];
+		$instance['phone'] = strip_tags( $new_instance['phone'] );
 
 		return $instance;
 	}
 
-	
-	function form( $instance ) {
+	function form( $instance ) 
+	{
 
-		//Set up some default widget settings.
-		$defaults = array( 'address' => __('Example', 'example'), 'email' => __('My e-mail@harmony.com', 'example'), 'show_info' => true );
-		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
-
-		//Widget Title: Text Input.
+		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e('Title:', 'example'); ?></label>
+			<label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e('Your address:', 'contact_us'); ?></label>
 			<input id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>" value="<?php echo $instance['address']; ?>" style="width:100%;" />
 		</p>
-
 		<p>
-			<label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e('Your email:', 'example'); ?></label>
+			<label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e('Your email:', 'contact_us'); ?></label>
 			<input id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" value="<?php echo $instance['email']; ?>" style="width:100%;" />
 		</p>
-
-		
-		//Checkbox.
 		<p>
-			<input class="checkbox" type="checkbox" <?php checked( $instance['show_info'], true ); ?> id="<?php echo $this->get_field_id( 'show_info' ); ?>" name="<?php echo $this->get_field_name( 'show_info' ); ?>" /> 
-			<label for="<?php echo $this->get_field_id( 'show_info' ); ?>"><?php _e('Display info publicly?', 'example'); ?></label>
+			<label for="<?php echo $this->get_field_id( 'phone' ); ?>"><?php _e('Your phone:', 'contact_us'); ?></label>
+			<input id="<?php echo $this->get_field_id( 'phone' ); ?>" name="<?php echo $this->get_field_name( 'phone' ); ?>" value="<?php echo $instance['phone']; ?>" style="width:100%;" />
 		</p>
-
 	<?php
 	}
 }
-
-
-
-
-
-
-
-
 
 
 
