@@ -8,7 +8,8 @@
 <?php $options = fruitful_get_theme_options(); ?>
 	<div class="post-content">	
 		<header class="post-header">
-			<?php if ( is_single() ) : ?>
+			<?php 
+			if ( is_single() ) : ?>
 			<?php else : ?>
 				<?php if (get_the_title() != '') : ?>
 				<?php endif; ?>
@@ -17,7 +18,8 @@
 			<?php if ( !is_single() ) : ?>
 				<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 					<div class="entry-thumbnail">
-						<?php if ( is_sticky() ) : ?>
+						<?php 
+						if ( is_sticky() ) : ?>
 							<div class="sticky-post">
 								<article id="sticky-post" <?php post_class('blog_post'); ?>>
 									<div class="property">
@@ -28,10 +30,10 @@
 											<div class="overlay-blog2">
 												<div class="info">
 													<h2>
-														<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fruitful' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+														<?php the_title(); ?>
 													</h2> 
 													<div class="additional-info2">
-														<span class="post_tree"><?php the_excerpt(); ?><span id="colortext"> <?php echo trim_characters(50, '...'); ?></span></span>
+														<span class="post_tree"><?php the_excerpt(); ?></span>
 													</div>
 												</div>
 											</div>
@@ -39,27 +41,21 @@
 									</div>
 								</article>
 							</div>
-						<?php else : ?>
-							<article  id="post-<?php the_ID(); ?>" <?php post_class('blog_post'); ?>>
-								<div class="property">
-									<a href="<?php the_permalink(); ?>">
-										<div class="property-image">
-											<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog_img2');echo ''.$full_image_url[0] . '';} ?>>
-										</div> 
-										<div class="overlay-blog">
-											<div class="info">
-												<h3 class="post-title2 entry-title">
-													<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fruitful' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
-												</h3>
-												<div class="additional-info">
-													<h2>test</h2>
-												</div>
-											</div>
-										</div>
-									</a>
+						<?php 
+						else : ?>
+							<?php 
+							if ($count < 2) : ?>
+								<div class="default-post">
+									<?php harmony_blog_structure(); ?>
 								</div>
-							</article>
-						<?php endif;  ?>
+							<?php 
+							else : ?>
+								<div class="default-post2">
+									<?php harmony_blog_structure(); ?>
+								</div>
+							<?php 
+							endif;
+						endif; ?>
 					</div>
 				<?php endif; ?>
 			<?php endif; ?>
@@ -88,4 +84,6 @@
 			?>
 		<?php endif; ?>
 	</div>
+
+
 		

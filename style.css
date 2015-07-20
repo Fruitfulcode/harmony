@@ -19,7 +19,7 @@ Text Domain: fruitful
 	margin: auto;
 }
 .container .sixteen.columns {
-    margin: 30px 10px 10px 0px;
+    margin: 10px 10px 10px 0px;
     width: 100%;
 }
 .container .eleven.columns {
@@ -755,12 +755,18 @@ input[type="submit"], input[type="reset"] {
 
 /*BLOG*/
 
-.sticky-post h2 {
+.sticky-post h2  {
 	font-family: 'Oswald', sans-serif !important;
   	line-height: 50px;
   	border: none;
   	padding: 0;
   	margin: 0% 0px 14px 25px;
+  	color: #fff;
+}
+.info h3 {
+	font-family: 'Oswald', sans-serif !important;
+  	margin: 0% 0px 10px 20px;
+  	color: #fff;
 }
 header.post-header .post-title2{
 	line-height: 25px;
@@ -810,7 +816,7 @@ property .property-image {
   	/*height: 195px;*/
   	overflow: hidden;
   	width: 100%;
-	height: 265px;
+	height: 264.5px;
 }
 .property-image2 {
 	overflow: hidden;
@@ -852,6 +858,7 @@ property .property-image {
   	overflow: hidden;
   	position: relative;
   	width: 100%;
+  	height: 100%;
 }
 .property .overlay-blog .info, .property .overlay-blog2 .info {
   	background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
@@ -866,13 +873,16 @@ property .property-image {
   	bottom: 0px;
 }
 .additional-info {
-  	display: table;
-  	height: 30px;
+  	height: 80px;
   	list-style: none;
   	margin: 0;
-  	width: 100%;
+  	width: 97%;
   	padding: 8px 12px;
   	color: #fff;
+}
+.additional-info p {
+	font-size: 12px;
+	line-height: 15px;
 }
 .additional-info2 {
   	height: 160px;

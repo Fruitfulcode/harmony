@@ -65,12 +65,9 @@ class fruitful_news_widget extends WP_Widget
 		if (!empty($title)){
 			echo $args['before_title'].$title.$args['after_title'];
 			}
-				$pc = new WP_Query('posts_per_page=6'); ?>
+				$pc = new WP_Query('ignore_sticky_posts=1&posts_per_page=6'); ?>
 				<?php while ($pc->have_posts()) : $pc->the_post(); ?>
 					<li>
-						<?php 
-						if (is_sticky() && $count==0) 
-						$pc = new WP_Query('ignore_sticky_posts=1&posts_per_page=5'); $count++;?>
 						<?php 
 						if(has_post_thumbnail()){
 							?><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array());?></a><?php
@@ -201,10 +198,10 @@ if ( function_exists( 'add_image_size' ) ) {
 }
 
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'blog_img2', 365, 265, true ); // new solution for blog pictures
+	add_image_size( 'blog_img2', 365, 275, true ); // new solution for blog pictures
 }
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'sticky_img', 767, 530, true ); // new solution for sticky post pictures
+	add_image_size( 'sticky_img', 767, 540, true ); // new solution for sticky post pictures
 }
 
 
@@ -638,3 +635,34 @@ function fruitful_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 endif; 
+
+
+
+
+if (!function_exists('harmony_blog_structure')) 
+{
+	function harmony_blog_structure()
+	{
+		?>						
+		<article  id="post-<?php the_ID(); ?>" <?php post_class('blog_post'); ?>>
+			<div class="property">
+				<a href="<?php the_permalink(); ?>">
+					<div class="property-image">
+						<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog_img2');echo ''.$full_image_url[0] . '';} ?>>
+					</div> 
+					<div class="overlay-blog">
+						<div class="info">
+							<h3>
+								<?php the_title(); ?>
+							</h3>
+							<div class="additional-info">
+								<span class="post_tree"><?php the_excerpt(); ?></span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</article>
+		<?php
+	}
+}
