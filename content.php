@@ -5,7 +5,9 @@
  * @since Fruitful theme 1.0
  */
 ?>
-<?php $options = fruitful_get_theme_options(); ?>
+<?php $options = fruitful_get_theme_options(); 
+$sticky = count(get_option('sticky_posts'));
+$default = $wp_query->post_count; ?>
 	<div class="post-content">	
 		<header class="post-header">
 			<?php 
@@ -18,44 +20,47 @@
 			<?php if ( !is_single() ) : ?>
 				<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 					<div class="entry-thumbnail">
-						<?php 
-						if ( is_sticky() ) : ?>
-							<div class="sticky-post">
-								<article id="sticky-post" <?php post_class('blog_post'); ?>>
-									<div class="property">
-										<a href="<?php the_permalink(); ?>">
-											<div class="property-image2">
-												<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sticky_img');echo ''.$full_image_url[0] . '';} ?>>
-											</div>
-											<div class="overlay-blog2">
-												<div class="info">
-													<h2>
-														<?php the_title(); ?>
-													</h2> 
-													<div class="additional-info2">
-														<span class="post_tree"><?php the_excerpt(); ?></span>
-													</div>
-												</div>
-											</div>
-										</a>
-									</div>
-								</article>
-							</div>
-						<?php 
-						else : ?>
+						<?php if ($sticky == 0 && $default == 1): ?>
+							
+						<?php endif;?>
+						<?php if ($sticky == 0 && $default == 2): ?>
+							
+						<?php endif;?>
+						<?php if ($sticky == 0 && $default > 2): ?>
+							
+						<?php endif;?>
+						<?php if ($sticky == 1 && $default == 0): ?>
+							
+						<?php endif;?>
+						<?php if ($sticky == 1 && $default == 1): ?>
+							
+						<?php endif;?>
+						<?php if ($sticky == 1 && $default == 2): ?>
+							
+						<?php endif;?>
+
+						<?php  /*sticky-1 default>2*/
+						if ($sticky == 1 && $default > 2): ?>
 							<?php 
-							if ($count < 2) : ?>
-								<div class="default-post">
-									<?php harmony_blog_structure(); ?>
-								</div>
+							if ( is_sticky() ) : ?>
+								<?php harmony_s1_d2more(); ?>
 							<?php 
 							else : ?>
-								<div class="default-post2">
-									<?php harmony_blog_structure(); ?>
-								</div>
-							<?php 
-							endif;
-						endif; ?>
+								<?php harmony_blog_structure(); ?>
+							<?php
+							endif;?>	
+						<?php 
+						endif;?>
+
+						<?php if ($sticky == 2): ?>
+							
+						<?php endif;?>
+						<?php if ($sticky == 3): ?>
+							
+						<?php endif;?>
+						<?php if ($sticky > 3): ?>
+							
+						<?php endif;?>
 					</div>
 				<?php endif; ?>
 			<?php endif; ?>
