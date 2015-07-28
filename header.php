@@ -29,7 +29,6 @@
 		<?php
 			$theme_options  = fruitful_ret_options("fruitful_theme_options");
 			$logo_pos = $menu_pos = '';
-			
 			if (isset($theme_options['logo_position'])) 
 			$logo_pos = esc_attr($theme_options['logo_position']);
 			
@@ -131,5 +130,5 @@
 			<div class="container">		
 				<?php do_action( 'before' ); ?>		
 					<div class="sixteen columns">
-						<?php harmony_entry_meta(); ?>
+						
 

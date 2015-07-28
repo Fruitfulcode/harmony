@@ -82,6 +82,7 @@ $default = $wp_query->post_count; ?>
 		<?php else : ?>
 			<?php if ( is_single() ) : ?>
 				<div class="entry-content">
+					<?php harmony_entry_meta(); ?>
 					<?php the_content( __( 'Read More <span class="meta-nav">&rarr;</span>', 'fruitful' ) ); ?>
 					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'fruitful' ), 'after' => '</div>' ) ); ?>
 				</div><!-- .entry-content -->

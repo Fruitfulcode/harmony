@@ -222,7 +222,7 @@ input[type=text], input[type=email], input[type=url] {
 input[type="submit"], input[type="reset"] {
   	background-color: #f64747 !important;
     padding: 16px 50px;
-  	float: right;
+  	float: left;
   	font-style: italic;
 }
 /*.hentry {
@@ -375,6 +375,44 @@ input[type="submit"], input[type="reset"] {
 #searchforms {
 	width: 23%;
 	margin:auto;
+}
+.comment-author.vcard{
+	float: left;
+	margin-top: 10px;
+}
+.comment-content {
+    padding: 5px 0 0 0 ;
+}
+cite {
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    margin-right: 10px;
+    float: left;
+    color: #F64747;
+}
+.comment-content p {
+	margin: 0px 0 10px 0 ;
+}
+.commentlist{
+	margin: 0 0 0 0;
+}
+.commentlist .reply {
+    text-transform: uppercase;
+    font-family: 'Oswald';
+    font-weight: bold;
+}
+.comments-title{
+	margin-bottom: 2%;
+	text-transform: uppercase;
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 20px;
+}
+.site-content .site-navigation {
+    margin-top: 35px;
 }
 
 
@@ -657,7 +695,6 @@ input[type="submit"], input[type="reset"] {
 }
 .tag-links{
 	text-transform: uppercase;
-	margin-bottom: 40px;
 	float: left;
 	width: 52%;
 }
@@ -742,7 +779,7 @@ input[type="submit"], input[type="reset"] {
 	font-size: initial;
 }
 .comment-body {
-  	padding: 0px 0;
+  	padding: 20px 0;
   	position: relative;
 }
 .commentsErrorBox {
@@ -840,19 +877,13 @@ property .property-image {
   	-moz-backface-visibility: hidden;
   	top: -10px;
 }
-/*@media (min-width: 992px)
-.col-md-3 {
-  width: 25%;
-}*/
-@media (min-width: 992px)
+@media (min-width: 992px){
 .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
   float: left;
 }
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   	position: relative;
   	min-height: 1px;
-/*  	padding-left: 15px;
-  	padding-right: 15px;*/
 }
 .property {
   	overflow: hidden;
@@ -901,13 +932,6 @@ property .property-image {
 .post_tree p {
 	width: 96%;
 }
-
-
-
-
-
-
-
 
 
 #sticky-post{
@@ -959,20 +983,9 @@ body.blog article, body.archive article {
 header.post-header, .blog_post {
    width: inherit;
 }
-/*a img, img {
-  	border: 0;
-  	width: 100%;
-  	height: 100%;
-}*/
 
 /* RESPONSIVE */
 
-
-/*@media screen and (max-width: 1200px) {
-	.footer li 			{width: 15%;}
-	.widget_text		{padding: 0px 8% 0px 3%;}
-	.contact-form2, .search_form2{margin-top: 30%;}
-}*/
 @media screen and (max-width: 1024px) {
 	.sixteen.columns,
 	.container 			{width: 960px;margin:0 0 0 3% ;}
