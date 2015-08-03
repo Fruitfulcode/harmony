@@ -706,7 +706,7 @@ cite {
 	padding-right: 2%;
 }
 .entry-meta {
-  	width: 810px;
+  	width: 100%;
   	float: left;
 /*  	padding-left: 2%;*/
 }
@@ -792,14 +792,14 @@ cite {
 
 /*BLOG*/
 
-.sticky-post h2  {
+/* .sticky-post h2  {
 	font-family: 'Oswald', sans-serif !important;
   	line-height: 50px;
   	border: none;
   	padding: 0;
   	margin: 0% 0px 14px 25px;
   	color: #fff;
-}
+} */
 .info h3 {
 	font-family: 'Oswald', sans-serif !important;
   	margin: 0% 0px 10px 20px;
@@ -813,7 +813,7 @@ header.post-header .post-title2{
   	font-family: 'Oswald', sans-serif !important;
 
 }
-header.post-header .post-title2 a, .sticky-post h2 a {
+header.post-header .post-title2 a/* , .sticky-post h2 a  */{
   	text-decoration: none;
   	color: #fff;
 
@@ -821,8 +821,8 @@ header.post-header .post-title2 a, .sticky-post h2 a {
 .blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post {
   	margin: 0;
 /*  	height: 263px;*/
-  	width: 363px;
-  	margin: 0px 9px 12px 0;
+  	width: 365px;
+  	margin: 0px 17px 20px 0;
 }
 
 
@@ -836,7 +836,7 @@ header.post-header .post-title2 a, .sticky-post h2 a {
   	width: 100%;
   	z-index: 1;
 }
-.property .overlay-blog2 {
+/* .property .overlay-blog2 {
   	-moz-transition: 0.4s;
   	-webkit-transition: 0.4s;
   	transition: 0.4s;
@@ -845,7 +845,7 @@ header.post-header .post-title2 a, .sticky-post h2 a {
   	position: absolute;
   	width: 100%;
   	z-index: 1;
-}
+} */
 property .property-image {
   /*height: 160px;*/
 }
@@ -855,10 +855,10 @@ property .property-image {
   	width: 100%;
 	height: 264.5px;
 }
-.property-image2 {
+/* .property-image2 {
 	overflow: hidden;
   	width: 100%;
-}
+} */
 .property img {
   	-moz-transition: 0.4s;
   	-webkit-transition: 0.4s;
@@ -891,7 +891,7 @@ property .property-image {
   	width: 100%;
   	height: 100%;
 }
-.property .overlay-blog .info, .property .overlay-blog2 .info {
+.property .overlay-blog .info, .grid-sticky_with-posts_post-two_post-one .sticky .property .overlay-blog .info,  .sticky .property .overlay-blog .info {
   	background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
   	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(0, 0, 0, 0.75)));
   	background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
@@ -900,7 +900,8 @@ property .property-image {
   	background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
   	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
 }
-.property:hover .overlay-blog, .property:active .overlay-blog, .property:focus .overlay-blog, .property:hover .overlay-blog2, .property:active .overlay-blog2, .property:focus .overlay-blog2 {
+.property:hover .overlay-blog, .property:active .overlay-blog, .property:focus .overlay-blog, .grid-sticky_with-posts_post-two_post-one .sticky .property:hover .overlay-blog, .grid-sticky_with-posts_post-two_post-one .sticky .property:active .overlay-blog, .grid-sticky_with-posts_post-two_post-one .sticky .property:focus .overlay-blog,
+.sticky .property:hover .overlay-blog, .sticky .property:active .overlay-blog, .sticky .property:focus .overlay-blog {
   	bottom: 0px;
 }
 .additional-info {
@@ -915,14 +916,6 @@ property .property-image {
 	font-size: 12px;
 	line-height: 15px;
 }
-.additional-info2 {
-  	height: 160px;
-  	list-style: none;
-  	margin: 0;
-  	width: 98%;
-  	padding: 8px 25px;
-  	color: #fff;
-}
 .blog .blog_post:last-of-type, .category .blog_post:last-of-type, .tag .blog_post:last-of-type, .author .blog_post:last-of-type, .search .blog_post:last-of-type {
   	margin: 0;
 }
@@ -934,10 +927,10 @@ property .property-image {
 }
 
 
-#sticky-post{
+/* #sticky-post{
 	width: 100%;
 	height: 100%;
-}
+} */
 .entry-thumbnail {
 	padding: 0;
 	width: 100%;
@@ -976,13 +969,123 @@ body.blog article, body.archive article {
 	margin-bottom: 10px;
 	position: relative;
 }
-.sticky-post {
+/* .sticky-post {
 	width: 767px;
 	height: 529px;
-}
-header.post-header, .blog_post {
+} */
+/* header.post-header, .blog_post {
    width: inherit;
+} */
+
+
+
+/* 1 sticky - 0 default */
+
+.sticky {
+	width: 100% !important;
+	margin-bottom: 20px;
 }
+.sticky .property {
+    height: 500px;
+}
+.sticky h3{
+	font-size: 36px;
+}
+.sticky p{
+	font-size: 18px;
+	line-height: 25px;
+}
+.sticky .property .property-image {
+	height: 100%;
+}
+.sticky .additional-info {
+  	height: 160px;
+  	list-style: none;
+  	margin: 0;
+  	width: 98%;
+  	padding: 8px 25px;
+  	color: #fff;
+}
+.sticky .property .overlay-blog {
+  	-moz-transition: 0.4s;
+  	-webkit-transition: 0.4s;
+  	transition: 0.4s;
+  	bottom: -150px;
+  	left: 0;
+  	position: absolute;
+  	width: 100%;
+  	z-index: 1;
+}
+
+
+
+
+/* 2 sticky - 0 default */
+
+.grid-sticky-odd {
+	display: table;
+}
+.grid-sticky-odd .sticky {
+	width: 49% !important;
+}
+.grid-sticky-odd .sticky .property {
+    height: 310px;
+}
+.grid-sticky-odd .sticky h3 {
+    font-size: 28px;
+}
+.grid-sticky-odd .sticky .additional-info {
+    padding: 2px 16px;
+}
+
+
+
+/* 1 sticky - 2 default */
+
+.grid-sticky_with-posts_post-two_post-one .blog_post {
+	margin: 0;
+}
+.grid-sticky_with-posts_post-two_post-one{
+	width: 100%;
+	height: 529px;
+	margin-bottom: 20px;
+}
+.grid-sticky_with-posts_post-two_post-one .sticky{
+	width: 765px !important;
+	height: 100%;
+}
+.grid-sticky_with-posts_post-two_post-one .sticky .property .property-image {
+	height: 519px;
+}
+.grid-sticky_with-posts_post-two_post-one .sticky h3{
+	font-size: 36px;
+}
+.grid-sticky_with-posts_post-two_post-one .sticky p{
+	font-size: 18px;
+	line-height: 25px;
+}
+.grid-sticky_with-posts_post-two_post-one .sticky .additional-info {
+  	height: 160px;
+  	list-style: none;
+  	margin: 0;
+  	width: 98%;
+  	padding: 8px 25px;
+  	color: #fff;
+}
+.grid-sticky_with-posts_post-two_post-one .sticky .property .overlay-blog {
+  	-moz-transition: 0.4s;
+  	-webkit-transition: 0.4s;
+  	transition: 0.4s;
+  	bottom: -150px;
+  	left: 0;
+  	position: absolute;
+  	width: 100%;
+  	z-index: 1;
+}
+
+
+
+
 
 /* RESPONSIVE */
 

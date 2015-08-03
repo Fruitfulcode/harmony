@@ -5,77 +5,51 @@
  * @since Fruitful theme 1.0
  */
 ?>
-<?php $options = fruitful_get_theme_options(); 
-$sticky = count(get_option('sticky_posts'));
-$default = $wp_query->post_count; ?>
+<?php $options = fruitful_get_theme_options(); ?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class('blog_post'); ?>>
+
+	
 	<div class="post-content">	
 		<header class="post-header">
-			<?php 
-			if ( is_single() ) : ?>
-			<?php else : ?>
-				<?php if (get_the_title() != '') : ?>
-				<?php endif; ?>
-			<?php endif;  ?>		
-			
+
 			<?php if ( !is_single() ) : ?>
 				<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 					<div class="entry-thumbnail">
-						<?php if ($sticky == 0 && $default == 1): ?>
-							
-						<?php endif;?>
-						<?php if ($sticky == 0 && $default == 2): ?>
-							
-						<?php endif;?>
-						<?php if ($sticky == 0 && $default > 2): ?>
-							
-						<?php endif;?>
-						<?php if ($sticky == 1 && $default == 0): ?>
-							
-						<?php endif;?>
-						<?php if ($sticky == 1 && $default == 1): ?>
-							
-						<?php endif;?>
-						<?php if ($sticky == 1 && $default == 2): ?>
-							
-						<?php endif;?>
+					
+						<div class="property">
+							<a href="<?php the_permalink(); ?>">
+								<div class="property-image">
+									<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog_img2');echo ''.$full_image_url[0] . '';} ?>>
+								</div> 
+								<div class="overlay-blog">
+									<div class="info">
+										<h3>
+											<?php the_title(); ?>
+										</h3>
+										<div class="additional-info">
+											<span class="post_tree"><?php the_excerpt(); ?></span>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
 
-						<?php  /*sticky-1 default>2*/
-						if ($sticky == 1 && $default > 2): ?>
-							<?php 
-							if ( is_sticky() ) : ?>
-								<?php harmony_s1_d2more(); ?>
-							<?php 
-							else : ?>
-								<?php harmony_blog_structure(); ?>
-							<?php
-							endif;?>	
-						<?php 
-						endif;?>
-
-						<?php if ($sticky == 2): ?>
-							
-						<?php endif;?>
-						<?php if ($sticky == 3): ?>
-							
-						<?php endif;?>
-						<?php if ($sticky > 3): ?>
-							
-						<?php endif;?>
 					</div>
 				<?php endif; ?>
-			<?php endif; ?>
+			<?php endif; // is_single() ?>
 			<?php if ( is_single() ) : 
 					if ($options['show_featured_single'] == 'on'){
 						if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 						<div class="entry-thumbnail">
 							<?php the_post_thumbnail(); ?>
-						</div> 
+						</div>
 						<?php endif;
 					} ?>
-			<?php endif;  ?>
-		</header>
+			<?php endif; // is_single() ?>
+		</header><!-- .entry-header -->
 
-		<?php if ( (is_search())) : // Only display Excerpts for Search ?>
+			<?php if ( (is_search())) : // Only display Excerpts for Search ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
@@ -90,6 +64,4 @@ $default = $wp_query->post_count; ?>
 			?>
 		<?php endif; ?>
 	</div>
-
-
-		
+</article><!-- #post-<?php the_ID(); ?> -->

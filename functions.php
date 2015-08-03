@@ -197,7 +197,7 @@ if ( function_exists( 'add_image_size' ) ) {
 }
 
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'blog_img2', 365, 275, true ); // new solution for blog pictures
+	add_image_size( 'blog_img2', 1920, 1080, true ); // new solution for blog pictures
 }
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'sticky_img', 767, 540, true ); // new solution for sticky post pictures
@@ -420,111 +420,13 @@ function fruitful_comment( $comment, $args, $depth ) {
 endif; 
 
 
-
-
-if (!function_exists('harmony_s1_d2more')) 
-{
-	function harmony_s1_d2more()
-	{
-		?>						
-		<div class="sticky-post">
-			<article id="sticky-post" <?php post_class('blog_post'); ?>>
-				<div class="property">
-					<a href="<?php the_permalink(); ?>">
-						<div class="property-image2">
-							<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sticky_img');echo ''.$full_image_url[0] . '';} ?>>
-						</div>
-						<div class="overlay-blog2">
-							<div class="info">
-								<h2>
-									<?php the_title(); ?>
-								</h2> 
-								<div class="additional-info2">
-									<span class="post_tree"><?php the_excerpt(); ?></span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-			</article>
-		</div>
-		<?php
-	}
-}
-
-
-
-global 	$cnt_posts;
-
-if (!function_exists('harmony_blog_structure')) 
-{
-	function harmony_blog_structure()
-	{
-		if ($cnt_posts < 2 )
-		{
-			$cnt_posts ++;
-			?>					
-			<article  id="post-<?php the_ID(); ?>" <?php post_class('blog_post'); ?>>
-				<div class="property">
-					<a href="<?php the_permalink(); ?>">
-						<div class="property-image">
-							<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog_img2');echo ''.$full_image_url[0] . '';} ?>>
-						</div> 
-						<div class="overlay-blog">
-							<div class="info">
-								<h3>
-									<?php the_title(); ?>
-								</h3>
-								<div class="additional-info">
-									<span class="post_tree"><?php the_excerpt(); ?></span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-			</article>
-		<?php
-		}
-		else
-		{
-			?> 
-			<div class="default_post">				
-				<article  id="post-<?php the_ID(); ?>" <?php post_class('blog_post'); ?>>
-					<div class="property">
-						<a href="<?php the_permalink(); ?>">
-							<div class="property-image">
-								<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog_img2');echo ''.$full_image_url[0] . '';} ?>>
-							</div> 
-							<div class="overlay-blog">
-								<div class="info">
-									<h3>
-										<?php the_title(); ?>
-									</h3>
-									<div class="additional-info">
-										<span class="post_tree"><?php the_excerpt(); ?></span>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-				</article>
-			</div> <?php 
-		}
-	}
-}
-
-
-
-
-
-
-
 /*blocks*/
 
 
-/*global $cnt_posts, $is_odd, $odd_count, $sticky_posts, $count_sticky, $posts_per_page;
-     $cnt_posts = 1;
-     $odd_count = 1;
+  global $cnt_posts, $is_even, $odd_count, $sticky_posts, $count_sticky, $posts_per_page;
+ 
+ $cnt_posts = 1;
+ $odd_count = 1;
  
  $sticky_posts   = get_option('sticky_posts');
  $count_sticky   = count($sticky_posts);
@@ -532,8 +434,12 @@ if (!function_exists('harmony_blog_structure'))
  
  if ( ! function_exists( 'child_post_classes' ) ) :
   function child_post_classes( $classes ) {
-   return $classes;
    
+   if  (is_home() && !is_single()) {
+    // $classes[] = 'one-third';
+    // $classes[] = 'column';
+   }
+   return $classes;
   }
  endif; //bilt_post_classes
  add_filter( 'post_class', 'child_post_classes' );
@@ -542,26 +448,31 @@ if (!function_exists('harmony_blog_structure'))
  function bpost_content_loop() {
   global $wp_query, 
       $cnt_posts, 
-      $is_odd, 
+      $is_even, 
       $odd_count, 
       $count_sticky,  
       $odd_count, 
       $posts_per_page; 
   
-  $post_count     = $wp_query->post_count;
+  $post_count  = $wp_query->post_count;
  
-  $is_odd = ($count_sticky%2 == 0);
+  $is_even = ($count_sticky%2 == 0);
   
-  if ($is_odd && $count_sticky >= $cnt_posts) {
-   if ($odd_count == 1)
-   echo '<div class="sticky-container">';
-  }
+  if (!$is_even && $count_sticky > 0) {
+   
+   if ($count_sticky == 1 && $cnt_posts == 1 && ($post_count - $count_sticky) > 0)
+   echo '<div class="sticky-container grid-sticky_with-posts_post-two_post-one">';
+   
+   
+   if ($count_sticky > 2 && $cnt_posts == 1)
+   echo '<div class="sticky-container grid-sticky">';
   
-  if (!$is_odd && $count_sticky >= $cnt_posts && $count_sticky > 2) {
-   if ($odd_count == 1)
-   echo '<div class="sticky-container">';
-  }
-  
+  } else if ($is_even && $count_sticky > 0) {
+   if ($odd_count == 1 && is_sticky(get_the_ID())) {
+    $odd_count = 1;
+    echo '<div class="sticky-container grid-sticky-odd ">';
+   }
+  }  
  }
 
  add_action('before_post_content_loop', 'bpost_content_loop');
@@ -569,36 +480,40 @@ if (!function_exists('harmony_blog_structure'))
  function apost_content_loop() {
   global $wp_query, 
       $cnt_posts, 
-      $is_odd, 
+      $is_even, 
       $odd_count, 
       $count_sticky,  
       $odd_count, 
       $posts_per_page; 
   
   $post_count = $wp_query->post_count;
-
-  if ($is_odd && $count_sticky >= $cnt_posts) {
-   if ($odd_count >= 2) {
-    echo '</div><!--line row sticky-container-->';
+  
+  if (!$is_even && $count_sticky > 0) {
+   if ($count_sticky == 1 && ($post_count - $count_sticky) > 0) {
+    if (($post_count - $count_sticky) >= 2 ) {
+     if ($cnt_posts == 3)
+     echo '</div> <!-- sticky-container with-posts -->'; 
+    } else if (($post_count - $count_sticky) == 1 && $cnt_posts > 1) {
+     echo '</div> <!-- sticky-container with-posts -->'; 
+    }
+   }
+   
+   if (is_sticky(get_the_ID()) && ($count_sticky == $cnt_posts) && $count_sticky > 2)
+   echo '</div> <!-- sticky-container grid-sticky -->';
+   
+  } else if ($is_even && $count_sticky > 0) {
+   if (is_sticky(get_the_ID()) && $odd_count == 2) {
+    echo '</div><!-- sticky-container grid-sticky-odd -->';
     $odd_count = 1;
    } else {
     $odd_count++;
    }
-  }
-  
-  
-  if (!$is_odd && $count_sticky >= $cnt_posts && $count_sticky > 2) {
-   if ($odd_count >= 2) {
-    echo '</div><!--line row sticky-container-->';
-    $odd_count = 1;
-   } else {
-    $odd_count++;
-   }
-  }
-  
+   
+   if (is_sticky(get_the_ID()) && ($count_sticky == $cnt_posts) && $count_sticky > 2)
+   echo '</div> <!-- sticky-container grid-sticky -->';
+  }  
   
   $cnt_posts++;
-  
  }
 
- add_action('after_post_content_loop', 'apost_content_loop');*/
+ add_action('after_post_content_loop', 'apost_content_loop');

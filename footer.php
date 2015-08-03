@@ -64,15 +64,6 @@
 			</nav>
 		</div>
 	</div>
-
-	<!-- <div class="overlay3 overlay-contentscale">
-		<button type="button" class="overlay-close3"></button>
-		<div class="addcomment">
-			<nav>
-				<?php comment_form(); ?>
-			</nav>
-		</div>
-	</div> -->
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/search_overlay.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/contact_overlay.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/comment_overlay.js" type="text/javascript"></script>
