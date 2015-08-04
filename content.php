@@ -16,12 +16,18 @@
 			<?php if ( !is_single() ) : ?>
 				<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 					<div class="entry-thumbnail">
-					
 						<div class="property">
 							<a href="<?php the_permalink(); ?>">
-								<div class="property-image">
-									<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'blog_img2');echo ''.$full_image_url[0] . '';} ?>>
-								</div> 
+								<?php if (is_sticky()) : ?>									
+									<div class="property-image">
+										<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sticky_post');echo ''.$full_image_url[0] . '';} ?>>
+									</div> 
+								<?php endif; ?>
+								<?php if (! is_sticky()) : ?>
+									<div class="property-image">
+										<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'default_post');echo ''.$full_image_url[0] . '';} ?>>
+									</div> 
+								<?php  endif; ?>
 								<div class="overlay-blog">
 									<div class="info">
 										<h3>
@@ -34,7 +40,6 @@
 								</div>
 							</a>
 						</div>
-
 					</div>
 				<?php endif; ?>
 			<?php endif; // is_single() ?>

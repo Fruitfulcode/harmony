@@ -193,14 +193,14 @@ class ContactUs_Widget extends WP_Widget
 
 
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'blog_img', 1920, 500, true ); // new solution for single blog pictures
+	add_image_size( 'sticky_post', 1080, 1080, true ); // new solution for single blog pictures
 }
 
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'blog_img2', 1920, 1080, true ); // new solution for blog pictures
+	add_image_size( 'default_post', 365, 280, true ); // new solution for blog pictures
 }
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'sticky_img', 767, 540, true ); // new solution for sticky post pictures
+	add_image_size( 'single_img', 1920, 500, true ); // new solution for single-blog post pictures
 }
 
 
