@@ -18,7 +18,7 @@
 				<div class="sixteen columns">
 					<div class="footer-sidebar">
 						<?php if (is_page() || is_single() ) : ?>
-							<?php get_sidebar('footer'); ?>
+							<?php dynamic_sidebar('sidebar-7'); ?>
 						<?php endif;?>
 					</div>
 				</div>
@@ -66,7 +66,6 @@
 	</div>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/search_overlay.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/contact_overlay.js" type="text/javascript"></script>
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/comment_overlay.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/classie.js" type="text/javascript"></script>
 </body>
 </html>

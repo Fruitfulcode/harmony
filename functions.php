@@ -420,9 +420,9 @@ function fruitful_comment( $comment, $args, $depth ) {
 endif; 
 
 
-/*blocks*/
 
 
+/*blog blocks*/
   global $cnt_posts, $is_even, $odd_count, $sticky_posts, $count_sticky, $posts_per_page;
  
  $cnt_posts = 1;

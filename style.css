@@ -247,6 +247,21 @@ input[type="submit"], input[type="reset"] {
 }
 
 /* FOOTER */
+.widget_fruitful_news_widget li{
+	font font-size: 14px;
+	font-family: 'Oswald';
+	padding-right: 18px;
+	float: left;
+	list-style: none;
+	width: 15%;
+}
+.widget_fruitful_news_widget a{
+	float: left;
+	font-size: 16px;
+}
+.widget_fruitful_news_widget h3{
+	margin-bottom: 20px
+}
 
 .footer li{
  	display: inline-block;
@@ -271,7 +286,7 @@ input[type="submit"], input[type="reset"] {
 }
 .widget img {
   	width: 170px;
-  	height: 170px;
+  	height: 130px;
   	float: right;
 }
 #back-to-top a {
@@ -293,8 +308,8 @@ input[type="submit"], input[type="reset"] {
 }
 .widget_text,.widget.contact_us {
   	float: left;
-  	width: 27%;
-  	margin: 5.5% 15% 10% 0;
+    width: 28%;
+    margin: 5.5% 14% 10% 0;
 }
 .widget_nav_menu {
 	float: left;
@@ -616,8 +631,8 @@ cite {
 	color: #F64747;
 }
 .eleven.columns .blog_post .post-content {
-  	width: 720px;
-  	margin-right: 30px;
+  	width: 800px;
+    margin-right: 20px;
 }
 .container .eleven.columns {
   width: 820px;
@@ -787,6 +802,9 @@ cite {
     border: 1px solid #F64747;
     width: 93%;
 }
+.site-content .site-navigation {
+    width: 98%;
+}
 
 
 
@@ -822,7 +840,7 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
   	margin: 0;
 /*  	height: 263px;*/
   	width: 362px;
-    margin: 0px 10px 15px 5px;
+    margin: 0px 10px 15px 4px;
 }
 
 
@@ -1027,6 +1045,34 @@ body.blog article, body.archive article {
     padding: 2px 16px;
 }
 
+/* 3 sticky posrts */
+
+.grid-sticky {
+	display: table;
+}
+.grid-sticky .blog_post:last-of-type, .grid-sticky .blog_post {
+	margin: 0px 5px 15px 5px;
+}
+.grid-sticky .sticky {
+	width: 49% !important;
+}
+.grid-sticky .sticky .property {
+    height: 310px;
+}
+.grid-sticky .sticky h3 {
+    font-size: 28px;
+}
+.grid-sticky .sticky .additional-info {
+    padding: 2px 16px;
+}
+.grid-sticky .sticky:first-child {
+	width: 100% !important;
+}
+.grid-sticky .sticky .property:first-child {
+    height: 400px;
+}
+
+
 
 
 /* 1 sticky - 2 default */
@@ -1090,10 +1136,9 @@ body.blog article, body.archive article {
 @media screen and (max-width: 1024px) {
 	.sixteen.columns,
 	.container 			{width: 960px;margin:0 0 0 3% ;}
+	.container .eleven.columns {width: 640px;}
 	.login 				{width: 29%;}
-	.footer li 			{width: 29%;}
 	.footer-footer 		{width: 960px;}
-/*	#main-menu-1 		{margin-left: 2%;}*/
 	.overlay1 nav,.overlay2 nav,.overlay3 nav {-webkit-transform: translateY(-24%);}
 	#wpcf7-f64-o1,#searchforms, .addcomment  {width: 50%;}
 	.widget_text		{margin: 5.5% 0 0px 0; width:31%;  padding: 0px 8% 0px 1%;}
@@ -1102,12 +1147,19 @@ body.blog article, body.archive article {
 	.biography_image 	{width: 25%;}
 	.eleven.columns .blog_post .post-content {width: 610px;}
 	.entry-title2 		{padding-right: 25%;}
+	.widget_fruitful_news_widget li {width: 14%;}
+	.widget.contact_us 	{margin: 5.5% 8% 10% 0;}
+	.grid-sticky-odd .sticky {width: 47% !important;}
+	.blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post, .blog .blog_post:last-of-type {width: 30%; margin: 0px 14px 14px 14px;}
+	.property .property-image {height: 100%;}
+	.grid-sticky-odd .sticky .property {height: 300px;}
+	.site-content .site-navigation { width: 96%;}
 }
-@media screen and (max-width: 960px){
+@media screen and (max-width: 960px) {
 	.container 			{width: 910px;}
 	.login 				{width: 31%;}
 	.footer li 			{width: 27%;}
-	.widget_text		{  margin: 5.5% 0 0px 0;width: 19%; padding: 0px 8% 0px 1%;}
+	.widget_text		{margin: 5.5% 0 0px 0;width: 19%; padding: 0px 8% 0px 1%;}
 	.footer-footer 		{width: 910px;}
 	#main-menu-1 		{margin-left: 1%;}
 }
