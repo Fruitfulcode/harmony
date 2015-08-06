@@ -884,12 +884,13 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
   	top: -10px;
 }
 @media (min-width: 992px){
-.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
-  float: left;
-}
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-  	position: relative;
-  	min-height: 1px;
+	.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+	  float: left;
+	}
+	.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+	  	position: relative;
+	  	min-height: 1px;
+	}
 }
 .property {
   	overflow: hidden;
@@ -1066,7 +1067,7 @@ body.blog article, body.archive article {
     padding: 2px 16px;
 }
 .grid-sticky .sticky:first-child {
-	width: 100% !important;
+	width: 99% !important;
 }
 .grid-sticky .sticky .property:first-child {
     height: 400px;
@@ -1094,9 +1095,9 @@ body.blog article, body.archive article {
 .grid-sticky_with-posts_post-two_post-one .blog_post:last-of-type, .grid-sticky_with-posts_post-two_post-one .blog_post {
   	margin: 0;
 }
-.grid-sticky_with-posts_post-two_post-one .sticky .property-image {
+/* .grid-sticky_with-posts_post-two_post-one .sticky .property-image {
 	height: 520px;
-}
+} */
 .property .property-image {
     overflow: hidden;
    
@@ -1137,7 +1138,7 @@ body.blog article, body.archive article {
 	.sixteen.columns,
 	.container 			{width: 960px;margin:0 0 0 3% ;}
 	.container .eleven.columns {width: 640px;}
-	.login 				{width: 29%;}
+	.login 				{width: 27%;}
 	.footer-footer 		{width: 960px;}
 	.overlay1 nav,.overlay2 nav,.overlay3 nav {-webkit-transform: translateY(-24%);}
 	#wpcf7-f64-o1,#searchforms, .addcomment  {width: 50%;}
@@ -1150,41 +1151,68 @@ body.blog article, body.archive article {
 	.widget_fruitful_news_widget li {width: 14%;}
 	.widget.contact_us 	{margin: 5.5% 8% 10% 0;}
 	.grid-sticky-odd .sticky {width: 47% !important;}
-	.blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post, .blog .blog_post:last-of-type {width: 30%; margin: 0px 14px 14px 14px;}
+	.blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post, .blog .blog_post:last-of-type {width: 30%; margin: 0px 18px 14px 13px;}
+	.grid-sticky .blog_post:first-child {margin:0 0 20px 0 ;}
+	.grid-sticky .blog_post {margin:0 0 20px 0 ;}
+	.grid-sticky-odd .blog_post {margin: 0 12px 20px 13px;}
+	.grid-sticky .blog_post:last-of-type {margin:0 0 20px 19px ;}
 	.property .property-image {height: 100%;}
 	.grid-sticky-odd .sticky .property {height: 300px;}
 	.site-content .site-navigation { width: 96%;}
+	.grid-sticky .sticky .property:first-child {height: 300px;}
+	.grid-sticky_with-posts_post-two_post-one .sticky {margin: 0 0 20px 0;}
+	.grid-sticky_with-posts_post-two_post-one .sticky {width: 67% !important;}
+	.grid-sticky_with-posts_post-two_post-one .blog_post{width: 32%;margin: 0px 0px 0px 0px;}
+	.grid-sticky_with-posts_post-two_post-one .blog_post:last-child{width: 32%;margin: 0px 0px 0px 0px;}
+	.grid-sticky_with-posts_post-two_post-one .sticky .property {height: 471px;}
 }
 @media screen and (max-width: 960px) {
 	.container 			{width: 910px;}
-	.login 				{width: 31%;}
+	.login 				{width: 30%;}
 	.footer li 			{width: 27%;}
-	.widget_text		{margin: 5.5% 0 0px 0;width: 19%; padding: 0px 8% 0px 1%;}
+	.main-slider-container .flexslider {width: 99%;}
+	.widget_fruitful_news_widget li {padding-right: 15px;}
+	.widget_text		{margin: 5.5% 0 0px 0;width: 25%; padding: 0px 8% 0px 1%;}
 	.footer-footer 		{width: 910px;}
-	#main-menu-1 		{margin-left: 1%;}
+	.blog .blog_post, .blog .blog_post:last-of-type {margin: 0px 17px 14px 13px;}
+	.grid-sticky_with-posts_post-two_post-one .sticky {margin: 0;width: 66% !important;}
+	.grid-sticky_with-posts_post-two_post-one .blog_post, .grid-sticky_with-posts_post-two_post-one .blog_post:last-of-type {margin: 0;}
+	.grid-sticky_with-posts_post-two_post-one .sticky .property {height: 446px;}
+	.grid-sticky-odd .blog_post {margin: 0 12px 20px 12px;}
+	.grid-sticky .blog_post, .grid-sticky .blog_post:last-of-type {margin:0 10px 20px 14px ;}
+	.grid-sticky .sticky {width: 47% !important;}
+	.grid-sticky .blog_post:first-child {margin: 0px 0px 20px 13px;}
+	.grid-sticky .sticky:first-child {width: 97% !important;}
 }
 @media screen and (max-width: 800px) {
 	.entry-content h1 	{line-height: 60px;}
 	.container .sixteen.columns,
-	.container 			{max-width: 710px;}
-	.login 				{width: 35%;}
+	.container 			{width: 755px;}
+	.login 				{width: 32%;}
 	#license 			{width: 100%;}
 	#trigger-overlay2, #trigger-overlay3 	{padding: 15px 20px 15px 20px;}
+	.widget.contact_us 	{margin: 5.5% 4% 10% 0;}
 	.footer li 			{width: 24%;}
-	.footer-sidebar 	{margin-left: 1%;}
 	.footer-footer 		{width: 750px;}
 	.bio 				{width: 95%;margin-bottom: 20px;}
 	.column.omega,.columns.omega {float: none;}
 	#page .container #secondary {width: 90%;}
 	.widget 			{width: 95%;}
 	.widget_text, .widget_nav_menu{width: 19%;}
-	.blog_post .post-content, .eleven.columns .blog_post .post-content, .search .blog_post .post-content {width: 700px;}
+	.widget_fruitful_news_widget li {padding-right: 15px;width: 12%;}
+	.blog .blog_post, .blog .blog_post:last-of-type {margin: 0px 15px 20px 10px;}
+	.grid-sticky_with-posts_post-two_post-one .blog_post, .grid-sticky_with-posts_post-two_post-one .blog_post:last-of-type {margin: 0;}
+	.grid-sticky_with-posts_post-two_post-one .sticky .property {height: 371px;}
+	.grid-sticky-odd .blog_post {margin: 0 10px 20px 10px;}
+	.grid-sticky .blog_post, .grid-sticky .blog_post:last-of-type {margin:0 10px 20px 12px ;}
+	.grid-sticky .sticky .property:first-child {height: 250px;}
 }
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 768px) {
 	.container 			{width: 710px;}
-	.container .sixteen.columns {max-width: 720px;}
+	.container .sixteen.columns {max-width: 730px;}
 	.login 				{width: 100%;}
-	.contact-form		{float: right;	margin-right: 15px;}
+	.widget_fruitful_news_widget li {width: 13%;}
+	.contact-form		{float: right;	margin-right: 9px;}
 	.widget_text		{margin: 5.5% 0 0px 0;width: 19%; padding: 0px 5% 0px 1%;}
 	.widget_nav_menu 	{width: 16%;}
 	.footer-footer 		{width: 100%;}
@@ -1195,7 +1223,14 @@ body.blog article, body.archive article {
 	.select-menu 		{width: 74%;}
 	.entry-title2 		{margin: -270px 0px 0px 10px;}
 	.entry-meta 		{width: 100%;margin-bottom: 15px;}
-	.widget 			{width: 85%;}
+	.widget_fruitful_news_widget{width: 85%;}
+	.overlay1 nav, .overlay2 nav, .overlay3 nav {-webkit-transform: translateY(-19%);}
+	.overlay nav 		{transform: translateY(2%);}
+	.blog .blog_post, .blog .blog_post:last-of-type {margin: 0px 10px 20px 10px;}
+	.grid-sticky_with-posts_post-two_post-one .blog_post, .grid-sticky_with-posts_post-two_post-one .blog_post:last-of-type {margin: 0;}
+	.grid-sticky_with-posts_post-two_post-one .sticky .property {height: 359px;}
+	.grid-sticky-odd .sticky .property {height: 260px;}
+	.grid-sticky .blog_post:first-child {margin: 0px 0px 20px 9px;}
 }
 @media screen and (max-width: 667px) {
 	.container .sixteen.columns,
