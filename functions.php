@@ -422,26 +422,42 @@ endif;
 
 
 
+
+
+
 /*blog blocks*/
   global $cnt_posts, $is_even, $odd_count, $sticky_posts, $count_sticky, $posts_per_page;
  
+
+/*if (isset($_GET['width']) AND isset($_GET['height'])) {
+    echo 'Ширина экрана: ' . $_GET['width'] . "<br />\n";
+    echo 'Высота экрана: ' . $_GET['height'] . "<br />\n";
+}
+else {
+    echo "<script language='javascript'>\n";
+    echo " location.href=\"${_SERVER['SCRIPT_NAME']}?${_SERVER['QUERY_STRING']}"
+            . "width=\" + screen.width + \"&height=\" + screen.height;\n";
+    echo "</script>\n";
+}*/
+
+
  $cnt_posts = 1;
  $odd_count = 1;
  
  $sticky_posts   = get_option('sticky_posts');
  $count_sticky   = count($sticky_posts);
  $posts_per_page = get_option('posts_per_page');
- 
- if ( ! function_exists( 'child_post_classes' ) ) :
-  function child_post_classes( $classes ) {
-   
-   if  (is_home() && !is_single()) {
-    // $classes[] = 'one-third';
-    // $classes[] = 'column';
-   }
-   return $classes;
-  }
- endif; //bilt_post_classes
+ 	
+	 if ( ! function_exists( 'child_post_classes' ) ) :
+	  function child_post_classes( $classes ) {
+	   if  (is_home() && !is_single()) {
+	    // $classes[] = 'one-third';
+	    // $classes[] = 'column';
+	   }
+	   return $classes;
+	  }
+	 endif; //bilt_post_classes
+
  add_filter( 'post_class', 'child_post_classes' );
 
 
@@ -457,22 +473,23 @@ endif;
   $post_count  = $wp_query->post_count;
  
   $is_even = ($count_sticky%2 == 0);
-  
-  if (!$is_even && $count_sticky > 0) {
-   
-   if ($count_sticky == 1 && $cnt_posts == 1 && ($post_count - $count_sticky) > 0)
-   echo '<div class="sticky-container grid-sticky_with-posts_post-two_post-one">';
-   
-   
-   if ($count_sticky > 2 && $cnt_posts == 1)
-   echo '<div class="sticky-container grid-sticky">';
-  
-  } else if ($is_even && $count_sticky > 0) {
-   if ($odd_count == 1 && is_sticky(get_the_ID())) {
-    $odd_count = 1;
-    echo '<div class="sticky-container grid-sticky-odd ">';
-   }
-  }  
+  	if (isset($_GET['width']) < 640) {
+	  if (!$is_even && $count_sticky > 0) {
+	   
+	   if ($count_sticky == 1 && $cnt_posts == 1 && ($post_count - $count_sticky) > 0)
+	   echo '<div class="sticky-container grid-sticky_with-posts_post-two_post-one">';
+	   
+	   
+	   if ($count_sticky > 2 && $cnt_posts == 1)
+	   echo '<div class="sticky-container grid-sticky">';
+	  
+	  } else if ($is_even && $count_sticky > 0) {
+	   if ($odd_count == 1 && is_sticky(get_the_ID())) {
+	    $odd_count = 1;
+	    echo '<div class="sticky-container grid-sticky-odd ">';
+	   }
+	  } 
+	} 
  }
 
  add_action('before_post_content_loop', 'bpost_content_loop');
@@ -487,31 +504,32 @@ endif;
       $posts_per_page; 
   
   $post_count = $wp_query->post_count;
-  
-  if (!$is_even && $count_sticky > 0) {
-   if ($count_sticky == 1 && ($post_count - $count_sticky) > 0) {
-    if (($post_count - $count_sticky) >= 2 ) {
-     if ($cnt_posts == 3)
-     echo '</div> <!-- sticky-container with-posts -->'; 
-    } else if (($post_count - $count_sticky) == 1 && $cnt_posts > 1) {
-     echo '</div> <!-- sticky-container with-posts -->'; 
-    }
-   }
-   
-   if (is_sticky(get_the_ID()) && ($count_sticky == $cnt_posts) && $count_sticky > 2)
-   echo '</div> <!-- sticky-container grid-sticky -->';
-   
-  } else if ($is_even && $count_sticky > 0) {
-   if (is_sticky(get_the_ID()) && $odd_count == 2) {
-    echo '</div><!-- sticky-container grid-sticky-odd -->';
-    $odd_count = 1;
-   } else {
-    $odd_count++;
-   }
-   
-   if (is_sticky(get_the_ID()) && ($count_sticky == $cnt_posts) && $count_sticky > 2)
-   echo '</div> <!-- sticky-container grid-sticky -->';
-  }  
+  	if (isset($_GET['width']) < 640) {
+	  if (!$is_even && $count_sticky > 0) {
+	   if ($count_sticky == 1 && ($post_count - $count_sticky) > 0) {
+	    if (($post_count - $count_sticky) >= 2 ) {
+	     if ($cnt_posts == 3)
+	     echo '</div> <!-- sticky-container with-posts -->'; 
+	    } else if (($post_count - $count_sticky) == 1 && $cnt_posts > 1) {
+	     echo '</div> <!-- sticky-container with-posts -->'; 
+	    }
+	   }
+	   
+	   if (is_sticky(get_the_ID()) && ($count_sticky == $cnt_posts) && $count_sticky > 2)
+	   echo '</div> <!-- sticky-container grid-sticky -->';
+	   
+	  } else if ($is_even && $count_sticky > 0) {
+	   if (is_sticky(get_the_ID()) && $odd_count == 2) {
+	    echo '</div><!-- sticky-container grid-sticky-odd -->';
+	    $odd_count = 1;
+	   } else {
+	    $odd_count++;
+	   }
+	   
+	   if (is_sticky(get_the_ID()) && ($count_sticky == $cnt_posts) && $count_sticky > 2)
+	   echo '</div> <!-- sticky-container grid-sticky -->';
+	  }  
+	}
   
   $cnt_posts++;
  }
