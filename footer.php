@@ -67,5 +67,6 @@
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/search_overlay.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/contact_overlay.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/classie.js" type="text/javascript"></script>
+	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/custom_harmony.js" type="text/javascript"></script>
 </body>
 </html>
