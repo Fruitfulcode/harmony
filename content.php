@@ -14,20 +14,22 @@
 		<header class="post-header">
 
 			<?php if ( !is_single() ) : ?>
-				<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+				<?php if ( /*has_post_thumbnail() &&*/ ! post_password_required() ) : ?>
 					<div class="entry-thumbnail">
 						<div class="property">
 							<a href="<?php the_permalink(); ?>">
-								<?php if (is_sticky()) : ?>									
-									<div class="property-image">
-										<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sticky_post');echo ''.$full_image_url[0] . '';} ?>>
-									</div> 
-								<?php endif; ?>
-								<?php if (! is_sticky()) : ?>
-									<div class="property-image">
-										<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'default_post');echo ''.$full_image_url[0] . '';} ?>>
-									</div> 
-								<?php  endif; ?>
+									<?php if (is_sticky()) : ?>									
+										<div class="property-image">
+											<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sticky_post');echo ''.$full_image_url[0] . '';} 
+											else {echo ''.get_bloginfo('stylesheet_directory').'/images/no-image-blog.png';}?>>
+										</div> 
+									<?php endif; ?>
+									<?php if (! is_sticky()) : ?>
+										<div class="property-image">
+											<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'default_post');echo ''.$full_image_url[0] . '';} 
+											else {echo ''.get_bloginfo('stylesheet_directory').'/images/no-image-blog-3.png';}?>>
+										</div> 
+									<?php  endif; ?>
 								<div class="overlay-blog">
 									<div class="info">
 										<h3>
