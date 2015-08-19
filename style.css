@@ -85,6 +85,7 @@ a 	{text-decoration: none;}
     display: table;
     width: 100%;
 }
+
 .head-container, .head-container.fixed {
    background-color: inherit !important; 
 }
@@ -192,16 +193,15 @@ a 	{text-decoration: none;}
     transition: all 0.3s ease-in-out; 
 }
 input#s {
-	height: 31px;
 	line-height: 1.5em;
 	padding: 4px 32px 4px 5px;
 	background-color: #fff;
 }
 textarea {
-   	width: 99%;
    	margin-bottom: 20px;
    	margin-top: 10px;
-   	height: 170px;
+   	padding: 10px 7px;
+   	width: 100%;
 }
 .search_form2 h3 {
 	color: #fff;
@@ -219,7 +219,7 @@ textarea {
 input[type=text], input[type=email], input[type=url] {
 	border-radius: 0px;
 	padding: 10px 7px 10px 7px;
-  	width: 98%;
+  	width: 100%;
   	margin-top: 10px;
 }
 input[type="submit"], input[type="reset"] {
@@ -280,7 +280,6 @@ input[type="submit"], input[type="reset"] {
  	margin-left: 10px;
  }
 .widget {
-	margin: 0 0 1.5em;
 	display: block;
 	width: 100%;
 }
@@ -309,16 +308,15 @@ input[type="submit"], input[type="reset"] {
 	width: 1448px;
 	color: #fff;
 }
-.widget_text,.widget.contact_us {
-  	float: left;
-    width: 28%;
-    margin: 5% 5% 10% 0;
+.widget_text, .widget.contact_us {
+    float: left;
+    width: 35%;
+    padding: 6% 6% 10% 0%;
 }
 .widget_nav_menu {
 	float: left;
   	width: 16%;
-  	margin: 5% 0 0 0;
-  	padding: 0 0% 0 0%;
+  	padding: 6% 0% 10% 0%;
 }
 .widget.contact_us{
 	background-image: url(images/map.png);
@@ -450,13 +448,18 @@ cite {
 .overlay .overlay-close,.overlay2 .overlay-close2,.overlay3 .overlay-close3 {
 	width: 58px;
 	height:58px;
-	background-color: #131215 !important;
+	background-color: #191919 !important;
 	position: absolute;
 	right: 20px;
 	top: 20px;
 	background: url('images/cross.png');
 	outline: none;
   	cursor:pointer;
+}
+.overlay2 textarea {
+	padding: 10px 7px 10px 7px;
+	width: 100%;
+	border-radius: 0px;
 }
 /* Menu style */
 .overlay nav {
@@ -473,7 +476,7 @@ cite {
 	text-align: center;
 	position: relative;
 	-webkit-transform: translateY(-30%);
-	transform: translateY(-40%);
+	transform: translateY(-33%);
 }
 .overlay ul,.overlay2 ul,.overlay3 ul  {
 	list-style: none;
@@ -520,16 +523,6 @@ cite {
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
-/*@media screen and (max-height: 30.5em) {
-	.overlay nav {
-		height: 70%;
-		font-size: 34px;
-	}
-	.overlay ul li {
-		min-height: 34px;
-	}
-}*/
-
 .mainclass {
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -539,7 +532,7 @@ cite {
 	transform: scale(0.8);
 }
 #wpcf7-f64-o1{
-	width: 25%;
+	width: 40%;
 	margin: auto;
 }
 .login p {
@@ -553,7 +546,6 @@ cite {
 .contact-form2 h3, .addcomment h3 {
 	color: #fff;
 	text-transform: uppercase;
-	margin-bottom: 20px;
 	float: left;
 }
 .contact-form2 p, .addcomment p {
@@ -581,7 +573,6 @@ cite {
 /*SINGLE POST*/
 
 .logofon{
-	display: table;
 	margin: auto;
 	position: relative;
 	background-size: 100% 100%;
@@ -596,7 +587,7 @@ cite {
 	position: relative;
 	background-size: 100% 100%;
 	height: 300px;
-	width: 1920px;
+	width: 100%;
 }
 .entry-title2{
 	padding-right: 45%;
@@ -635,7 +626,6 @@ cite {
 }
 .eleven.columns .blog_post .post-content {
   	width: 800px;
-    margin-right: 20px;
 }
 .container .eleven.columns {
   width: 820px;
@@ -689,7 +679,6 @@ cite {
 .date {
 	color: #F64747;
 	float: right;
-	margin-right: 8px;
 }
 .date2 {
 	float: left;
@@ -819,8 +808,6 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
   	color: #fff;
 
 }
-
-
 .blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post, .blog .blog_post:last-of-type {
   	margin: 0;
     padding: 5px;
@@ -843,7 +830,7 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
   	-moz-transition: 0.4s;
   	-webkit-transition: 0.4s;
   	transition: 0.4s;
-  	-moz-backface-visibility: hidden;
+  	-moz-backface-visibility: visible;
   	max-width: 100%;
   	position: relative;
   	top: 0;
@@ -854,7 +841,7 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
   	height: auto;
 }
 .property:hover img, .property:active img, .property:focus img {
-  	-moz-backface-visibility: hidden;
+  	-moz-backface-visibility: visible;
   	top: -10px;
 }
 @media (min-width: 992px){
@@ -936,6 +923,7 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 }
 #masthead, #colophon, #content {
     margin:0;
+    width: 100%;
 }
 body.blog article, body.archive article {
 	width: 32.4%;
@@ -944,6 +932,12 @@ body.blog article, body.archive article {
 	text-align: left;
 	margin-bottom: 10px;
 	position: relative;
+}
+#page .container #secondary .widget h3.widget-title, #page .container #secondary .widget h1.widget-title {
+    margin: 0;
+}
+#page .container #secondary>.widget_nav_menu a {
+    margin:0; 
 }
 
 
@@ -1008,9 +1002,6 @@ body.blog article, body.archive article {
 
 /* 3 sticky posrts */
 
-.grid-sticky {
-	display: table;
-}
 .grid-sticky .sticky {
 	width: 49%;
 }
@@ -1082,32 +1073,27 @@ body.blog article, body.archive article {
 /* RESPONSIVE */
 
 @media screen and (max-width: 1024px) {
-	.sixteen.columns,
-	.container 			{width: 960px;}
+	.sixteen.columns, .container, .footer-footer {width: 960px;}
 	.container .sixteen.columns {margin: 10px 0 10px 0 ;width: 100%;}
-	.container .eleven.columns {width: 640px;}
-	.container .five.columns {width: 240px;}
+	.container .eleven.columns {width: 700px;}
+	.container .five.columns {width: 200px;}
 	.login 				{width: 27%;margin-top: 10px;}
-	.logofon img 		{height: 400px;}
-	.logofon 			{height: 400px;}
-	.footer-footer 		{width: 960px;}
+	.logofon img, .logofon 	{height: 350px;}
 	.overlay1 nav,.overlay2 nav,.overlay3 nav {-webkit-transform: translateY(-24%);}
 	#wpcf7-f64-o1,#searchforms, .addcomment  {width: 50%;}
-	.widget_text		{margin: 5.5% 0 0px 0; width:31%;  padding: 0px 8% 0px 1%;}
 	.biography_block 	{width: 85%;}
 	.biography_image 	{width: 15%;}
 	.eleven.columns .blog_post .post-content {width: 100%;}
-	.entry-title2 		{padding-right: 25%;    padding-left: 2%;}
+	.entry-title2 		{padding-right: 25%;}
 	.entry-content h2, .comment-content h2 {line-height: 1.3;margin-bottom: 30px;font-size: 24px;}
 	.widget_fruitful_news_widget li {width: 14.7%;}
-	.widget.contact_us 	{margin: 5.5% 8% 10% 0;}
 	.grid-sticky-odd .sticky {width: 48.89% !important;}
 	.blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post, .blog .blog_post:last-of-type {width: 32.2%;}
 	.grid-sticky .blog_post:last-of-type, .grid-sticky .blog_post {width: 48.95%;}
 	.property .property-image {height: 100%;}
-	.grid-sticky-odd .sticky .property {height: 300px;}
-	.grid-sticky .sticky .property:first-child {height: 300px;}
+	.grid-sticky-odd .sticky .property, .grid-sticky .sticky .property:first-child {height: 300px;}
 	.grid-sticky_with-posts_post-two_post-one .sticky {width: 67% !important;}
+	.grid-sticky_with-posts_post-two_post-one .sticky .property .overlay-blog {bottom: -120px;}
 	.grid-sticky_with-posts_post-two_post-one .blog_post:last-child, .grid-sticky_with-posts_post-two_post-one .blog_post{width: 32.6%;}
 	.grid-sticky_with-posts_post-two_post-one .sticky .property {height: 475px;}
 	.widget img 		{width: 170px;height: 130px;float: right;}
@@ -1118,17 +1104,16 @@ body.blog article, body.archive article {
 	.sticky .property .overlay-blog {bottom: -122px;}
 	.sticky .additional-info {height: 120px;}
 	#masthead, #colophon, #content {margin: 0;}
+	.widget.contact_us a, .widget.contact_us p, .textwidget, .widget_nav_menu li, .widget_fruitful_news_widget a {font-size: 14px;}
+	.comment-form-comment {width: 100%;}
 }
 @media screen and (max-width: 960px) {
-	.container 			{width: 900px;}
-	.sixteen.columns, .container {width: 900px;}
+	.sixteen.columns, .container, .container, .footer-footer {width: 900px;}
 	.login 				{width: 30%;}
-	.logofon img 		{height: 350px;}
-	.logofon 			{height: 350px;}
+	.logofon img, .logofon  {height: 320px;}
 	.footer li 			{width: 27%;}
 	.widget_fruitful_news_widget li {padding-right: 15px;}
-	.widget_text		{margin: 5.5% 0 0px 0;width: 25%; padding: 0px 8% 0px 1%;}
-	.footer-footer 		{width: 910px;}
+	.widget img 		{height: 120px;}
 	.blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post, .blog .blog_post:last-of-type {width: 32.2%;}
 	.grid-sticky_with-posts_post-two_post-one .sticky {width: 67.3% !important;}
 	.grid-sticky_with-posts_post-two_post-one .blog_post, .grid-sticky_with-posts_post-two_post-one .blog_post:last-of-type {width: 32.6%;}
@@ -1138,16 +1123,14 @@ body.blog article, body.archive article {
 	.sticky .property .overlay-blog {bottom: -110px;}
 	.sticky .additional-info {height: 100px;}
 	.commentsErrorBox 	{width: 91%}
+	.entry-title2 		{margin: -190px 0 0 0;}
 }
 @media screen and (max-width: 800px) {
 	.entry-content h1 	{line-height: 60px;}
-	.sixteen.columns, .container {width: 790px;}
-	.container .sixteen.columns,
-	.container 			{width: 755px;}
+	.container .sixteen.columns, .container, .sixteen.columns, .container, .footer-footer {width: 755px;}
 	.eleven.columns .blog_post .post-content {width: 565px;}
 	.container .eleven.columns {width: 565px;}
 	.container .five.columns {width: 160px;}
-	.eleven.columns .blog_post .post-content {margin-right: 10px;}
 	.login 				{width: 33%;}
 	.logofon img 		{height: 300px;}
 	.logofon 			{height: 300px;}
@@ -1155,20 +1138,19 @@ body.blog article, body.archive article {
 	#trigger-overlay2, #trigger-overlay3 	{padding: 15px 20px 15px 20px;}
 	.widget.contact_us 	{margin: 5.5% 4% 10% 0;}
 	.footer li 			{width: 24%;}
-	.footer-footer 		{width: 750px;}
 	.bio 				{width: 98%;margin-bottom: 20px;text-align: justify;}
 	.biography_image 	{width: 20%;}
 	.biography_block 	{width: 80%;}
-	.widget 			{margin: 0px 15px 0 15px; width: 100%;}
-	.widget_text, .widget.contact_us {width: 30%;padding: 5% 5% 10% 0%;margin:0;}
-	.five.columns .widget_text, .five.columns .widget_nav_menu {width: 100% !important;padding: 10% 5% 10% 0%; margin: 0;}
+	.widget_text, .widget.contact_us {padding: 5% 5% 10% 0%;margin:0;}
+	.five.columns .widget_text, .five.columns .widget_nav_menu {width: 100% !important; margin: 0;}
 	.widget_nav_menu 	{float: left;width: 16% !important; padding: 5% 0% 0% 3%;}
-	.widget_fruitful_news_widget li {padding-right: 8px;width: 15%;}
+	.widget_fruitful_news_widget li {padding-right: 12px;width: 15%;}
 	.blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post, .blog .blog_post:last-of-type {width: 32%;}
 	.grid-sticky_with-posts_post-two_post-one .sticky {width: 67.5% !important;}
 	.grid-sticky_with-posts_post-two_post-one .blog_post, .grid-sticky_with-posts_post-two_post-one .blog_post:last-of-type {width: 32.5%;}
 	.grid-sticky_with-posts_post-two_post-one .sticky .property {height: 371px;}
 	.grid-sticky_with-posts_post-two_post-one .sticky p {font-size: 14px;line-height: 24px;}
+	.grid-sticky-odd .sticky .property, .grid-sticky .sticky .property:first-child {height: 275px;}
 	.grid-sticky .sticky .additional-info {padding: 2px 10px;}
 	.grid-sticky .sticky .property:first-child {height: 250px;}
 	.grid-sticky-odd .sticky, .grid-sticky .sticky{width: 48.67% !important;}
@@ -1176,6 +1158,7 @@ body.blog article, body.archive article {
 	.widget img 		{height: 110px;}
 	.overlay1 nav, .overlay2 nav, .overlay3 nav {-webkit-transform: translateY(-20%);}
 	.overlay nav 		{transform: translateY(0%);}
+	.entry-title2 		{margin: -210px 0 0 0;}
 	
 }
 @media screen and (max-width: 768px) {
@@ -1212,7 +1195,7 @@ body.blog article, body.archive article {
 	.grid-sticky-odd .sticky, .grid-sticky .sticky {width: 48.61% !important;}
 	.blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post, .blog .blog_post:last-of-type {width: 31.9%;}
 	.grid-sticky_with-posts_post-two_post-one .blog_post, .grid-sticky_with-posts_post-two_post-one .blog_post:last-of-type {width: 32.5%;}
-	#page .container #secondary {width: 100%; padding: 13px 4%;}
+	#page .container #secondary {width: 100%; padding: 13px 0 0 15%;}
 	.property .overlay-blog {bottom: -90px;}
 	.additional-info 	{height: 73px; width: 96%;}
 	.grid-sticky-odd .sticky .additional-info {padding: 2px 14px;}
@@ -1246,6 +1229,7 @@ body.blog article, body.archive article {
 	#copyright 			{height: 100%;}
 	.footer li 			{width: 25%;}
 	.widget 			{width: 100%;}
+	.grid-sticky-odd .sticky .property {height: 220px;}
 	.widget_text, .widget.contact_us, .widget_nav_menu {width: 95%;margin: 5% 0 0 0; padding: 0;}
 	.sixteen.columns, .container {width: 620px;}
 	.widget_fruitful_news_widget li {width: 33%;padding:1px;}
@@ -1281,13 +1265,12 @@ body.blog article, body.archive article {
 	.overlay nav 		{transform: translateY(16%);}
 	.additional-info 	{height: 80px;width: 96%;}
 	.select-menu 		{width: 99%;}
+	.property .property-image {height: 140px;}
 
 }
 @media screen and (max-width: 640px) {
 	.container			{width: 620px;}
-	.container .sixteen.columns, .container {max-width: 600px;}
-	.eleven.columns .blog_post .post-content {width: 600px;}
-	.sixteen.columns, .container {width: 600px;}
+	.container .sixteen.columns, .container, .eleven.columns .blog_post .post-content, .sixteen.columns, .container {width: 600px;}
 	#page-header .container header 
 	.header-hgroup.center-pos a {text-align: center;}
 	#trigger-overlay	{padding: 10px 18px 0 0 ;}
@@ -1312,12 +1295,13 @@ body.blog article, body.archive article {
 	.sticky .property .overlay-blog {bottom: -87px;}
 	.sticky p 			{font-size: 12px;line-height: 15px;}
 	.sticky .additional-info {padding: 8px 10px;height: 67px;}
-	.sticky .property 	{height: 143px;}
+	.sticky .property 	{height: 140px;}
 	#content 			{margin:0; float: none;}
 	.post_tree p 		{width: 93%;}
 	.widget_fruitful_news_widget a {width: 95%;}
 	.widget_fruitful_news_widget li {width: 33%;padding-right: 0px;}
-
+	.post_tree 			{font-size: 16px;}
+	.entry-title2 h1 	{font-size: 36px;}
 }
 @media screen and (max-width: 600px) {
 	.container .sixteen.columns, .sixteen.columns, .container  {max-width: 560px;}
@@ -1334,7 +1318,6 @@ body.blog article, body.archive article {
 	.widget_fruitful_news_widget a {width: 88%;}
 	.widget_fruitful_news_widget li {width: 33%;}
 	.page-container 	{margin-bottom: 0px;}
-	#colophon .sixteen.columns{padding: 0 15px 0 15px;}
 	.flexslider .slides img {width: 100%;}
 	.blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post, .blog .blog_post:last-of-type,  
 	.grid-sticky_with-posts_post-two_post-one .blog_post, .grid-sticky_with-posts_post-two_post-one .blog_post:last-of-type {width: 31.5%;}
@@ -1349,6 +1332,7 @@ body.blog article, body.archive article {
 	.biography_block 	{width: 75%;}
 	.property .overlay-blog {bottom: -75px;}
 	.sticky .property 	{height: 135px;}
+	.widget img 		{height: 140px;}
 }
 @media screen and (max-width: 480px) {
 	.footer li 			{width: 34%; height: 220px;}
@@ -1366,19 +1350,17 @@ body.blog article, body.archive article {
 	.biography_image 	{width: 20%;}
 	.entry-meta 		{width: 100%;margin-bottom: 15px;}
 	.select-menu 		{width: 99%;}
-	.widget 			{width: 95%;}
 	.logo-description h2.site-description {display: inherit;}
 	.blog .blog_post, .category .blog_post, .tag .blog_post, .author .blog_post, .archive .blog_post, .search .blog_post, .blog .blog_post:last-of-type {width: 47.7%;}
 	.contact-form2, .addcomment	{margin-top: 16%;}
 	.contact-form2 p, .addcomment p	{font-size: 12px;}
 	h1 					{font-size: 32px !important;}
 	.entry-content h1 	{line-height: 35px;}
-	.widget img 		{height: 130px;}
+	.widget img 		{height: 120px;}
 	.widget_fruitful_news_widget a {font-size: 13px;width: 95%;}
 	.entry-content h2, .comment-content h2 {line-height: 1.4;}
 	p 					{line-height: 22px;}
 	.grid-sticky_with-posts_post-two_post-one .sticky {width: 46% !important;}
-	.grid-sticky_with-posts_post-two_post-one .sticky .property {height: 162px;}
 	.grid-sticky_with-posts_post-two_post-one {display: block;}
 	.logofon img 		{height: 220px;}
 	.logofon 			{height: 220px;}
@@ -1386,7 +1368,8 @@ body.blog article, body.archive article {
 	.grid-sticky 		{display: block;}
 	.grid-sticky .sticky:first-child, .grid-sticky .sticky {width: 46% !important;}
 	.overlay nav, .overlay2 nav, .overlay3 nav {-webkit-transform: translateY(2%);}
-	.sticky .property 	{height: 161px;}
+	.sticky .property 	{height: 140px;}
+	#wpcf7-f64-o1, #searchforms {width: 80%;}
 
 }
 @media screen and (max-width: 400px) and (min-width: 320px){
@@ -1394,7 +1377,6 @@ body.blog article, body.archive article {
 	.logo-description h2.site-description {	display: inherit;}
 	.wpcf7 p 			{font-size: 11px;}
 	.contact-form2{margin-top: 30%;}
-	#wpcf7-f64-o1, #searchforms {width: 80%;}
 	#license 			{ width: 80%;padding: 0 10%;text-align: center;}
 	.textwidget, .widget.contact_us p, li, #license{font-size: 13px;}
 	.widget_fruitful_news_widget li {width: 49.6%;}
@@ -1402,15 +1384,16 @@ body.blog article, body.archive article {
 	.additional-info 	{height: 42px;}
 	.property .overlay-blog {bottom: -55px;}
 	.info h3 			{font-size: 13px;}
-	.sticky .property 	{height: 108px;}
+	.sticky .property, .property .property-image 	{height: 100px;}
 	.sticky .additional-info {height: 40px; padding: 0px 10px;}
 	.sticky .property .overlay-blog {bottom: -50px;}
-	h1 					{font-size: 28px !important;}
+	h1 					{font-size: 24px !important;}
 	h2 					{font-size: 18px !important;}
 	.entry-title2 		{margin: -180px 5px 0px 5px;}
 	.biography_block 	{width: 100%;}
 	.logofon img 		{height: 170px;}
 	.logofon 			{height: 170px;}
+	#colophon .sixteen.columns {padding: 0;}
 }
 
 

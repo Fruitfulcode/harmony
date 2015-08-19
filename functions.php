@@ -71,7 +71,8 @@ class fruitful_news_widget extends WP_Widget
 						if(has_post_thumbnail()){
 							?><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array());?></a><?php
 						} else {
-							echo '<img src="'.get_bloginfo('stylesheet_directory').'/images/no-image-blog-2.png"/>';
+							/*echo '<img src="'.get_bloginfo('stylesheet_directory').'/images/no-image-blog-2.png"/>';*/
+							?><a href="<?php the_permalink();?>"><?php echo '<img src="'.get_bloginfo('stylesheet_directory').'/images/no-image-blog-2.png"/>';?></a><?php
 						}?>
 						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
  					</li>

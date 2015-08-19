@@ -21,7 +21,7 @@
 									<?php if (is_sticky()) : ?>									
 										<div class="property-image">
 											<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sticky_post');echo ''.$full_image_url[0] . '';} 
-											else {echo ''.get_bloginfo('stylesheet_directory').'/images/no-image-blog.png';}?>>
+											else {echo ''.get_bloginfo('stylesheet_directory').'/images/no-image-blog-3.png';}?>>
 										</div> 
 									<?php endif; ?>
 									<?php if (! is_sticky()) : ?>
