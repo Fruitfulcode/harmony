@@ -19,6 +19,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <?php fruitful_get_favicon(); ?>
 <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script><![endif]-->
 <?php wp_head(); ?> 
@@ -27,7 +28,9 @@
 	<div class="mainclass" id="classmain">
 		<div id="page-header" class="hfeed site">
 		<?php
+			
 			$theme_options  = fruitful_ret_options("fruitful_theme_options");
+
 			$logo_pos = $menu_pos = '';
 			if (isset($theme_options['logo_position'])) 
 			$logo_pos = esc_attr($theme_options['logo_position']);
@@ -40,7 +43,6 @@
 			
 			$responsive_menu_type = esc_attr($theme_options['menu_type_responsive']);
 			$is_responsive  	  = (isset($theme_options['responsive']) && ($theme_options['responsive'] == 'on'));
-			
 				
 				if ( !$is_responsive || ( $is_responsive && ( $responsive_menu_type == 'inside_content' ) ) ) { ?>
 				

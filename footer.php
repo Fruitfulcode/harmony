@@ -44,29 +44,11 @@
 		<!--WordPress Development by Fruitful Code-->
 		<?php wp_footer(); ?>
 	</div>
-	<div class="overlay overlay-contentscale">
-		<button type="button" class="overlay-close"></button>
-		<div class="search_form2">
-			<nav>
-				<div id="searchforms">
-					<h3>Search For</h3>
-					<?php fruitful_get_search_form() ?>
-				</div>
-			</nav>
-		</div>
-	</div>
-	<!-- Overlay Blocks -->
-	<div class="overlay2 overlay-contentscale">
-		<button type="button" class="overlay-close2"></button>
-		<div class="contact-form2">
-			<nav>
-				<?php echo do_shortcode('[contact-form-7 id="64" title="Contact Us"]');?>
-			</nav>
-		</div>
-	</div>
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/search_overlay.js" type="text/javascript"></script>
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/contact_overlay.js" type="text/javascript"></script>
+	<?php get_search_overlay(); ?>
+	<?php get_contact_overlay(); ?>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/classie.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/custom_harmony.js" type="text/javascript"></script>
+	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/modernizr.custom.js" type="text/javascript"></script>
+	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/snap.svg-min.js" type="text/javascript"></script>
 </body>
 </html>
