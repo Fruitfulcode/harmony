@@ -441,15 +441,7 @@ cite {
 }
 
 /******OVERLAY******/
-/* 
-.mainclass {
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-}
-.mainclass.overlay-open {
-	-webkit-transform: scale(0.8);
-	transform: scale(0.8);
-} */
+
 .overlay, .overlay2 {
 	position: fixed;
 	width: 100%;
@@ -556,7 +548,6 @@ cite {
 	transform: translateY(-100%);
 	-webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s;
 	transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
-
 }
 .overlay-slidedown.open {
 	visibility: visible;

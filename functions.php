@@ -665,9 +665,21 @@ function get_contact_overlay() {
 			echo '</div>';
 		echo '</div>';
 }
-		
-		
-		
+
+function get_search_status() {
+	$theme_options  = fruitful_ret_options("fruitful_theme_options"); 
+	if ($theme_options['search_overlay'] == 'off') {
+		echo '<div class="search_form" style="display:none;">';
+	}
+	else {
+		echo '<div class="search_form">';
+	}
+			echo '<span id="trigger-overlay" type="button"><i class="fa fa-search"></i>Search</span>';
+		echo '</div>';
+}
+
+
+
 				
 					
 					

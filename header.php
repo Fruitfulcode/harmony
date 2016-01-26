@@ -30,7 +30,6 @@
 		<?php
 			
 			$theme_options  = fruitful_ret_options("fruitful_theme_options");
-
 			$logo_pos = $menu_pos = '';
 			if (isset($theme_options['logo_position'])) 
 			$logo_pos = esc_attr($theme_options['logo_position']);
@@ -59,9 +58,7 @@
 											<?php echo fruitful_get_logo(); ?>
 										</div>
 										<div class="login">
-											<div class="search_form">
-												<span id="trigger-overlay" type="button"><i class="fa fa-search"></i>Search</span>
-											</div>
+											<?php echo get_search_status();	?>
 											<div class="contact-form">
 												<button id="trigger-overlay2" type="button"><i class="fa fa-envelope-o"></i>Contact Me</button>
 											</div>
