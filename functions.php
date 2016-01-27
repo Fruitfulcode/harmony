@@ -47,8 +47,8 @@ if ( ! function_exists( 'fruitful_widgets_init' ) ) {
 	add_action( 'widgets_init', 'fruitful_widgets_init' );
 }
 
-class fruitful_news_widget extends WP_Widget 
-{
+
+class fruitful_news_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct('fruitful_news_widget',__('Recent News', 'fruitful_new_widget'), 
 			array( 'description' => __( 'Latest news from your blog', 'fruitful_new_widget'),));
@@ -64,7 +64,7 @@ class fruitful_news_widget extends WP_Widget
 			<li>
 				<?php 
 				if(has_post_thumbnail()){
-					?><a href="<?php the_permalink();?>"><?php the_post_thumbnail(array());?><?php the_title(); ?></a><?php
+					?><a href="<?php the_permalink();?>"><?php the_post_thumbnail('default_post');?><?php the_title(); ?></a><?php
 				} else {
 					/*echo '<img src="'.get_bloginfo('stylesheet_directory').'/images/no-image-blog-2.png"/>';*/
 					?><a href="<?php the_permalink();?>"><?php echo '<img src="'.get_bloginfo('stylesheet_directory').'/images/no-image-blog-2.png"/>';?><?php the_title(); ?></a><?php
@@ -72,7 +72,6 @@ class fruitful_news_widget extends WP_Widget
 			</li>
 		<?php endwhile; 
 		echo $args['after_widget'];
-
 	}
 	public function form( $instance ){
 		if ( isset( $instance['title'])){
@@ -99,13 +98,14 @@ class fruitful_news_widget extends WP_Widget
 		return $instance;
 	}
 } 
-
 function fruit_load_widget() {
 	register_widget( 'fruitful_news_widget' );
 }
 add_action( 'widgets_init', 'fruit_load_widget' );
-add_action( 'widgets_init', 'ContactUs_widget' );
 
+
+
+add_action( 'widgets_init', 'ContactUs_widget' );
 function ContactUs_widget() 
 {
 	register_widget( 'ContactUs_Widget' );
@@ -117,7 +117,7 @@ class ContactUs_Widget extends WP_Widget
 	{
 		$widget_ops = array( 'classname' => 'contact_us', 'description' => __('Simple contact information ', 'contact_us') );
 		$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'contact_us-widget' );
-		$this->WP_Widget( 'contact_us-widget', __('Harmony Contact Information', 'contact_us'), $widget_ops, $control_ops );
+		parent::__construct( 'contact_us-widget', __('Harmony Contact Information', 'contact_us'), $widget_ops, $control_ops );
 	}
 	function widget( $args, $instance )
 	{
@@ -133,16 +133,10 @@ class ContactUs_Widget extends WP_Widget
 			<?php
 			if ( $address )
 				printf( '<p>' . __('<i class="fa fa-map-marker"></i> %1$s', 'contact_us') . '</p>', $address );
-			if ( $show_info )
-				printf( $email );
 			if ( $email )
 				printf( __('<a href="mailto:%1$s"><i class="fa fa-envelope"></i> %1$s</a>', 'contact_us') . '<br><br>', $email );
-			if ( $show_info )
-				printf( $email );
 			if ( $phone )
 				printf( __('<a href="tel:%1$s"><i class="fa fa-phone"></i> %1$s</a>', 'contact_us'), $phone );
-			if ( $show_info )
-				printf( $phone );
 			?>
 		</div>
 		<?php
@@ -157,7 +151,6 @@ class ContactUs_Widget extends WP_Widget
 
 		return $instance;
 	}
-
 	function form( $instance ) 
 	{
 		?>
@@ -200,24 +193,19 @@ function trim_characters($count, $after = '...') //function for cutting post tit
 
 if (!function_exists('fruitful_get_blog_single')) //single blog post header
 {
-	function fruitful_get_blog_single()
-	{
-		if (is_single())
-		{
-			if ( has_post_thumbnail()) 
-			{ 
+	function fruitful_get_blog_single()	{
+		if (is_single()) {
+			if ( has_post_thumbnail()) { 
 				?>
 				<div class="logofon">
 					<?php echo get_the_post_thumbnail(null, array(1920, 500)); ?>
 				</div>
 				<?php
 			} 
-			if (! has_post_thumbnail()) 
-			{ 
+			if (! has_post_thumbnail()) { 
 				?><div class="logofon2">
-
 			</div><?php
-		} 
+			} 
 		?>
 		<div class="sixteen columns">
 			<div class="entry-title2"> 
@@ -237,32 +225,25 @@ function the_breadcrumb(){ // blogpost title
 		echo get_option('home');
 		echo '">Home';
 		echo "</a> / ";
-		if (is_category() || is_single()) 
-		{
+		if (is_category() || is_single()) {
 			the_category(' ');
-			if (is_single()) 
-			{
+			if (is_single()) {
 				echo " / ";
 			}
 		} 
-		elseif (is_page()) 
-		{
+		elseif (is_page()) {
 			echo the_title();
 		}
 	}
-	else 
-	{
+	else 	{
 		echo 'Home';
 	}
 }
 
 
-if (!function_exists('harmony_entry_meta')) 
-{
-	function harmony_entry_meta()
-	{
-		if (is_single()) 
-		{ 
+if (!function_exists('harmony_entry_meta')) {
+	function harmony_entry_meta()	{
+		if (is_single()) { 
 			?>
 			<div class="page-container">
 				<header class="entry-meta">
@@ -270,42 +251,36 @@ if (!function_exists('harmony_entry_meta'))
 						<?php
 						$categories_list = get_the_category_list( __( ', ', 'fruitful'));
 						if ( $categories_list && fruitful_categorized_blog() ) : ?>
-					<?php endif;?>
+						<?php endif;?>
 					
-				<?php endif;?>
+						<?php endif;?>
 
-				<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) { ?>
-				<!-- <span class="comments-link"><i class="fa fa-comment-o"></i><?php comments_popup_link( __( 'Leave a comment', 'fruitful' ), __( '1', 'fruitful' ), __( '% Comments', 'fruitful' ) ); ?></span> -->
-				<?php } ?>
-				<?php
-				$tags_list = get_the_tag_list( '', __( ', ', 'fruitful' ) );
-				if ( $tags_list ) :
-					?>
-				<div class="tag-links">
-					<h2 >Tags</h2> 
-					<span class="tags"><?php echo $tags_list; ?></span> 
-				</div>
-			<?php endif;  ?>
-			<div class="date"><?php echo get_the_date(); ?></div>
-			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) { ?>
-			<div class="comments-link"><i class="fa fa-comment-o"></i><?php comments_popup_link( __( '0', 'fruitful' ), __( '1', 'fruitful' ), __( '% ', 'fruitful' ) ); ?></div>
-			<?php } ?>
-
-		</header>
-	</div>	
-	<?php
-} 
+						<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) { ?>
+						<!-- <span class="comments-link"><i class="fa fa-comment-o"></i><?php comments_popup_link( __( 'Leave a comment', 'fruitful' ), __( '1', 'fruitful' ), __( '% Comments', 'fruitful' ) ); ?></span> -->
+						<?php } ?>
+						<?php
+						$tags_list = get_the_tag_list( '', __( ', ', 'fruitful' ) );
+						if ( $tags_list ) :
+							?>
+						<div class="tag-links">
+							<h2 >Tags</h2> 
+							<span class="tags"><?php echo $tags_list; ?></span> 
+						</div>
+					<?php endif;  ?>
+					<div class="date"><?php echo get_the_date(); ?></div>
+					<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) { ?>
+					<div class="comments-link"><i class="fa fa-comment-o"></i><?php comments_popup_link( __( '0', 'fruitful' ), __( '1', 'fruitful' ), __( '% ', 'fruitful' ) ); ?></div>
+					<?php } ?>
+				</header>
+			</div>	
+			<?php
+		} 
+	}
 }
-}
 
-
-
-if (!function_exists('harmony_entry_meta2')) 
-{
-	function harmony_entry_meta2()
-	{
-		if (is_single()) 
-		{ 
+if (!function_exists('harmony_entry_meta2')) {
+	function harmony_entry_meta2() {
+		if (is_single()) { 
 			?>
 			<div class="bio">
 				<span class="biography_image"><?php echo get_avatar( get_the_author_meta('email') , 120 ); ?></span>
@@ -493,43 +468,75 @@ if ( ! function_exists( 'fruitful_comment' ) ) :
 
 	 add_action('after_post_content_loop', 'apost_content_loop');
 
-	 function child_options($sections) {	
+	function child_options($sections) {
+
+		include_once(ABSPATH . 'wp-admin/includes/plugin.php'); // Require plugin.php to use is_plugin_active() below
+		if (is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
+			global $wpdb;
+			$cf7 = $wpdb->get_results(
+				"
+				SELECT ID, post_title
+				FROM $wpdb->posts
+				WHERE post_type = 'wpcf7_contact_form'
+				"
+				);
+			$contact_forms = array();
+			if ($cf7) {
+				foreach ( $cf7 as $cform ) {
+					$contact_forms[$cform->ID] = $cform->post_title;
+				}
+			} else {
+				$contact_forms[0] = 0;
+			}
+		} 
+		else {
+			$contact_forms[0] = 'No contact forms found';
+		}	
+
 	 	$sections['custom'] = array (
-	 		'title'		=> __( 'Custom', 'fruitful' ),
-	 		'fields'	=> array(	
+	 		'title'					=> __( 'Custom', 'fruitful' ),
+	 		'fields'				=> array(	
 	 			array(
-	 				'id' 			=> 'search_overlay',
+	 				'id' 				=> 'search_overlay',
 	 				'label'			=> __( 'Search field' , 'fruitful' ),
-	 				'info'          => __( 'Here you can enable/disable Overlay Search', 'fruitful' ),
+	 				'info'      => __( 'Here you can enable/disable Overlay Search', 'fruitful' ),
 	 				'description'	=> __( 'Enable' , 'fruitful'),
 	 				'type'			=> 'checkbox',
 	 				'default'		=> 'on'
 	 				),
 	 			array(
-	 				'id' 			=> 'overlay_type',
+	 				'id' 				=> 'overlay_type',
 	 				'label'			=> __( 'Overlay type' , 'fruitful' ),
-	 				'info'          => __( 'Set search overlay type', 'fruitful' ),			
+	 				'info'      => __( 'Set search overlay type', 'fruitful' ),			
 	 				'type'			=> 'select',
 	 				'options'		=> 	array( 
-	 					'-1' => __('Huge inc', 'fruitful') , 
-	 					'2' => __('Corner', 'fruitful'),
-	 					'3' => __('Slide down', 'fruitful'), 
-	 					'4' => __('Scale', 'fruitful'), 
-	 					'5' => __('Door', 'fruitful'), 
-	 					'6' => __('Content push', 'fruitful'), 
-	 					'7' => __('Content scale', 'fruitful'), 
-	 					'8' => __('Corner shape', 'fruitful'), 
-	 					'9' => __('Little boxes', 'fruitful'), 
-	 					'10' => __('Simple genie', 'fruitful'), 
-	 					'11' => __('Genie', 'fruitful')
+	 					'-1'	 		=> __('Huge inc', 'fruitful') , 
+	 					'2' 			=> __('Corner', 'fruitful'),
+	 					'3' 			=> __('Slide down', 'fruitful'), 
+	 					'4' 			=> __('Scale', 'fruitful'), 
+	 					'5' 			=> __('Door', 'fruitful'), 
+	 					'6' 			=> __('Content push', 'fruitful'), 
+	 					'7' 			=> __('Content scale', 'fruitful'), 
+	 					'8' 			=> __('Corner shape', 'fruitful'), 
+	 					'9' 			=> __('Little boxes', 'fruitful'), 
+	 					'10' 			=> __('Simple genie', 'fruitful'), 
+	 					'11' 			=> __('Genie', 'fruitful')
 	 					),
 	 				'default'		=> '7'
 	 				),
+	 			array(
+				  'id'        => 'cc-scf-7',
+				  'label'			=> __( 'Contact form type' , 'fruitful' ),
+				  'info'      => __( 'Only if contact form 7 enebled', 'fruitful' ),	
+				  'type'      => 'select',
+				  'title'     => __('Select contact form', 'fruitful'),
+				  'options'   => $contact_forms,
+				  ),
 	 			)
-);
-return $sections;
-}
-add_filter('settings_fields', 'child_options');
+		);
+		return $sections;
+	}
+	add_filter('settings_fields', 'child_options');
 
 function get_search_overlay() {
 	$theme_options  = fruitful_ret_options("fruitful_theme_options"); 
@@ -602,6 +609,11 @@ function get_search_overlay() {
 
 function get_contact_overlay() {
 	$theme_options  = fruitful_ret_options("fruitful_theme_options"); 
+	include_once(ABSPATH . 'wp-admin/includes/plugin.php'); // Require plugin.php to use is_plugin_active() below
+		if (is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
+			$cf7_id = $theme_options['cc-scf-7'];
+		}
+
 	if ($theme_options['overlay_type'] == -1) {echo '<div class="overlay2 overlay-hugeinc">';}
 	else if ($theme_options['overlay_type'] == 2) {echo '<div class="overlay2 overlay-corner">';}
 	else if ($theme_options['overlay_type'] == 3) {echo '<div class="overlay2 overlay-slidedown">';}
@@ -651,19 +663,22 @@ function get_contact_overlay() {
 		echo '<div class="overlay2 overlay-genie" data-steps="m 701.56545,809.01175 35.16718,0 0,19.68384 -35.16718,0 z;m 698.9986,728.03569 41.23353,0 -3.41953,77.8735 -34.98557,0 z;m 687.08153,513.78234 53.1506,0 C 738.0505,683.9161 737.86917,503.34193 737.27015,806 l -35.90067,0 c -7.82727,-276.34892 -2.06916,-72.79261 -14.28795,-292.21766 z;m 403.87105,257.94772 566.31246,2.93091 C 923.38284,513.78233 738.73561,372.23931 737.27015,806 l -35.90067,0 C 701.32034,404.49318 455.17312,480.07689 403.87105,257.94772 z;M 51.871052,165.94772 1362.1835,168.87863 C 1171.3828,653.78233 738.73561,372.23931 737.27015,806 l -35.90067,0 C 701.32034,404.49318 31.173122,513.78234 51.871052,165.94772 z;m 52,26 1364,4 c -12.8007,666.9037 -273.2644,483.78234 -322.7299,776 l -633.90062,0 C 359.32034,432.49318 -6.6979288,733.83462 52,26 z;m 0,0 1439.999975,0 0,805.99999 -1439.999975,0 z">';
 		echo '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1440 806" preserveAspectRatio="none">';
 		echo '<path class="overlay-path" d="m 701.56545,809.01175 35.16718,0 0,19.68384 -35.16718,0 z"/>';
-		echo '</svg>';}
-
-	echo '<button type="button" class="overlay-close2"></button>';
-			echo '<div class="contact-form2">';
-				echo '<nav>';
-					echo '<ul>';
-						echo '<li>';
-							echo do_shortcode('[contact-form-7 id="64" title="Contact Us"]');
-						echo '</li>';
-					echo '</ul>';
-				echo '</nav>';
-			echo '</div>';
+		echo '</svg>';
+	}
+		echo '<button type="button" class="overlay-close2"></button>';
+		echo '<div class="contact-form2">';
+			echo '<nav>';
+				echo '<ul>';
+					echo '<li>';
+						echo '<h3>Contact</h3>';
+						echo '<div class="cf7-contact">';
+							echo do_shortcode('[contact-form-7 id="'.$cf7_id.'"]');
+						echo '</div>';
+					echo '</li>';
+				echo '</ul>';
+			echo '</nav>';
 		echo '</div>';
+	echo '</div>';
 }
 
 function get_search_status() {
@@ -677,6 +692,23 @@ function get_search_status() {
 			echo '<span id="trigger-overlay" type="button"><i class="fa fa-search"></i>Search</span>';
 		echo '</div>';
 }
+
+function get_contact_status() {
+	include_once(ABSPATH . 'wp-admin/includes/plugin.php'); // Require plugin.php to use is_plugin_active() below
+		if (is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
+			echo '<div class="contact-form">';
+		}
+		else {
+			echo '<div class="contact-form" style="display:none;">';
+		}
+		echo '<button id="trigger-overlay2" type="button"><i class="fa fa-envelope-o"></i>Contact Me</button>';
+			echo '</div>';
+}
+
+
+
+
+
 
 
 

@@ -33,7 +33,7 @@
 			$logo_pos = $menu_pos = '';
 			if (isset($theme_options['logo_position'])) 
 			$logo_pos = esc_attr($theme_options['logo_position']);
-			
+
 			if (isset($theme_options['menu_position'])) 
 			$menu_pos = esc_attr($theme_options['menu_position']);
 			
@@ -59,9 +59,7 @@
 										</div>
 										<div class="login">
 											<?php echo get_search_status();	?>
-											<div class="contact-form">
-												<button id="trigger-overlay2" type="button"><i class="fa fa-envelope-o"></i>Contact Me</button>
-											</div>
+											<?php echo get_contact_status();	?>
 										</div>
 										<div data-originalstyle="<?php echo $menu_pos_class; ?>" class="menu-wrapper <?php echo $menu_pos_class; ?>">
 											<?php fruitful_get_languages_list(); ?>

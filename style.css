@@ -89,11 +89,11 @@ a 	{text-decoration: none;}
 /* 	display: table; */
 	width: 100%;
 }
-.flex-active-slide, #page, #page-header .head-container {
-	z-index: 0 !important;
+.flex-active-slide, #page {
+	z-index: 0;
 }
-.head-container, .head-container.fixed {
-	background-color: inherit !important; 
+.flex-active-slide {
+	z-index: 0 !important;
 }
 .logo-description {
 	margin: 20px 0 0 0 ;
@@ -157,7 +157,7 @@ a 	{text-decoration: none;}
 	float: left;
 }
 .main-navigation {
-	background-color: #282828;
+	background-color: inherit !important;
 	float: none;
 	margin: auto;
 	width: 100%;
@@ -398,7 +398,7 @@ input[type="submit"], input[type="reset"] {
 	list-style: none;
 }
 #searchforms {
-	width: 23%;
+	width: 25%;
 	margin:auto;
 }
 .comment-author.vcard{
@@ -440,7 +440,7 @@ cite {
 	margin-top: 35px;
 }
 
-/******OVERLAY******/
+/****** OVERLAY ******/
 
 .overlay, .overlay2 {
 	position: fixed;
@@ -449,6 +449,7 @@ cite {
 	top: 0;
 	left: 0;
 	background: rgba(0,0,0,0.9);
+	z-index: 1001;
 }
 .overlay .overlay-close, .overlay2 .overlay-close2 {
 	width: 80px;
@@ -465,7 +466,7 @@ cite {
 	z-index: 100;
 	background-color: transparent !important;
 }
-.overlay nav, .overlay2 nav {
+.overlay nav {
 	text-align: center;
 	position: relative;
 	top: 50%;
@@ -825,27 +826,33 @@ cite {
 }
 
 
-#wpcf7-f64-o1{
-	width: 40%;
-	margin: auto;
+.wpcf7 input[type=text], input[type=email], input[type=url] {
+	margin:0;
+}
+.wpcf7 textarea {
+	margin-top: 0;
+	border-radius: 0px;
 }
 .login p {
 	color: #727171;
 	font-size: 17px;
 	margin: 5px 0 5px 0 ; 
 }
-.contact-form2{
-	margin-top: 25%;
+.contact-form2 {
+	width: 30%;
+	margin: auto;
+	margin-top: 150px;;
 }
 .contact-form2 h3, .addcomment h3 {
 	color: #fff;
 	text-transform: uppercase;
-	float: left;
+	margin-bottom: 20px;
 }
 .contact-form2 p, .addcomment p {
 	line-height: 32px;
-	margin: 10px 0 0 0;
 	color: #6F6F6D;
+	margin: 0;
+	font-size: 14px;
 }
 .wpcf7-form-control wpcf7-text{
 	display: table;
