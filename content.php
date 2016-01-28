@@ -14,23 +14,20 @@
 		<header class="post-header">
 
 			<?php if ( !is_single() ) : ?>
-				<?php if ( /*has_post_thumbnail() &&*/ ! post_password_required() ) : ?>
+				<?php if ( /*has_post_thumbnail() &&*/ !post_password_required() ) : ?>
 					<div class="entry-thumbnail">
 						<div class="property">
 							<a href="<?php the_permalink(); ?>">
-									<?php if (is_sticky()) : ?>									
-										<div class="property-image">
-											<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sticky_post');echo ''.$full_image_url[0] . '';} 
-											else {echo get_bloginfo('stylesheet_directory').'/images/no-image-blog-3.png';}?>>
-										</div> 
-									<?php endif; ?>
-									<?php if (! is_sticky()) : ?>
-										<div class="property-image">
-											<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'default_post');echo ''.$full_image_url[0] . '';} 
-											else {echo get_bloginfo('stylesheet_directory').'/images/no-image-blog-3.png';}?>>
-
-										</div> 
-									<?php  endif; ?>
+								<?php if (is_sticky()) :
+									$post_type	= 'sticky_post';	
+								endif; ?>
+								<?php if (! is_sticky()) :
+									$post_type	= 'default_post';
+								endif; ?>
+								<div class="property-image">
+									<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), $post_type);echo ''.$full_image_url[0] . '';} 
+									else {echo get_bloginfo('stylesheet_directory').'/images/no-image-blog-3.png';}?>>
+								</div> 
 								<div class="overlay-blog">
 									<div class="info">
 										<h3>
@@ -44,14 +41,14 @@
 							</a>
 						</div>
 					</div>
-				<?php endif; ?>
-			<?php endif; // is_single() ?>
+				<?php endif;?>
+		<?php endif;?>
 		</header><!-- .entry-header -->
 
-			<?php if ( (is_search())) : // Only display Excerpts for Search ?>
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>
-		</div><!-- .entry-summary -->
+		<?php if ( (is_search())) : // Only display Excerpts for Search ?>
+			<div class="entry-summary">
+				<?php the_excerpt(); ?>
+			</div><!-- .entry-summary -->
 		<?php else : ?>
 			<?php if ( is_single() ) : ?>
 				<div class="entry-content">
@@ -59,8 +56,7 @@
 					<?php the_content( __( 'Read More <span class="meta-nav">&rarr;</span>', 'fruitful' ) ); ?>
 					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'fruitful' ), 'after' => '</div>' ) ); ?>
 				</div><!-- .entry-content -->
-			<?php endif;
-			?>
-		<?php endif; ?>
+			<?php endif;?>
+		<?php endif;?>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
