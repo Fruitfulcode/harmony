@@ -15,10 +15,13 @@ Text Domain: fruitful
 @import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic);
 
 body {
-	min-width: 320px;
+	min-width: 300px;
 	background-color: #F5F5F5 !important;
 }
-
+/* #classmain {
+	display: table;
+	width: 100%;
+} */
 .container {
 	width: 1132px;
 	margin: auto;
@@ -33,6 +36,7 @@ body {
 .container .five.columns {
 	width: 25%;
 	margin:0px;
+	margin-left: 3%;
 }
 .sixteen.columns {
 	width: 1132px;
@@ -91,8 +95,8 @@ a 	{text-decoration: none;}
 }
 .page-container {
 	padding-top: 0px;
-/* 	display: table; */
-	width: 100%;
+	display: table; 
+	width: 100%; 
 }
 .flex-active-slide, #page {
 	z-index: 0;
@@ -177,19 +181,16 @@ a 	{text-decoration: none;}
 	top:inherit;
 }
 .main-navigation ul li.current_page_item a{
-	padding: 22px 19px 22px 19px;
-}
-.main-navigation ul li.current_page_parent a {
-	padding: 22px 19px 22px 19px;
+	padding: 22px 15px;
 }
 .main-navigation a {
 	color: #ffffff;
-	padding: 22px 19px;
+	padding: 22px 15px !important;
 }
 .main-navigation ul li:hover > a {
 	background:none repeat scroll 0 0 #F15A23;
 	color:#fff;
-	padding:22px 19px;
+	padding: 22px 15px;
 	-webkit-transition: all 0.2s ease-in-out; 
 	-moz-transition: all 0.3s ease-in-out; 
 	-khtml-transition: all 0.3s ease-in-out; 
@@ -362,6 +363,9 @@ input[type="submit"], input[type="reset"] {
 }
 #page .container #secondary {
 	margin: 20px 0 0 0;
+}
+.blog #page .container #secondary {
+	margin: 0;
 }
 .textwidget {
 	font-size: 18px;
@@ -1028,7 +1032,7 @@ cite {
 .entry-meta {
 	width: 100%;
 	float: left;
-	margin-bottom: 20px;
+	margin-top: 13px;
 }
 .bio h2{
 	text-transform: uppercase;
@@ -1109,7 +1113,7 @@ cite {
 
 .info h3 {
 	font-family: 'Oswald', sans-serif !important;
-	margin: 0px 0px 0px 10px;
+	margin: 0px 10px 0px 10px;
 	color: #fff;
 }
 .sticky .info h3 {
@@ -1149,35 +1153,6 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 .property .property-image {
 	overflow: hidden;
 	height: 250px;
-}
-.property img {
-	-moz-transition: 0.4s;
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
-	-moz-backface-visibility: visible;
-	min-width: 100%;
-	min-height: 100%;
-	position: relative;
-	top: 0;
-	width: 100%;
-}
-.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	display: block;
-	max-width: 100%;
-	height: auto;
-}
-.property:hover img, .property:active img, .property:focus img {
-	-moz-backface-visibility: visible;
-	top: -10px;
-}
-@media (min-width: 992px){
-	.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
-		float: left;
-	}
-	.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-		position: relative;
-		min-height: 1px;
-	}
 }
 .property {
 	overflow: hidden;
@@ -1300,9 +1275,9 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 
 /* 2 sticky */
 
-.grid-sticky-odd {
+/* .grid-sticky-odd {
 	display: table;
-}
+} */
 .grid-sticky-odd .sticky {
 	width: 50%;
 }
@@ -1343,12 +1318,13 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 	margin: 0;
 }
 .grid-sticky_with-posts_post-two_post-one {
-	display: table;
+	/* display: table; */
 	padding: 5px;
 }
 .grid-sticky_with-posts_post-two_post-one .entry-thumbnail {
 	padding: 0px;
 }
+
 .grid-sticky_with-posts_post-two_post-one article {
 	width: 32.7%;
 }
@@ -1361,6 +1337,19 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 }
 .property .property-image {
 	overflow: hidden;
+	background-size: cover !important;
+	background-position: center !important;
+	-moz-transition: 0.4s;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	-moz-backface-visibility: visible;
+	min-width: 100%;
+	min-height: 100%;
+	position: relative;
+	top: 0;
+}
+.property .property-image:hover, .property .property-image:active, .property .property-image:focus {
+	top: -10px;
 }
 .grid-sticky_with-posts_post-two_post-one .sticky h3{
 	font-size: 36px;
@@ -1373,7 +1362,7 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 	height: 160px;
 	list-style: none;
 	margin: 0;
-	padding: 8px 25px;
+	padding: 8px 15px;
 	color: #fff;
 }
 .grid-sticky_with-posts_post-two_post-one .sticky .property .overlay-blog {
@@ -1385,6 +1374,32 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 	position: absolute;
 	width: 100%;
 	z-index: 1;
+}
+
+/* Archive */
+
+.archive {
+	width: 100%;
+}
+.archive .grid-sticky_with-posts_post-two_post-one .entry-thumbnail {
+	padding: 5px;
+}
+.archive .grid-sticky_with-posts_post-two_post-one article {
+    width: 33.33333333%;
+}
+.archive .property .property-image {
+    height: 200px;
+}
+.archive .grid-sticky_with-posts_post-two_post-one {
+    display: table;
+    padding: 0px;
+}
+.archive .container .five.columns {
+	margin-left: 3%;
+	margin-top: 45px;
+}
+.archive .page-header {
+  margin: 10px 0 10px;
 }
 
 /* RESPONSIVE */
@@ -1414,8 +1429,8 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 	.contact-form2, .search_form2 { width: 50%;margin: auto;margin-top: 250px; }
 	.overlay .overlay-close, .overlay2 .overlay-close2 {top: 40px;}
 
-	.grid-sticky_with-posts_post-two_post-one .sticky h3 {margin-left: 17px;}
-	.grid-sticky_with-posts_post-two_post-one .sticky .additional-info {height: 125px;padding: 15px 11px 2px 19px;}
+	.grid-sticky_with-posts_post-two_post-one .sticky h3 {margin-left: 15px;}
+	.grid-sticky_with-posts_post-two_post-one .sticky .additional-info {height: 125px;padding: 0px 15px;}
 	.sticky p 			{font-size: 14px;line-height: 18px;}
 	.sticky .property .overlay-blog {bottom: -105px;}
 	.sticky .additional-info {height: 120px;}
@@ -1424,6 +1439,8 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 	.property:hover .additional-info {height: 135px;}
 	.widget.contact_us a, .widget.contact_us p, .textwidget, .widget_nav_menu li, .widget_fruitful_news_widget a {font-size: 14px;}
 	.comment-form-comment {width: 100%;}
+	.archive .grid-sticky_with-posts_post-two_post-one .property .property-image, .archive .property .property-image {height: 150px;}
+	.archive .property:hover .additional-info {height: 90px;}
 }
 	@media screen and (max-width: 768px) {
 		.entry-content, .entry-summary {padding: 0;}
@@ -1470,8 +1487,11 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 		.grid-sticky_with-posts_post-two_post-one article { width: 32.5%; }
 		.sticky p {font-size: 12px;}
 		.sticky:first-child p {font-size: 14px;}
-		.property:hover .additional-info {height: 108px;}
+		.property:hover .additional-info {height: 75px;}
 		.sticky .additional-info { height: 115px; }
+		.archive .page-header {padding: 10px 1%;}
+		.archive .container .five.columns { margin-top: 10px; width: 100%;max-width: 100%; }
+		.archive .container .eleven.columns { width: 100%; max-width: 100%; }
 	}
 	@media screen and (max-width: 640px) {
 		#page-header .container header 
@@ -1492,8 +1512,8 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 		.widget_text, .widget.contact_us, .widget_nav_menu {padding: 20px 0 0 0; width: 100%; margin: 0;}
 		.biography_block 	{width: 77%;}
 		.bio 				{width: 100%;}
-		.sticky .property .overlay-blog { bottom: -125px; } 
-		.sticky:first-child .property:hover .overlay-blog { bottom: -70px; }
+		.sticky .property .overlay-blog { bottom: -115px; } 
+		/* .sticky:first-child .property:hover .overlay-blog { bottom: -70px; } */
 		.sticky p 			{font-size: 12px;line-height: 15px;}
 		.sticky .info h3 {margin: 0px 0px 0px 10px;}
 		.grid-sticky .sticky .additional-info {padding: 0px 10px;height: 125px;}
@@ -1505,28 +1525,30 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 		.eleven .blog_post .post-content .entry-content {padding-right: 0px;}
 		#page .container #secondary { padding: 0; }
 		#license {padding: 0;}
+		.info h3, .grid-sticky_with-posts_post-two_post-one .sticky h3 {font-size: 14px;}
 
 		.grid-sticky_with-posts_post-two_post-one {padding: 0;}
-		.grid-sticky_with-posts_post-two_post-one .sticky h3 {font-size: 18px;}
 		.grid-sticky_with-posts_post-two_post-one .sticky, 
 		.grid-sticky_with-posts_post-two_post-one article {width: 33.3333333%;}
 		.grid-sticky_with-posts_post-two_post-one .sticky .property .property-image {height: 150px;}
+		.grid-sticky_with-posts_post-two_post-one .sticky .additional-info {height: 120px; padding: 0px 10px;}
 		.grid-sticky_with-posts_post-two_post-one .entry-thumbnail { padding: 5px; }
 		.sticky .property .property-image {height: 150px;}
 		.grid-sticky-odd .sticky .property .property-image, 
 		.grid-sticky-odd .sticky .property,
 		.grid-sticky .sticky .property:first-child,
 		.grid-sticky .sticky h3 { font-size: 18px; }
-		.sticky:first-child p { font-size: 12px;}
-		.sticky:first-child .additional-info { padding: 0px 12px; }
+		.sticky:first-child p { font-size: 12px; line-height: 15px;}
+		/* .sticky:first-child .additional-info { padding: 0px 12px; } */
 		.sticky .property:hover .additional-info {height: 120px;}
-		.sticky:first-child .property:hover .additional-info {height: 150px;}
+		.sticky:first-child .property:hover .additional-info {height: 90px;}
 		.property:hover .additional-info {height: 60px;}
+
 
 		.grid-sticky-odd .sticky .property .property-image, 
 		.grid-sticky .sticky .property:first-child, 
 		.grid-sticky .sticky .property .property-image { height: 180px;}
-		.property .property-image {height: 105px; }
+		/* .property .property-image {height: 105px; } */
 	}
 	@media screen and (max-width: 480px) {
 		.footer li 			{width: 34%; height: 220px;}
@@ -1558,6 +1580,7 @@ header.post-header .post-title2 a/* , .sticky-post h2 a  */{
 		.overlay nav, .overlay2 nav, .overlay3 nav {-webkit-transform: translateY(2%);}
 		.sticky .property 	{height: 140px;}
 		.sticky:first-child p {font-size: 12px;}
+		.archive .grid-sticky_with-posts_post-two_post-one article {width: 100%;}
 	}
 	@media screen and (max-width: 414px) {
 		.logo-description h2.site-description {	display: inherit;}

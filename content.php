@@ -24,10 +24,15 @@
 								<?php if (! is_sticky()) :
 									$post_type	= 'default_post';
 								endif; ?>
-								<div class="property-image">
-									<img class="img-responsive" src=<?php if ( has_post_thumbnail()) { $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), $post_type);echo ''.$full_image_url[0] . '';} 
-									else {echo get_bloginfo('stylesheet_directory').'/images/no-image-blog-3.png';}?>>
-								</div> 
+								<div class="property-image img-responsive" style="background:url(<?php 
+									if ( has_post_thumbnail()) { 
+										$full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sticky_post');echo ''.$full_image_url[0] . '';
+									} 
+									else {
+										echo get_bloginfo('stylesheet_directory').'/images/no-image-blog-3.png';
+									}?> )";>
+								</div>
+
 								<div class="overlay-blog">
 									<div class="info">
 										<h3>

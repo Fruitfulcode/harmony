@@ -19,7 +19,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
 <?php fruitful_get_favicon(); ?>
 <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script><![endif]-->
 <?php wp_head(); ?> 
@@ -59,7 +59,7 @@
 										</div>
 										<div class="login">
 											<?php echo get_search_status();	?>
-											<?php echo get_contact_status();	?>
+											<?php echo get_contact_status(); ?>
 										</div>
 										<div data-originalstyle="<?php echo $menu_pos_class; ?>" class="menu-wrapper <?php echo $menu_pos_class; ?>">
 											<?php fruitful_get_languages_list(); ?>
