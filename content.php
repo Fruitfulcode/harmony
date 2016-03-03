@@ -29,7 +29,7 @@
 										$full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sticky_post');echo ''.$full_image_url[0] . '';
 									} 
 									else {
-										echo get_bloginfo('stylesheet_directory').'/images/no-image-blog-3.png';
+										echo get_stylesheet_directory_uri(). '/images/no-image-blog-3.png'; 
 									}?> )";>
 								</div>
 

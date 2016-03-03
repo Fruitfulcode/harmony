@@ -18,10 +18,9 @@ body {
 	min-width: 300px;
 	background-color: #F5F5F5 !important;
 }
-/* #classmain {
-	display: table;
-	width: 100%;
-} */
+html {
+  overflow-y: scroll;
+}
 .container {
 	width: 1132px;
 	margin: auto;
@@ -937,9 +936,6 @@ cite {
 	font-size: 18px;
 	color: #F5F5F5;
 	margin-bottom: 10px;
-}
-#colortext {
-	color: #F64747;
 }
 .eleven.columns .blog_post .post-content {
 	width: 100%;

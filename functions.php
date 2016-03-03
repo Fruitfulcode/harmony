@@ -66,7 +66,7 @@ class fruitful_news_widget extends WP_Widget {
 				if (has_post_thumbnail()) {
 					$img_type = wp_get_attachment_image_src(get_post_thumbnail_id(),'default_post')[0];
 				} else {
-					$img_type = 'wp-content/themes/harmony/images/no-image-blog-2.png';
+					$img_type = get_stylesheet_directory_uri().'/images/no-image-blog-2.png';
 				}?>
 				<div class="news-block">
 					<a class="news-img" href="<?php the_permalink();?>" style="background:url(<?php echo $img_type ?>)no-repeat center;"></a>
@@ -85,7 +85,7 @@ class fruitful_news_widget extends WP_Widget {
 		}?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); 
-				?>"><?php _e( 'Title:' );?>
+				?>"><?php _e( 'Title:', 'fruitful' );?>
 			</label> 
 			<input class="widefat" id="<?php echo $this->get_field_id('title');
 			?>" name="<?php echo $this->get_field_name( 'title' ); 
@@ -219,7 +219,7 @@ function the_breadcrumb(){ // blogpost title
 	if (!is_front_page()) 
 	{
 		echo '<a href="';
-		echo get_option('home');
+		echo home_url();
 		echo '">Home';
 		echo "</a> / ";
 		if (is_category() || is_single()) {

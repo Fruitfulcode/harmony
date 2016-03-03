@@ -46,9 +46,9 @@
 	</div>
 	<?php get_search_overlay(); ?>
 	<?php get_contact_overlay(); ?>
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/classie.js" type="text/javascript"></script>
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/custom_harmony.js" type="text/javascript"></script>
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/modernizr.custom.js" type="text/javascript"></script>
-	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/snap.svg-min.js" type="text/javascript"></script>
+	<script src="<?php echo esc_url( get_stylesheet_directory_uri());?>/js/classie.js" type="text/javascript"></script>
+	<script src="<?php echo esc_url( get_stylesheet_directory_uri());?>/js/custom_harmony.js" type="text/javascript"></script>
+	<script src="<?php echo esc_url( get_stylesheet_directory_uri());?>/js/modernizr.custom.js" type="text/javascript"></script>
+	<script src="<?php echo esc_url( get_stylesheet_directory_uri());?>/js/snap.svg-min.js" type="text/javascript"></script>
 </body>
 </html>
