@@ -6,7 +6,7 @@ if ( ! function_exists( 'fruitful_get_product_search_form' ) ) {
 		<form role="search" method="get" id="searchform" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
 			<div>
 				<input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php _e( 'Search...', 'woocommerce' ); ?>" />
-				<input type="submit" id="searchsubmit" value="<?php echo esc_attr__( 'Search' ); ?>" />
+				<input type="submit" id="searchsubmit" value="<?php echo esc_attr__( 'Search', 'fruitful' ); ?>" />
 				<input type="hidden" name="post_type" value="product" />
 			</div>
 		</form>
@@ -14,10 +14,17 @@ if ( ! function_exists( 'fruitful_get_product_search_form' ) ) {
 	}
 }
 
+
+/*function my_unregister_sidebars() {
+	unregister_sidebar( 'Main Sidebar' );
+}
+add_action( 'widgets_init', 'my_unregister_sidebars', 11 );*/
+
+
 if ( ! function_exists( 'fruitful_widgets_init' ) ) {
 	function fruitful_widgets_init() {
-		register_widget( 'Fruitful_Widget_News_Archive' );
-
+		register_widget( 'fruitful_news_widget' );
+		register_widget( 'ContactUs_Widget' );
 		register_sidebar( array(
 			'name' => __( 'Footer top sidebar', 'fruitful' ),
 			'id' => 'sidebar-7',
@@ -43,10 +50,46 @@ if ( ! function_exists( 'fruitful_widgets_init' ) ) {
 			'after_title' => '</h3>',
 			) );
 	}
-
-	add_action( 'widgets_init', 'fruitful_widgets_init' );
+add_action( 'widgets_init', 'fruitful_widgets_init' );
 }
 
+add_action( 'after_switch_theme', 'activate_theme', 10 , 2 );
+function activate_theme() {
+	$sidebar_id = 'sidebar-7';
+	$sidebars_widgets = get_option( 'sidebars_widgets' );
+	$id = count( $sidebars_widgets ) + 1;
+	$sidebars_widgets[$sidebar_id] = array( "fruitful_news_widget-" . $id );
+	$ops = get_option( 'widget_fruitful_news_widget' );
+	if (empty($ops[$id])) {
+		$ops[$id] = array(
+			'title' => 'Recent News',
+		);
+		update_option( 'widget_fruitful_news_widget', $ops ); 
+	}$id++;
+
+	$sidebar2_id = 'sidebar-8';
+	$sidebars_widgets[$sidebar2_id][0] = "text-" . $id;
+	$ops2 = get_option( 'widget_text' );
+	if (empty($ops2[$id])) {
+		$ops2[$id] = array(
+			'title' 		=> 'about us',
+			'text' 			=> 'Free WordPress responsive theme with powerful theme options panel and simple clean front end design.',
+		);
+		update_option( 'widget_text', $ops2 );
+	}$id++;
+	
+	$sidebars_widgets[$sidebar2_id][1] = "contact_us-widget-" . $id ;
+	$ops3 = get_option( 'widget_contact_us-widget' );
+	if (empty($ops3[$id])) {
+		$ops3[$id] = array(
+			'address' 	=> 'Chris Niswandee, Smallsys inc 795 E Dragram Tucson AZ 85705 USA',
+			'email' 		=> 'mail@fruitfulcode.com',
+			'phone' 		=> '+1 911 321-4567',
+		);
+		update_option( 'widget_contact_us-widget', $ops3 );
+	}$id++;
+	update_option( 'sidebars_widgets', $sidebars_widgets );
+}
 
 class fruitful_news_widget extends WP_Widget {
 	function __construct() {
@@ -99,18 +142,7 @@ class fruitful_news_widget extends WP_Widget {
 		return $instance;
 	}
 } 
-function fruit_load_widget() {
-	register_widget( 'fruitful_news_widget' );
-}
-add_action( 'widgets_init', 'fruit_load_widget' );
 
-
-
-add_action( 'widgets_init', 'ContactUs_widget' );
-function ContactUs_widget() 
-{
-	register_widget( 'ContactUs_Widget' );
-}
 class ContactUs_Widget extends WP_Widget 
 {
 
@@ -710,16 +742,16 @@ function get_contact_status() {
 	echo '</div>';
 }
 
+function catch_that_image() {
+  global $post, $posts;
+  $first_img = '';
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+  $first_img = $matches[1][0];
 
-
-
-
-
-
-
-
-
-
-
-
-
+  if(empty($first_img)) {
+    $first_img = "/path/to/default.png";
+  }
+  return $first_img;
+}

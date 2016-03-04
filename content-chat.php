@@ -1,27 +1,26 @@
 <?php
 /**
+ * The template for displaying posts in the Chat post format.
+ *
  * @package WordPress
  * @subpackage Fruitful theme
  * @since Fruitful theme 1.0
  */
 ?>
-<?php $options = fruitful_get_theme_options(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog_post'); ?>>
 
-	
 	<div class="post-content">	
 		<header class="post-header">
-
 			<?php if ( !is_single() ) : ?>
 				<div class="entry-thumbnail">
 					<div class="property">
 						<a href="<?php the_permalink(); ?>">
 							<?php if (is_sticky()) :
-								$post_type	= 'sticky_post';	
+							$post_type	= 'sticky_post';	
 							endif; ?>
 							<?php if (! is_sticky()) :
-								$post_type	= 'default_post';
+							$post_type	= 'default_post';
 							endif; ?>
 							<div class="property-image img-responsive" style="background:url(<?php 
 								if ( has_post_thumbnail()) { 
@@ -55,11 +54,15 @@
 		<?php else : ?>
 			<?php if ( is_single() ) : ?>
 				<div class="entry-content">
-					<?php harmony_entry_meta(); ?>
-					<?php the_content( __( 'Read More <span class="meta-nav">&rarr;</span>', 'fruitful' ) ); ?>
-					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'fruitful' ), 'after' => '</div>' ) ); ?>
+					<?php the_content(); ?>
+					<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'fruitful' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
 				</div><!-- .entry-content -->
+
+				<footer class="entry-meta">
+					<?php fruitful_entry_meta(); ?>
+					<?php edit_post_link( __( 'Edit', 'fruitful' ), '<span class="edit-link">', '</span>' ); ?>
+				</footer><!-- .entry-meta -->
 			<?php endif;?>
 		<?php endif;?>
 	</div>
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post -->

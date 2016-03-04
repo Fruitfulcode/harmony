@@ -1,18 +1,17 @@
 <?php
 /**
+ * The template for displaying posts in the Gallery post format.
+ *
  * @package WordPress
  * @subpackage Fruitful theme
  * @since Fruitful theme 1.0
  */
 ?>
-<?php $options = fruitful_get_theme_options(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog_post'); ?>>
 
-	
 	<div class="post-content">	
 		<header class="post-header">
-
 			<?php if ( !is_single() ) : ?>
 				<div class="entry-thumbnail">
 					<div class="property">
@@ -55,11 +54,27 @@
 		<?php else : ?>
 			<?php if ( is_single() ) : ?>
 				<div class="entry-content">
-					<?php harmony_entry_meta(); ?>
-					<?php the_content( __( 'Read More <span class="meta-nav">&rarr;</span>', 'fruitful' ) ); ?>
-					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'fruitful' ), 'after' => '</div>' ) ); ?>
+					<?php if ( is_single() || ! get_post_gallery() ) : ?>
+						<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'fruitful' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'fruitful' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
+					<?php else : ?>
+						<?php echo get_post_gallery(); ?>
+					<?php endif; // is_single() ?>
 				</div><!-- .entry-content -->
+
+				<footer class="entry-meta">
+					<?php fruitful_entry_meta(); ?>
+
+					<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) { ?>
+					<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'fruitful' ), __( '1 Comment', 'fruitful' ), __( '% Comments', 'fruitful' ) ); ?></span>
+					<?php } ?>
+
+					<?php if ( is_single() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
+						<?php get_template_part( 'author-bio' ); ?>
+					<?php endif; ?>
+					<?php edit_post_link( __( 'Edit', 'fruitful' ), '<span class="edit-link">', '</span>' ); ?>
+				</footer><!-- .entry-meta -->
 			<?php endif;?>
 		<?php endif;?>
-	</div>
-</article><!-- #post-<?php the_ID(); ?> -->
+	</div>	
+</article><!-- #post -->

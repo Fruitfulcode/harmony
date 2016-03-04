@@ -1,27 +1,24 @@
 <?php
 /**
+ * The template for displaying posts in the Aside post format.
+ *
  * @package WordPress
  * @subpackage Fruitful theme
  * @since Fruitful theme 1.0
  */
 ?>
-<?php $options = fruitful_get_theme_options(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog_post'); ?>>
-
-	
 	<div class="post-content">	
 		<header class="post-header">
-
 			<?php if ( !is_single() ) : ?>
 				<div class="entry-thumbnail">
-					<div class="property">
-						<a href="<?php the_permalink(); ?>">
+					<div class="property aside">
 							<?php if (is_sticky()) :
-								$post_type	= 'sticky_post';	
+							$post_type	= 'sticky_post';	
 							endif; ?>
 							<?php if (! is_sticky()) :
-								$post_type	= 'default_post';
+							$post_type	= 'default_post';
 							endif; ?>
 							<div class="property-image img-responsive" style="background:url(<?php 
 								if ( has_post_thumbnail()) { 
@@ -38,11 +35,10 @@
 										<?php the_title(); ?>
 									</h3>
 									<div class="additional-info">
-										<span class="post_tree"><?php the_excerpt(); ?></span>
+										<span class="post_tree"><?php the_content(); ?></span>
 									</div>
 								</div>
 							</div>
-						</a>
 					</div>
 				</div>
 			<?php endif;?>
@@ -55,11 +51,24 @@
 		<?php else : ?>
 			<?php if ( is_single() ) : ?>
 				<div class="entry-content">
-					<?php harmony_entry_meta(); ?>
-					<?php the_content( __( 'Read More <span class="meta-nav">&rarr;</span>', 'fruitful' ) ); ?>
-					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'fruitful' ), 'after' => '</div>' ) ); ?>
+					<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'fruitful' ) ); ?>
+					<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'fruitful' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
 				</div><!-- .entry-content -->
+
+				<footer class="entry-meta">
+					<?php if ( is_single() ) : ?>
+						<?php fruitful_entry_meta(); ?>
+						<?php edit_post_link( __( 'Edit', 'fruitful' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php if ( get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
+							<?php get_template_part( 'author-bio' ); ?>
+						<?php endif; ?>
+
+					<?php else : ?>
+						<?php fruitful_entry_date(); ?>
+						<?php edit_post_link( __( 'Edit', 'fruitful' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php endif; // is_single() ?>
+				</footer><!-- .entry-meta -->
 			<?php endif;?>
 		<?php endif;?>
-	</div>
-</article><!-- #post-<?php the_ID(); ?> -->
+	</div>	
+</article><!-- #post -->
