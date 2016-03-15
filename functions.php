@@ -97,6 +97,7 @@ class fruitful_news_widget extends WP_Widget {
 			array( 'description' => __( 'Latest news from your blog', 'fruitful_new_widget'),));
 	}
 	public function widget( $args, $instance ) {
+		$img_type = '';
 		$title = apply_filters('widget_title',$instance['title']);
 		echo $args['before_widget'];
 		if (!empty($title)){
@@ -109,7 +110,7 @@ class fruitful_news_widget extends WP_Widget {
 				if (has_post_thumbnail()) {
 					$img_type = wp_get_attachment_image_src(get_post_thumbnail_id(),'default_post')[0];
 				} else {
-					$img_type = get_stylesheet_directory_uri().'/images/no-image-blog-2.png';
+					$img_type = '';
 				}?>
 				<div class="news-block">
 					<a class="news-img" href="<?php the_permalink();?>" style="background:url(<?php echo $img_type ?>)no-repeat center;"></a>
@@ -543,7 +544,7 @@ if ( ! function_exists( 'fruitful_comment' ) ) :
 					'10' 			=> __('Simple genie', 'fruitful'), 
 					'11' 			=> __('Genie', 'fruitful')
 					),
-				'default'		=> '7'
+				'default'		=> '3'
 				),
 			array(
 				'id'        => 'cc-scf-7',
@@ -554,7 +555,207 @@ if ( ! function_exists( 'fruitful_comment' ) ) :
 				'options'   => $contact_forms,
 				),
 			)
-);
+	);
+
+	/*Colors*/
+
+	$sections['colors'] = array(
+		'title'		=> __( 'Colors', 'fruitful' ),
+		'id'		=> 'main-colors',
+		'fields'	=> array(
+			array(
+				'id'			=> 'menu-color',
+				'label'			=> __( 'Main menu color' , 'fruitful' ),
+				'info'			=> __( 'Choose your colors for main menu in header', 'fruitful' ),		
+				'newrow'		=> true,
+				'fields'		=>  array (	
+					array(
+						'id' 			=> 'menu_bg_color',
+						'type'			=> 'color',
+						'default'		=> '#282828',
+						'box-title'		=> __('Background color', 'fruitful')					
+						),
+					array(
+						'id' 			=> 'menu_btn_color',
+						'type'			=> 'color',
+						'default'		=> '#F3494C',
+						'box-title'		=> __('Menu button color', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'menu_font_color',
+						'type'			=> 'color',
+						'default'		=> '#ffffff',
+						'box-title'		=> __('Font color', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'menu_hover_color',
+						'type'			=> 'color',
+						'default'		=> '#ffffff',
+						'box-title'		=> __('Font color (active and hover)', 'fruitful')					
+						),						
+					)
+				),	
+			array( 
+				'id'			=> 'dd-menu-color',
+				'label'			=> __( 'Dropdown menu color' , 'fruitful' ),
+				'info'			=> __( 'Choose your colors for dropdown menu in header', 'fruitful' ),		
+				'fields'		=>  array (	
+					array(
+						'id' 			=> 'dd_menu_bg_color',
+						'type'			=> 'color',
+						'default'		=> '#ffffff',
+						'box-title'		=> __('Background color', 'fruitful')					
+						),
+					array(
+						'id' 			=> 'dd_menu_btn_color',
+						'type'			=> 'color',
+						'default'		=> '#F3494C',
+						'box-title'		=> __('Menu button color', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'dd_menu_font_color',
+						'type'			=> 'color',
+						'default'		=> '#ffffff',
+						'box-title'		=> __('Font color', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'dd_menu_hover_color',
+						'type'			=> 'color',
+						'default'		=> '#ffffff',
+						'box-title'		=> __('Font color (active and hover)', 'fruitful')					
+						),						
+					) 
+				),	
+			array(
+				'id'			=> 'g-menu-color',
+				'label'			=> __( 'General font color' , 'fruitful' ),
+				'info'			=> __( 'Choose your colors for text and links', 'fruitful' ),
+				'newrow'		=> true,				
+				'fields'		=>  array (	
+					array(
+						'id' 			=> 'p_font_color',
+						'type'			=> 'color',
+						'default'		=> '#282828',
+						'box-title'		=> __('Font color', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'a_font_color',
+						'type'			=> 'color',
+						'default'		=> '#282828',
+						'box-title'		=> __('Link color', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'a_hover_font_color',
+						'type'			=> 'color',
+						'default'		=> '#F3494C',
+						'box-title'		=> __('Link color (hover)', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'a_focus_font_color',
+						'type'			=> 'color',
+						'default'		=> '#F3494C',
+						'box-title'		=> __('Link color (focus)', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'a_active_font_color',
+						'type'			=> 'color',
+						'default'		=> '#F3494C',
+						'box-title'		=> __('Link color (active)', 'fruitful')					
+						),						
+					)
+				),		
+			array(
+				'id'			=> 'lines-color',
+				'label'			=> __( 'Color for lines' , 'fruitful' ),
+				'info'			=> __( 'Choose your colors for lines and separators', 'fruitful' ),
+				'fields'		=>  array (	
+					array(
+						'id' 			=> 'widgets_sep_color',
+						'type'			=> 'color',
+						'default'		=> '#F3494C',
+						'box-title'		=> __('Widget separator color', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'date_of_post_b_color',
+						'type'			=> 'color',
+						'default'		=> '#F3494C',
+						'box-title'		=> __('Blog post date color', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'date_of_post_f_color',
+						'type'			=> 'color',
+						'default'		=> '#ffffff',
+						'box-title'		=> __('Date font color', 'fruitful')					
+						),	
+					)
+				),	
+			array(
+				'id'			=> 'buttons-color',
+				'label'			=> __( 'Color for buttons' , 'fruitful' ),
+				'info'			=> __( 'Choose your colors for buttons', 'fruitful' ),
+				'newrow'		=> true,
+				'fields'		=>  array (	
+					array(
+						'id' 			=> 'btn_color',
+						'type'			=> 'color',
+						'default'		=> '#282828',
+						'box-title'		=> __('Button background color', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'btn_active_color',
+						'type'			=> 'color',
+						'default'		=> '#F3494C',
+						'box-title'		=> __('Button background color (hover, active, focus, current page - pagenavi)', 'fruitful')					
+						),	
+					)
+				),
+			array(
+				'id'			=> 'social-color',
+				'label'			=> __( 'Color for social icons' , 'fruitful' ),
+				'info'			=> __( 'Choose your colors for social icons', 'fruitful' ),
+				'fields'		=>  array (	
+					array(
+						'id' 			=> 'soc_icon_bg_color',
+						'type'			=> 'color',
+						'default'		=> '#282828',
+						'box-title'		=> __('Social icons background color', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'soc_icon_color',
+						'type'			=> 'color',
+						'default'		=> '#ffffff',
+						'box-title'		=> __('Button background color (hover, active, focus, current page - pagenavi)', 'fruitful')					
+						),	
+					)
+				),	
+			array(
+				'id'			=> 'woocommerce-color',
+				'label'			=> __( 'WooCommerce colors' , 'fruitful' ),
+				'info'			=> __( 'Choose your colors for WooCommerce', 'fruitful' ),
+				'fields'		=>  array (	
+					array(
+						'id' 			=> 'woo_sale_price_color',
+						'type'			=> 'color',
+						'default'		=> '#919191',
+						'box-title'		=> __('Sale price color', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'woo_rating_color_regular',
+						'type'			=> 'color',
+						'default'		=> '#282828',
+						'box-title'		=> __('Rating color (regular)', 'fruitful')					
+						),	
+					array(
+						'id' 			=> 'woo_rating_color_active',
+						'type'			=> 'color',
+						'default'		=> '#F3494C',
+						'box-title'		=> __('Rating color (hover, active)', 'fruitful')					
+						),						
+					)
+				),				
+			)
+); 
+
 return $sections;
 }
 add_filter('settings_fields', 'child_options');
@@ -714,7 +915,6 @@ function get_contact_overlay() {
 	}
 }
 
-
 function get_search_status() {
 	$theme_options  = fruitful_get_theme_options(); 
 	if (isset($theme_options['search_overlay'])) {
@@ -728,7 +928,6 @@ function get_search_status() {
 		echo '</div>';
 	}
 }
-
 
 function get_contact_status() {
 	include_once(ABSPATH . 'wp-admin/includes/plugin.php'); // Require plugin.php to use is_plugin_active() below

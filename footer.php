@@ -33,8 +33,8 @@
 				<div id="copyright">
 					<div class="footer-footer">
 						<div class="license">
-							<p id="license">© 2015 Harmony theme by  <span class="colortext">fruitfulcode</span> 
-							Powered by <span class="colortext">WordPress</span> </p>
+							<p id="license">© 2015 Harmony theme by  <a href="http://fruitfulcode.com" class="colortext" target="blank">fruitfulcode</a> 
+							Powered by <a href="https://wordpress.org" class="colortext" target="blank">WordPress</a> </p>
 						</div>
 						<?php fruitful_get_socials_icon (); ?>
 

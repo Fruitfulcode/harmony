@@ -24,9 +24,6 @@
 							<div class="property-image img-responsive" style="background:url(<?php 
 								if ( has_post_thumbnail()) { 
 									$full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'sticky_post');echo ''.$full_image_url[0] . '';
-								} 
-								else {
-									echo get_stylesheet_directory_uri(). '/images/no-image-blog.png'; 
 								}?> )";>
 							</div>
 
